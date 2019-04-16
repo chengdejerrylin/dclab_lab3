@@ -1,0 +1,8 @@
+*.log
+INCA_libs/*
+*/INCA_libs/*
+*/nWaveLog/*
+nWaveLog/*
+*/novas*
+*/wrapper.fsdb*
+sftp-config.json
