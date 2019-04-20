@@ -5,7 +5,7 @@ module SRAM(
     output reg [15:0] out_signal,     //to DSP
     output reg [20:0] in_addr,
     output reg [20:0] out_addr,
-    input request_out_signa1,
+    input request_out_signal,
     input  in_signal_valid,  
     output reg out_signal_valid,  
     output reg full,

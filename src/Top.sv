@@ -27,7 +27,7 @@ module Top(
 	inout AUD_BCLK,
 	output AUD_DACDAT,
 	input AUD_DACLRCK,
-	output AUD_XCK,
+	output AUD_XCK
 
 );
 	//state
@@ -46,7 +46,7 @@ module Top(
 	wire [15:0] play_data, record_data;
 	wire play_valid, record_valid;
 	wire sram_end, dsp_request_data;
-	SRAM sramController(.clk(clk), .rst(rst), .in_signal(record_data), .out_signal(play_data), .in_addr(record_addr), 
+	SRAM sramController(.i_clk(clk), .i_rst(rst), .in_signal(record_data), .out_signal(play_data), .in_addr(record_addr), 
 		.out_addr(play_addr), .in_signal_valid(record_valid), .out_signal_valid(play_valid), .full(sram_end), .top_state(state),
 		.SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), .SRAM_WE_N(SRAM_WE_N), 
 		.SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .request_out_signal(dsp_request_data));
@@ -62,7 +62,7 @@ module Top(
 	//dsp
 	DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
 		.I2S_request_data(I2S_request_data), .slot_way(oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
-		.request_data(dsp_request_data), play_speed(play_speed));
+		.request_data(dsp_request_data), .play_speed(play_speed));
 
 
 

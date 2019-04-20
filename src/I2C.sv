@@ -6,7 +6,7 @@ module I2C (
 	output reg I2C_SCLK,
 	inout I2C_SDAT,
 
-	output reg done,
+	output reg done
 );
 
 endmodule // I2C
