@@ -3,8 +3,8 @@ module SRAM(
     input  i_rst,       //i_rst = 1 -> reset
     input  [15:0] in_signal,      //from I2S
     output reg [15:0] out_signal,     //to DSP
-    output reg [20:0] in_addr,
-    output reg [20:0] out_addr,
+    output reg [19:0] in_addr,
+    output reg [19:0] out_addr,
     input request_out_signal,
     input  in_signal_valid,  
     output reg out_signal_valid,  
