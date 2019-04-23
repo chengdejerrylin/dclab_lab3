@@ -6,7 +6,7 @@ module DSP_LOGIC(
 	input data_valid,
 	input I2S_request_data,
 	input slot_way,
-	input play_speed,
+	input [3:0] play_speed,
 
  
  	output reg request_data,

@@ -87,6 +87,14 @@ module Top(
 		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
 		.request_data(dsp_request_data), .play_speed(play_speed));
 
+	//LED
+	assign HEX7 = 7'h7F;
+	assign HEX6 = 7'h7F;
+	assign HEX5 = 7'h7F;
+	assign HEX4 = 7'h7F;
+	SevenHexDecoder speed_display(.i_hex      (play_speed), .o_seven_ten(HEX3), .o_seven_one(HEX2));
+	SevenHexDecoder state_display(.i_hex      ({1'b0, state}), .o_seven_ten(HEX1), .o_seven_one(HEX0));
+
 	task fastSpeed;
 		begin
 			case (play_speed)
@@ -132,7 +140,31 @@ module Top(
 
 	//state
 	always_comb begin
+		if(state == INIT) n_state = (I2C_down) ? {_mode, 2'b00} : INIT;
+		else begin
+			case(state[1:0] )
+				2'b00 : begin // stop
+					n_state = (_mode != state[2]) ? {_mode, 2'b00} :
+							  playRecord ? {state[2], 2'b10} : 
+							  state;
+				end
 
+				2'b10 : begin //play
+					n_state = stop ? {state[2], 2'b00} :
+							  playRecord ? {state[2], 2'b11} :
+							  state;
+				end
+
+				2'b11 : begin //pause
+					n_state = (_mode != state[2]) ? {_mode, 2'b00} :
+							  stop ? {state[2], 2'b00} :
+							  playRecord ? {state[2], 2'b10} :
+							  state;
+				end
+
+				default : n_state = state;
+			endcase // state[1:0]
+		end
 	
 	end
 
