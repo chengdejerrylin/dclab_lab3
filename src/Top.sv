@@ -3,7 +3,7 @@ module Top(
 	input rst,
 
 	//I2C
-	input I2C_Down,
+	input I2C_down,
 
 	//user IO
 	input playRecord,
@@ -11,6 +11,7 @@ module Top(
 	input fast,
 	input slow,
 	input oneSlot,
+	input mode,
 
 	//SRAM
     output [19:0] SRAM_ADDR,
@@ -27,11 +28,32 @@ module Top(
 	inout AUD_BCLK,
 	output AUD_DACDAT,
 	input AUD_DACLRCK,
-	output AUD_XCK
+	output AUD_XCK,
 
+	//seven hex
+	output [6:0] HEX0,
+	output [6:0] HEX1,
+	output [6:0] HEX2,
+	output [6:0] HEX3,
+	output [6:0] HEX4,
+	output [6:0] HEX5,
+	output [6:0] HEX6,
+	output [6:0] HEX7,
+
+	//LED
+	output [8:0] LEDG,
+	output [17:0] LEDR,
+
+	//LCD
+	output LCD_BLON,
+	inout [7:0] LCD_DATA,
+	output LCD_EN,
+	output LCD_ON,
+	output LCD_RS,
+	output LCD_RW
 );
 	//state
-	parameter INIT          = 3'b001;
+	parameter INIT          = 3'b101;
 	parameter PLAY_STOP     = 3'b000;
 	parameter PLAY_PLAY     = 3'b010;
 	parameter PLAY_PAUSE    = 3'b011;
@@ -40,6 +62,7 @@ module Top(
 	parameter RECORD_PAUSE  = 3'b111;
 	reg [2:0] state, n_state;
 	reg [3:0] play_speed, n_play_speed;
+	reg _mode, _oneSlot;
 
 	//sram controller
 	wire [19:0] play_addr, record_addr;
@@ -61,9 +84,76 @@ module Top(
 
 	//dsp
 	DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
-		.I2S_request_data(I2S_request_data), .slot_way(oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
+		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
 		.request_data(dsp_request_data), .play_speed(play_speed));
 
+	task fastSpeed;
+		begin
+			case (play_speed)
+				4'b1111 : n_play_speed = 4'b1111; // x8 -> x8
+				4'b0000 : n_play_speed = 4'b1001; // x1 -> x2
+				4'b1001, 
+				4'b1010, 
+				4'b1011, 
+				4'b1100, 
+				4'b1101, 
+				4'b1110 : n_play_speed = play_speed + 4'd1; // x2~x7 ->  x3~x8
+				default : n_play_speed = play_speed - 4'd1;// x1/8 ~ x1/2 -> x1/7 ~ x1
+			endcase
+		end
+	endtask
 
+	task slowSpeed;
+		begin
+			case (play_speed)
+				4'b0111 : n_play_speed = 4'b0111; // x1/8 -> x1/8
+				4'b1001 : n_play_speed = 4'b0000; // x2 -> x1 
+				4'b1010, 
+				4'b1011, 
+				4'b1100, 
+				4'b1101, 
+				4'b1110,
+				4'b1111 : n_play_speed = play_speed - 4'd1; // x3~x8 ->  x2~x7
+				default : n_play_speed = play_speed + 4'd1;// x1/7 ~ x1 -> x1/8 ~ x1/2
+			endcase
+		end
+	endtask
+
+	task changeSpeed;
+		begin
+			case ({fast, slow})
+				2'b10 : fastSpeed();
+				2'b01 : slowSpeed();
+
+				default : n_play_speed = play_speed;
+			endcase
+		end
+	endtask
+
+	//state
+	always_comb begin
+
+	
+	end
+
+	//speed
+	always_comb begin
+		if (state[2]) n_play_speed = 4'd0;
+		else changeSpeed();
+	end
+
+	always_ff @(posedge clk or posedge rst) begin
+		if(rst) begin
+			 state<= INIT;
+			 play_speed <= 4'd0;
+			 _mode <= 1'd1;
+			 _oneSlot <= 1'd0;
+		end else begin
+			 state <= n_state;
+			 play_speed <= n_play_speed;
+			 _mode <= mode;
+			 _oneSlot <= oneSlot;
+		end
+	end
 
 endmodule // Top
