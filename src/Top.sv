@@ -88,12 +88,14 @@ module Top(
 		.request_data(dsp_request_data), .play_speed(play_speed));
 
 	//LED
-	assign HEX7 = 7'h7F;
-	assign HEX6 = 7'h7F;
-	assign HEX5 = 7'h7F;
-	assign HEX4 = 7'h7F;
-	SevenHexDecoder speed_display(.i_hex      (play_speed), .o_seven_ten(HEX3), .o_seven_one(HEX2));
-	SevenHexDecoder state_display(.i_hex      ({1'b0, state}), .o_seven_ten(HEX1), .o_seven_one(HEX0));
+	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
+	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
+	assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
+	assign HEX4 = play_speed[0] ? 7'b1111001 : 7'b1000000;
+	assign HEX3 = 7'h7F;
+	assign HEX2 = state[2] ? 7'b1111001 : 7'b1000000;
+	assign HEX1 = state[1] ? 7'b1111001 : 7'b1000000;
+	assign HEX0 = state[0] ? 7'b1111001 : 7'b1000000;
 
 	task fastSpeed;
 		begin
