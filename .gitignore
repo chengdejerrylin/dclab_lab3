@@ -6,3 +6,5 @@ nWaveLog/*
 */novas*
 */wrapper.fsdb*
 sftp-config.json
+db/
+.qsys_edit/
