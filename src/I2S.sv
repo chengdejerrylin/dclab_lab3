@@ -208,7 +208,7 @@ module I2S (
 	output reg record_valid,
 
 	//play
-	output request_play_data,
+	output reg request_play_data,
 	input [15:0] play_data,
 	input play_valid
 );
@@ -230,11 +230,10 @@ DAC dac(.clk(AUD_BCLK), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_
 
 //IO
 assign AUD_XCK = clk;
-assign request_play_data = dataReady;
 
 //data from chip
 always_comb begin
-	if(adc_valid) n_record_valid = (top_state != 3'b110);
+	if(adc_valid) n_record_valid = (top_state == 3'b110);
 	else n_record_valid = 1'd0;
 end
 
@@ -244,13 +243,16 @@ always_comb begin
 		if(dataReady) begin
 			n_prepare_data = prepare_data;
 			n_dataReady = ~dac_take_data;
+			n_request_play_data = dac_take_data;
 		end else begin
 			n_prepare_data = play_data;
 			n_dataReady = play_valid;
+			n_request_play_data = ~play_valid;
 		end
 	end else begin
 		n_prepare_data = 16'd0;
 		n_dataReady = 1'd0;
+		n_request_play_data = 1'd0;
 	end
 
 end
@@ -260,6 +262,7 @@ always_ff @(posedge clk or negedge rst) begin
 		//IO
 		record_data <= 16'd0;
 		record_valid <= 1'd0;
+		request_play_data <= 1'd0;
 
 		//ADC
 		subStart <= 1'd0;
@@ -274,6 +277,7 @@ always_ff @(posedge clk or negedge rst) begin
 		//IO
 		record_data <= adc_data;
 		record_valid <= n_record_valid;
+		request_play_data <= n_request_play_data;
 
 		//ADC
 		subStart <= (top_state != 3'b101);
