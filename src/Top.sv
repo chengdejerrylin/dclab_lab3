@@ -88,7 +88,18 @@ module Top(
 	// 	.request_data(dsp_request_data), .play_speed(play_speed));
 
 	//debug
-	assign LEDG = {5'h1f, sram_end, record_valid, play_valid, dsp_request_data};
+	reg debug_valid;
+	wire n_debug_valid;
+	always_ff @(posedge clk or negedge rst) begin
+		if(~rst) begin
+			debug_valid <= 1'd0;
+		end else begin
+			debug_valid <= n_debug_valid;
+		end
+	end
+	assign n_debug_valid = state[2] ? (debug_valid | record_valid) : 1'd0;
+
+	assign LEDG = {5'h1f, sram_end, debug_valid, play_valid, dsp_request_data};
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
 	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
 	assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
