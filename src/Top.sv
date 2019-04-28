@@ -152,7 +152,7 @@ module Top(
 				end
 
 				2'b10 : begin //play
-					n_state = stop ? {state[2], 2'b00} :
+					n_state = (stop | sram_end) ? {state[2], 2'b00} :
 							  playRecord ? {state[2], 2'b11} :
 							  state;
 				end
