@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Sun Apr 28 05:24:52 2019
+Sun Apr 28 14:39:25 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -10,40 +10,9 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |DE2_115|I2C:i2c|state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for altpll:altpll|altpll_altpll_0:altpll_0
- 16. Source assignments for altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_stdsync_sv6:stdsync2|altpll_altpll_0_dffpipe_l2c:dffpipe3
- 17. Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 18. Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 19. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller
- 20. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 21. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 22. Parameter Settings for User Entity Instance: Debounce:fast_buttom
- 23. Parameter Settings for User Entity Instance: Debounce:playRecord_buttom
- 24. Parameter Settings for User Entity Instance: Debounce:stop_buttom
- 25. Parameter Settings for User Entity Instance: Debounce:slow_buttom
- 26. Parameter Settings for User Entity Instance: Top:top
- 27. Port Connectivity Checks: "Top:top|SRAM:sramController"
- 28. Port Connectivity Checks: "Debounce:slow_buttom"
- 29. Port Connectivity Checks: "Debounce:stop_buttom"
- 30. Port Connectivity Checks: "Debounce:playRecord_buttom"
- 31. Port Connectivity Checks: "Debounce:fast_buttom"
- 32. Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
- 33. Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller"
- 34. Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_2ra2:sd1"
- 35. Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+  5. Analysis & Synthesis IP Cores Summary
+  6. Analysis & Synthesis Messages
+  7. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,20 +39,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 28 05:24:52 2019       ;
+; Analysis & Synthesis Status        ; Failed - Sun Apr 28 14:39:25 2019           ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 277                                         ;
-;     Total combinational functions  ; 169                                         ;
-;     Dedicated logic registers      ; 212                                         ;
-; Total registers                    ; 212                                         ;
-; Total pins                         ; 480                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -191,79 +160,6 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
-+---------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
-+---------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; altpll/synthesis/altpll.v                               ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/altpll.v                               ;         ;
-; altpll/synthesis/submodules/altera_reset_controller.v   ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/submodules/altera_reset_controller.v   ; altpll  ;
-; altpll/synthesis/submodules/altera_reset_synchronizer.v ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/submodules/altera_reset_synchronizer.v ; altpll  ;
-; altpll/synthesis/submodules/altpll_altpll_0.v           ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/submodules/altpll_altpll_0.v           ; altpll  ;
-; src/DE2_115/DE2_115.sv                                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/DE2_115/DE2_115.sv                                  ;         ;
-; src/Top.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/Top.sv                                              ;         ;
-; src/SRAM.sv                                             ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/SRAM.sv                                             ;         ;
-; src/I2S.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/I2S.sv                                              ;         ;
-; src/I2C.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/I2C.sv                                              ;         ;
-; src/DSP_LOGIC.sv                                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/DSP_LOGIC.sv                                        ;         ;
-; src/Debounce.sv                                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/Debounce.sv                                         ;         ;
-+---------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                           ;
-+---------------------------------------------+-----------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                                   ;
-+---------------------------------------------+-----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 277                                                                                     ;
-;                                             ;                                                                                         ;
-; Total combinational functions               ; 169                                                                                     ;
-; Logic element usage by number of LUT inputs ;                                                                                         ;
-;     -- 4 input functions                    ; 66                                                                                      ;
-;     -- 3 input functions                    ; 22                                                                                      ;
-;     -- <=2 input functions                  ; 81                                                                                      ;
-;                                             ;                                                                                         ;
-; Logic elements by mode                      ;                                                                                         ;
-;     -- normal mode                          ; 159                                                                                     ;
-;     -- arithmetic mode                      ; 10                                                                                      ;
-;                                             ;                                                                                         ;
-; Total registers                             ; 212                                                                                     ;
-;     -- Dedicated logic registers            ; 212                                                                                     ;
-;     -- I/O registers                        ; 0                                                                                       ;
-;                                             ;                                                                                         ;
-; I/O pins                                    ; 480                                                                                     ;
-;                                             ;                                                                                         ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                       ;
-;                                             ;                                                                                         ;
-; Total PLLs                                  ; 1                                                                                       ;
-;     -- PLLs                                 ; 1                                                                                       ;
-;                                             ;                                                                                         ;
-; Maximum fan-out node                        ; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_2ra2:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 213                                                                                     ;
-; Total fan-out                               ; 1883                                                                                    ;
-; Average fan-out                             ; 1.27                                                                                    ;
-+---------------------------------------------+-----------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
-+--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Library Name ;
-+--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
-; |DE2_115                                   ; 169 (0)           ; 212 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
-;    |Debounce:fast_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:fast_buttom                                                   ; work         ;
-;    |Debounce:playRecord_buttom|            ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:playRecord_buttom                                             ; work         ;
-;    |Debounce:slow_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:slow_buttom                                                   ; work         ;
-;    |Debounce:stop_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:stop_buttom                                                   ; work         ;
-;    |I2C:i2c|                               ; 106 (106)         ; 184 (184)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2C:i2c                                                                ; work         ;
-;    |Top:top|                               ; 39 (39)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top                                                                ; work         ;
-;    |altpll:altpll|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll                                                          ; work         ;
-;       |altpll_altpll_0:altpll_0|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0                                 ; altpll       ;
-;          |altpll_altpll_0_altpll_2ra2:sd1| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_2ra2:sd1 ; altpll       ;
-+--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis IP Cores Summary                                                                                                                      ;
 +--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
@@ -274,450 +170,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
 
 
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------+
-; State Machine - |DE2_115|I2C:i2c|state                                      ;
-+-------------+-----------+------------+-------------+------------+-----------+
-; Name        ; state.ACT ; state.SEND ; state.START ; state.INIT ; state.END ;
-+-------------+-----------+------------+-------------+------------+-----------+
-; state.INIT  ; 0         ; 0          ; 0           ; 0          ; 0         ;
-; state.START ; 0         ; 0          ; 1           ; 1          ; 0         ;
-; state.SEND  ; 0         ; 1          ; 0           ; 1          ; 0         ;
-; state.ACT   ; 1         ; 0          ; 0           ; 1          ; 0         ;
-; state.END   ; 0         ; 0          ; 0           ; 1          ; 1         ;
-+-------------+-----------+------------+-------------+------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                ;
-+------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                                                            ; Reason for Removal                     ;
-+------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; altpll:altpll|altpll_altpll_0:altpll_0|prev_reset                                                                                        ; Stuck at GND due to stuck port data_in ;
-; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  ; Lost fanout                            ;
-; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0,1] ; Lost fanout                            ;
-; I2C:i2c|state~4                                                                                                                          ; Lost fanout                            ;
-; I2C:i2c|state~5                                                                                                                          ; Lost fanout                            ;
-; I2C:i2c|state.END                                                                                                                        ; Merged with I2C:i2c|done               ;
-; Total Number of Removed Registers = 7                                                                                                    ;                                        ;
-+------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                              ;
-+---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                     ; Reason for Removal        ; Registers Removed due to This Register                                                                                                   ;
-+---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; altpll:altpll|altpll_altpll_0:altpll_0|prev_reset ; Stuck at GND              ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out, ;
-;                                                   ; due to stuck port data_in ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0],  ;
-;                                                   ;                           ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]   ;
-+---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 212   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 211   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 169   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; Top:top|state[0]                        ; 9       ;
-; Top:top|state[2]                        ; 15      ;
-; Top:top|_mode                           ; 4       ;
-; I2C:i2c|cmd[165]                        ; 1       ;
-; I2C:i2c|cmd[164]                        ; 1       ;
-; I2C:i2c|cmd[162]                        ; 1       ;
-; I2C:i2c|cmd[156]                        ; 1       ;
-; I2C:i2c|cmd[155]                        ; 1       ;
-; I2C:i2c|cmd[154]                        ; 1       ;
-; I2C:i2c|cmd[153]                        ; 1       ;
-; I2C:i2c|cmd[141]                        ; 1       ;
-; I2C:i2c|cmd[140]                        ; 1       ;
-; I2C:i2c|cmd[138]                        ; 1       ;
-; I2C:i2c|cmd[131]                        ; 1       ;
-; I2C:i2c|cmd[124]                        ; 1       ;
-; I2C:i2c|cmd[122]                        ; 1       ;
-; I2C:i2c|cmd[120]                        ; 1       ;
-; I2C:i2c|cmd[117]                        ; 1       ;
-; I2C:i2c|cmd[116]                        ; 1       ;
-; I2C:i2c|cmd[114]                        ; 1       ;
-; I2C:i2c|cmd[107]                        ; 1       ;
-; I2C:i2c|cmd[105]                        ; 1       ;
-; I2C:i2c|cmd[93]                         ; 1       ;
-; I2C:i2c|cmd[92]                         ; 1       ;
-; I2C:i2c|cmd[90]                         ; 1       ;
-; I2C:i2c|cmd[83]                         ; 1       ;
-; I2C:i2c|cmd[82]                         ; 1       ;
-; I2C:i2c|cmd[69]                         ; 1       ;
-; I2C:i2c|cmd[68]                         ; 1       ;
-; I2C:i2c|cmd[66]                         ; 1       ;
-; I2C:i2c|cmd[59]                         ; 1       ;
-; I2C:i2c|cmd[58]                         ; 1       ;
-; I2C:i2c|cmd[57]                         ; 1       ;
-; I2C:i2c|cmd[54]                         ; 1       ;
-; I2C:i2c|cmd[49]                         ; 1       ;
-; I2C:i2c|cmd[45]                         ; 1       ;
-; I2C:i2c|cmd[44]                         ; 1       ;
-; I2C:i2c|cmd[42]                         ; 1       ;
-; I2C:i2c|cmd[36]                         ; 1       ;
-; I2C:i2c|cmd[28]                         ; 1       ;
-; I2C:i2c|cmd[27]                         ; 1       ;
-; I2C:i2c|cmd[24]                         ; 1       ;
-; I2C:i2c|cmd[21]                         ; 1       ;
-; I2C:i2c|cmd[20]                         ; 1       ;
-; I2C:i2c|cmd[18]                         ; 1       ;
-; I2C:i2c|cmd[12]                         ; 1       ;
-; I2C:i2c|cmd[9]                          ; 1       ;
-; I2C:i2c|cmd[0]                          ; 2       ;
-; Total number of inverted registers = 48 ;         ;
-+-----------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 7:1                ; 123 bits  ; 492 LEs       ; 0 LEs                ; 492 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[75]       ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|Top:top|play_speed[1] ;
-; 7:1                ; 44 bits   ; 176 LEs       ; 0 LEs                ; 176 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[165]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-
-
-+---------------------------------------------------------------+
-; Source assignments for altpll:altpll|altpll_altpll_0:altpll_0 ;
-+----------------+-------+------+-------------------------------+
-; Assignment     ; Value ; From ; To                            ;
-+----------------+-------+------+-------------------------------+
-; POWER_UP_LEVEL ; HIGH  ; -    ; pfdena_reg                    ;
-+----------------+-------+------+-------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_stdsync_sv6:stdsync2|altpll_altpll_0_dffpipe_l2c:dffpipe3 ;
-+---------------------------------+-------+------+----------------------------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                                     ;
-+---------------------------------+-------+------+----------------------------------------------------------------------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                      ;
-+---------------------------------+-------+------+----------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
-+-------------------+-------+------+-------------------------------------------------------------------------------------+
-; Assignment        ; Value ; From ; To                                                                                  ;
-+-------------------+-------+------+-------------------------------------------------------------------------------------+
-; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                              ;
-; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                              ;
-+-------------------+-------+------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1 ;
-+-------------------+-------+------+-----------------------------------------------------------------------------------------+
-; Assignment        ; Value ; From ; To                                                                                      ;
-+-------------------+-------+------+-----------------------------------------------------------------------------------------+
-; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                                  ;
-; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                                  ;
-+-------------------+-------+------+-----------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller ;
-+---------------------------+----------+------------------------------------------------------------+
-; Parameter Name            ; Value    ; Type                                                       ;
-+---------------------------+----------+------------------------------------------------------------+
-; NUM_RESET_INPUTS          ; 1        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN0     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN1     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN2     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN3     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN4     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN5     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN6     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN7     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN8     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN9     ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN10    ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN11    ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN12    ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN13    ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN14    ; 0        ; Signed Integer                                             ;
-; USE_RESET_REQUEST_IN15    ; 0        ; Signed Integer                                             ;
-; OUTPUT_RESET_SYNC_EDGES   ; deassert ; String                                                     ;
-; SYNC_DEPTH                ; 2        ; Signed Integer                                             ;
-; RESET_REQUEST_PRESENT     ; 0        ; Signed Integer                                             ;
-; RESET_REQ_WAIT_TIME       ; 1        ; Signed Integer                                             ;
-; MIN_RST_ASSERTION_TIME    ; 3        ; Signed Integer                                             ;
-; RESET_REQ_EARLY_DSRT_TIME ; 1        ; Signed Integer                                             ;
-; ADAPT_RESET_REQUEST       ; 0        ; Signed Integer                                             ;
-+---------------------------+----------+------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
-+----------------+-------+---------------------------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                                                ;
-+----------------+-------+---------------------------------------------------------------------------------------------------------------------+
-; ASYNC_RESET    ; 1     ; Unsigned Binary                                                                                                     ;
-; DEPTH          ; 2     ; Signed Integer                                                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1 ;
-+----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                                                                    ;
-+----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
-; ASYNC_RESET    ; 0     ; Signed Integer                                                                                                          ;
-; DEPTH          ; 2     ; Signed Integer                                                                                                          ;
-+----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debounce:fast_buttom ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; CNT_N          ; 7     ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debounce:playRecord_buttom ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; CNT_N          ; 7     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debounce:stop_buttom ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; CNT_N          ; 7     ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Debounce:slow_buttom ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; CNT_N          ; 7     ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top:top ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; INIT           ; 101   ; Unsigned Binary             ;
-; PLAY_STOP      ; 000   ; Unsigned Binary             ;
-; PLAY_PLAY      ; 010   ; Unsigned Binary             ;
-; PLAY_PAUSE     ; 011   ; Unsigned Binary             ;
-; RECORD_STOP    ; 100   ; Unsigned Binary             ;
-; RECORD_RECORD  ; 110   ; Unsigned Binary             ;
-; RECORD_PAUSE   ; 111   ; Unsigned Binary             ;
-+----------------+-------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Top:top|SRAM:sramController"                                                            ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; in_addr  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; out_addr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; full     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Debounce:slow_buttom"                                                                                           ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; o_debounced ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; o_pos       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Debounce:stop_buttom"                                                                                           ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; o_debounced ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; o_pos       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Debounce:playRecord_buttom"                                                                                     ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; o_debounced ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; o_pos       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Debounce:fast_buttom"                                                                                           ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; o_debounced ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; o_pos       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" ;
-+----------+-------+----------+---------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                           ;
-+----------+-------+----------+---------------------------------------------------------------------------------------------------+
-; reset_in ; Input ; Info     ; Stuck at GND                                                                                      ;
-+----------+-------+----------+---------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------+
-; Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller" ;
-+----------------+--------+----------+---------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                     ;
-+----------------+--------+----------+---------------------------------------------+
-; reset_req      ; Output ; Info     ; Explicitly unconnected                      ;
-; reset_req_in0  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in1      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in1  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in2      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in2  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in3      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in3  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in4      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in4  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in5      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in5  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in6      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in6  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in7      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in7  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in8      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in8  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in9      ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in9  ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in10     ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in10 ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in11     ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in11 ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in12     ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in12 ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in13     ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in13 ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in14     ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in14 ; Input  ; Info     ; Stuck at GND                                ;
-; reset_in15     ; Input  ; Info     ; Stuck at GND                                ;
-; reset_req_in15 ; Input  ; Info     ; Stuck at GND                                ;
-+----------------+--------+----------+---------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_2ra2:sd1"                  ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; clk[4..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; inclk[1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------+
-; Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0" ;
-+-----------+--------+----------+------------------------------------+
-; Port      ; Type   ; Severity ; Details                            ;
-+-----------+--------+----------+------------------------------------+
-; read      ; Input  ; Info     ; Explicitly unconnected             ;
-; write     ; Input  ; Info     ; Explicitly unconnected             ;
-; address   ; Input  ; Info     ; Explicitly unconnected             ;
-; readdata  ; Output ; Info     ; Explicitly unconnected             ;
-; writedata ; Input  ; Info     ; Explicitly unconnected             ;
-; areset    ; Input  ; Info     ; Explicitly unconnected             ;
-; locked    ; Output ; Info     ; Explicitly unconnected             ;
-; phasedone ; Output ; Info     ; Explicitly unconnected             ;
-+-----------+--------+----------+------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 212                         ;
-;     CLR               ; 42                          ;
-;     ENA CLR           ; 169                         ;
-;     plain             ; 1                           ;
-; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 173                         ;
-;     arith             ; 10                          ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 163                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 66                          ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 66                          ;
-; cycloneiii_pll        ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.11                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Sun Apr 28 05:24:42 2019
+    Info: Processing started: Sun Apr 28 14:39:17 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Warning (12090): Entity "altpll" obtained from "altpll/synthesis/altpll.v" instead of from Quartus II megafunction library
@@ -733,7 +192,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file altpll/
 Info (12021): Found 4 design units, including 4 entities, in source file altpll/synthesis/submodules/altpll_altpll_0.v
     Info (12023): Found entity 1: altpll_altpll_0_dffpipe_l2c
     Info (12023): Found entity 2: altpll_altpll_0_stdsync_sv6
-    Info (12023): Found entity 3: altpll_altpll_0_altpll_2ra2
+    Info (12023): Found entity 3: altpll_altpll_0_altpll_kpa2
     Info (12023): Found entity 4: altpll_altpll_0
 Info (12021): Found 1 design units, including 1 entities, in source file src/de2_115/de2_115.sv
     Info (12023): Found entity 1: DE2_115
@@ -743,14 +202,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file src/sra
     Info (12023): Found entity 1: SRAM
 Info (12021): Found 1 design units, including 1 entities, in source file src/sevenhexdecoder.sv
     Info (12023): Found entity 1: SevenHexDecoder
-Info (12021): Found 1 design units, including 1 entities, in source file src/i2s.sv
-    Info (12023): Found entity 1: I2S
+Info (12021): Found 3 design units, including 3 entities, in source file src/i2s.sv
+    Info (12023): Found entity 1: ADC
+    Info (12023): Found entity 2: DAC
+    Info (12023): Found entity 3: I2S
 Info (12021): Found 1 design units, including 1 entities, in source file src/i2c.sv
     Info (12023): Found entity 1: I2C
 Info (12021): Found 1 design units, including 1 entities, in source file src/dsp_logic.sv
     Info (12023): Found entity 1: DSP_LOGIC
 Info (12021): Found 1 design units, including 1 entities, in source file src/debounce.sv
     Info (12023): Found entity 1: Debounce
+Warning (10236): Verilog HDL Implicit Net warning at SRAM.sv(44): created implicit net for "SRAM_Q"
+Warning (10236): Verilog HDL Implicit Net warning at I2S.sv(222): created implicit net for "n_adc_valid"
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
 Warning (10034): Output port "VGA_B" at DE2_115.sv(38) has no driver
 Warning (10034): Output port "VGA_G" at DE2_115.sv(41) has no driver
@@ -806,7 +269,7 @@ Info (12128): Elaborating entity "altpll" for hierarchy "altpll:altpll"
 Info (12128): Elaborating entity "altpll_altpll_0" for hierarchy "altpll:altpll|altpll_altpll_0:altpll_0"
 Info (12128): Elaborating entity "altpll_altpll_0_stdsync_sv6" for hierarchy "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_stdsync_sv6:stdsync2"
 Info (12128): Elaborating entity "altpll_altpll_0_dffpipe_l2c" for hierarchy "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_stdsync_sv6:stdsync2|altpll_altpll_0_dffpipe_l2c:dffpipe3"
-Info (12128): Elaborating entity "altpll_altpll_0_altpll_2ra2" for hierarchy "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_2ra2:sd1"
+Info (12128): Elaborating entity "altpll_altpll_0_altpll_kpa2" for hierarchy "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1"
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller"
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1"
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
@@ -827,495 +290,27 @@ Warning (10034): Output port "LCD_ON" at Top.sv(51) has no driver
 Warning (10034): Output port "LCD_RS" at Top.sv(52) has no driver
 Warning (10034): Output port "LCD_RW" at Top.sv(54) has no driver
 Info (12128): Elaborating entity "SRAM" for hierarchy "Top:top|SRAM:sramController"
-Warning (10034): Output port "out_signal" at SRAM.sv(5) has no driver
-Warning (10034): Output port "in_addr" at SRAM.sv(6) has no driver
-Warning (10034): Output port "out_addr" at SRAM.sv(7) has no driver
-Warning (10034): Output port "SRAM_ADDR" at SRAM.sv(15) has no driver
-Warning (10034): Output port "out_signal_valid" at SRAM.sv(10) has no driver
-Warning (10034): Output port "full" at SRAM.sv(11) has no driver
-Warning (10034): Output port "SRAM_CE_N" at SRAM.sv(17) has no driver
-Warning (10034): Output port "SRAM_OE_N" at SRAM.sv(18) has no driver
-Warning (10034): Output port "SRAM_WE_N" at SRAM.sv(19) has no driver
-Warning (10034): Output port "SRAM_UB_N" at SRAM.sv(20) has no driver
-Warning (10034): Output port "SRAM_LB_N" at SRAM.sv(22) has no driver
-Warning (12158): Entity "SRAM" contains only dangling pins
-Info (12128): Elaborating entity "I2S" for hierarchy "Top:top|I2S:i2s"
-Warning (10034): Output port "record_data" at I2S.sv(17) has no driver
-Warning (10034): Output port "AUD_DACDAT" at I2S.sv(9) has no driver
-Warning (10034): Output port "AUD_XCK" at I2S.sv(11) has no driver
-Warning (10034): Output port "record_valid" at I2S.sv(18) has no driver
-Warning (10034): Output port "request_play_data" at I2S.sv(21) has no driver
-Warning (12158): Entity "I2S" contains only dangling pins
-Info (12128): Elaborating entity "DSP_LOGIC" for hierarchy "Top:top|DSP_LOGIC:dsp"
-Warning (10034): Output port "data_out" at DSP_LOGIC.sv(13) has no driver
-Warning (10034): Output port "request_data" at DSP_LOGIC.sv(12) has no driver
-Warning (10034): Output port "valid" at DSP_LOGIC.sv(15) has no driver
-Warning (12158): Entity "DSP_LOGIC" contains only dangling pins
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "I2C:i2c|n_I2C_SDAT" feeding internal logic into a wire
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[2]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[3]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[4]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[5]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[6]" has no driver
-    Warning (13040): bidirectional pin "LCD_DATA[7]" has no driver
-    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver
-    Warning (13040): bidirectional pin "AUD_BCLK" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[0]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[1]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[2]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[3]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[4]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[5]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[6]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[7]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[8]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[9]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[10]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[11]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[12]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[13]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[14]" has no driver
-    Warning (13040): bidirectional pin "SRAM_DQ[15]" has no driver
-    Warning (13040): bidirectional pin "PS2_CLK" has no driver
-    Warning (13040): bidirectional pin "PS2_DAT" has no driver
-    Warning (13040): bidirectional pin "PS2_CLK2" has no driver
-    Warning (13040): bidirectional pin "PS2_DAT2" has no driver
-    Warning (13040): bidirectional pin "SD_CMD" has no driver
-    Warning (13040): bidirectional pin "SD_DAT[0]" has no driver
-    Warning (13040): bidirectional pin "SD_DAT[1]" has no driver
-    Warning (13040): bidirectional pin "SD_DAT[2]" has no driver
-    Warning (13040): bidirectional pin "SD_DAT[3]" has no driver
-    Warning (13040): bidirectional pin "EEP_I2C_SDAT" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[0]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[1]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[2]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[3]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[4]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[5]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[6]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[7]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[8]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[9]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[10]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[11]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[12]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[13]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[14]" has no driver
-    Warning (13040): bidirectional pin "OTG_DATA[15]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[16]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[17]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[18]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[19]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[20]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[21]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[22]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[23]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[24]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[25]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[26]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[27]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[28]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[29]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[30]" has no driver
-    Warning (13040): bidirectional pin "DRAM_DQ[31]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[0]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[1]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[2]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[3]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[4]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[5]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[6]" has no driver
-    Warning (13040): bidirectional pin "FL_DQ[7]" has no driver
-    Warning (13040): bidirectional pin "GPIO[0]" has no driver
-    Warning (13040): bidirectional pin "GPIO[1]" has no driver
-    Warning (13040): bidirectional pin "GPIO[2]" has no driver
-    Warning (13040): bidirectional pin "GPIO[3]" has no driver
-    Warning (13040): bidirectional pin "GPIO[4]" has no driver
-    Warning (13040): bidirectional pin "GPIO[5]" has no driver
-    Warning (13040): bidirectional pin "GPIO[6]" has no driver
-    Warning (13040): bidirectional pin "GPIO[7]" has no driver
-    Warning (13040): bidirectional pin "GPIO[8]" has no driver
-    Warning (13040): bidirectional pin "GPIO[9]" has no driver
-    Warning (13040): bidirectional pin "GPIO[10]" has no driver
-    Warning (13040): bidirectional pin "GPIO[11]" has no driver
-    Warning (13040): bidirectional pin "GPIO[12]" has no driver
-    Warning (13040): bidirectional pin "GPIO[13]" has no driver
-    Warning (13040): bidirectional pin "GPIO[14]" has no driver
-    Warning (13040): bidirectional pin "GPIO[15]" has no driver
-    Warning (13040): bidirectional pin "GPIO[16]" has no driver
-    Warning (13040): bidirectional pin "GPIO[17]" has no driver
-    Warning (13040): bidirectional pin "GPIO[18]" has no driver
-    Warning (13040): bidirectional pin "GPIO[19]" has no driver
-    Warning (13040): bidirectional pin "GPIO[20]" has no driver
-    Warning (13040): bidirectional pin "GPIO[21]" has no driver
-    Warning (13040): bidirectional pin "GPIO[22]" has no driver
-    Warning (13040): bidirectional pin "GPIO[23]" has no driver
-    Warning (13040): bidirectional pin "GPIO[24]" has no driver
-    Warning (13040): bidirectional pin "GPIO[25]" has no driver
-    Warning (13040): bidirectional pin "GPIO[26]" has no driver
-    Warning (13040): bidirectional pin "GPIO[27]" has no driver
-    Warning (13040): bidirectional pin "GPIO[28]" has no driver
-    Warning (13040): bidirectional pin "GPIO[29]" has no driver
-    Warning (13040): bidirectional pin "GPIO[30]" has no driver
-    Warning (13040): bidirectional pin "GPIO[31]" has no driver
-    Warning (13040): bidirectional pin "GPIO[32]" has no driver
-    Warning (13040): bidirectional pin "GPIO[33]" has no driver
-    Warning (13040): bidirectional pin "GPIO[34]" has no driver
-    Warning (13040): bidirectional pin "GPIO[35]" has no driver
-    Warning (13040): bidirectional pin "HSMC_D[0]" has no driver
-    Warning (13040): bidirectional pin "HSMC_D[1]" has no driver
-    Warning (13040): bidirectional pin "HSMC_D[2]" has no driver
-    Warning (13040): bidirectional pin "HSMC_D[3]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[0]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[1]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[2]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[3]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[4]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[5]" has no driver
-    Warning (13040): bidirectional pin "EX_IO[6]" has no driver
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SMA_CLKOUT" is stuck at GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
-    Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "LEDG[5]" is stuck at GND
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
-    Warning (13410): Pin "LEDG[7]" is stuck at GND
-    Warning (13410): Pin "LEDG[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
-    Warning (13410): Pin "LEDR[12]" is stuck at GND
-    Warning (13410): Pin "LEDR[13]" is stuck at GND
-    Warning (13410): Pin "LEDR[14]" is stuck at GND
-    Warning (13410): Pin "LEDR[15]" is stuck at GND
-    Warning (13410): Pin "LEDR[16]" is stuck at GND
-    Warning (13410): Pin "LEDR[17]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
-    Warning (13410): Pin "HEX4[1]" is stuck at GND
-    Warning (13410): Pin "HEX4[2]" is stuck at GND
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC
-    Warning (13410): Pin "HEX5[1]" is stuck at GND
-    Warning (13410): Pin "HEX5[2]" is stuck at GND
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC
-    Warning (13410): Pin "HEX6[1]" is stuck at GND
-    Warning (13410): Pin "HEX6[2]" is stuck at GND
-    Warning (13410): Pin "HEX6[6]" is stuck at VCC
-    Warning (13410): Pin "HEX7[1]" is stuck at GND
-    Warning (13410): Pin "HEX7[2]" is stuck at GND
-    Warning (13410): Pin "HEX7[6]" is stuck at VCC
-    Warning (13410): Pin "LCD_BLON" is stuck at GND
-    Warning (13410): Pin "LCD_EN" is stuck at GND
-    Warning (13410): Pin "LCD_ON" is stuck at GND
-    Warning (13410): Pin "LCD_RS" is stuck at GND
-    Warning (13410): Pin "LCD_RW" is stuck at GND
-    Warning (13410): Pin "UART_CTS" is stuck at GND
-    Warning (13410): Pin "UART_TXD" is stuck at GND
-    Warning (13410): Pin "SD_CLK" is stuck at GND
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND
-    Warning (13410): Pin "VGA_B[4]" is stuck at GND
-    Warning (13410): Pin "VGA_B[5]" is stuck at GND
-    Warning (13410): Pin "VGA_B[6]" is stuck at GND
-    Warning (13410): Pin "VGA_B[7]" is stuck at GND
-    Warning (13410): Pin "VGA_BLANK_N" is stuck at GND
-    Warning (13410): Pin "VGA_CLK" is stuck at GND
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND
-    Warning (13410): Pin "VGA_G[2]" is stuck at GND
-    Warning (13410): Pin "VGA_G[3]" is stuck at GND
-    Warning (13410): Pin "VGA_G[4]" is stuck at GND
-    Warning (13410): Pin "VGA_G[5]" is stuck at GND
-    Warning (13410): Pin "VGA_G[6]" is stuck at GND
-    Warning (13410): Pin "VGA_G[7]" is stuck at GND
-    Warning (13410): Pin "VGA_HS" is stuck at GND
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND
-    Warning (13410): Pin "VGA_R[3]" is stuck at GND
-    Warning (13410): Pin "VGA_R[4]" is stuck at GND
-    Warning (13410): Pin "VGA_R[5]" is stuck at GND
-    Warning (13410): Pin "VGA_R[6]" is stuck at GND
-    Warning (13410): Pin "VGA_R[7]" is stuck at GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
-    Warning (13410): Pin "VGA_VS" is stuck at GND
-    Warning (13410): Pin "AUD_DACDAT" is stuck at GND
-    Warning (13410): Pin "AUD_XCK" is stuck at GND
-    Warning (13410): Pin "EEP_I2C_SCLK" is stuck at GND
-    Warning (13410): Pin "ENET0_GTX_CLK" is stuck at GND
-    Warning (13410): Pin "ENET0_MDC" is stuck at GND
-    Warning (13410): Pin "ENET0_RST_N" is stuck at GND
-    Warning (13410): Pin "ENET0_TX_DATA[0]" is stuck at GND
-    Warning (13410): Pin "ENET0_TX_DATA[1]" is stuck at GND
-    Warning (13410): Pin "ENET0_TX_DATA[2]" is stuck at GND
-    Warning (13410): Pin "ENET0_TX_DATA[3]" is stuck at GND
-    Warning (13410): Pin "ENET0_TX_EN" is stuck at GND
-    Warning (13410): Pin "ENET0_TX_ER" is stuck at GND
-    Warning (13410): Pin "ENET1_GTX_CLK" is stuck at GND
-    Warning (13410): Pin "ENET1_MDC" is stuck at GND
-    Warning (13410): Pin "ENET1_RST_N" is stuck at GND
-    Warning (13410): Pin "ENET1_TX_DATA[0]" is stuck at GND
-    Warning (13410): Pin "ENET1_TX_DATA[1]" is stuck at GND
-    Warning (13410): Pin "ENET1_TX_DATA[2]" is stuck at GND
-    Warning (13410): Pin "ENET1_TX_DATA[3]" is stuck at GND
-    Warning (13410): Pin "ENET1_TX_EN" is stuck at GND
-    Warning (13410): Pin "ENET1_TX_ER" is stuck at GND
-    Warning (13410): Pin "TD_RESET_N" is stuck at GND
-    Warning (13410): Pin "OTG_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "OTG_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "OTG_CS_N" is stuck at GND
-    Warning (13410): Pin "OTG_WR_N" is stuck at GND
-    Warning (13410): Pin "OTG_RD_N" is stuck at GND
-    Warning (13410): Pin "OTG_RST_N" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND
-    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND
-    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND
-    Warning (13410): Pin "DRAM_DQM[2]" is stuck at GND
-    Warning (13410): Pin "DRAM_DQM[3]" is stuck at GND
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[18]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[19]" is stuck at GND
-    Warning (13410): Pin "SRAM_CE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_LB_N" is stuck at GND
-    Warning (13410): Pin "SRAM_OE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_UB_N" is stuck at GND
-    Warning (13410): Pin "SRAM_WE_N" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[12]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[13]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[14]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[15]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[16]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[17]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[18]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[19]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[20]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[21]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[22]" is stuck at GND
-    Warning (13410): Pin "FL_CE_N" is stuck at GND
-    Warning (13410): Pin "FL_OE_N" is stuck at GND
-    Warning (13410): Pin "FL_RST_N" is stuck at GND
-    Warning (13410): Pin "FL_WE_N" is stuck at GND
-    Warning (13410): Pin "FL_WP_N" is stuck at GND
-    Warning (13410): Pin "HSMC_CLKOUT_P1" is stuck at GND
-    Warning (13410): Pin "HSMC_CLKOUT_P2" is stuck at GND
-    Warning (13410): Pin "HSMC_CLKOUT0" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[0]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[1]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[2]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[3]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[4]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[5]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[6]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[7]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[8]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[9]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[10]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[11]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[12]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[13]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[14]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[15]" is stuck at GND
-    Warning (13410): Pin "HSMC_TX_D_P[16]" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 85 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK2_50"
-    Warning (15610): No output dependent on input pin "CLOCK3_50"
-    Warning (15610): No output dependent on input pin "ENETCLK_25"
-    Warning (15610): No output dependent on input pin "SMA_CLKIN"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
-    Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "SW[9]"
-    Warning (15610): No output dependent on input pin "SW[10]"
-    Warning (15610): No output dependent on input pin "SW[11]"
-    Warning (15610): No output dependent on input pin "SW[12]"
-    Warning (15610): No output dependent on input pin "SW[13]"
-    Warning (15610): No output dependent on input pin "SW[14]"
-    Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "SW[17]"
-    Warning (15610): No output dependent on input pin "UART_RTS"
-    Warning (15610): No output dependent on input pin "UART_RXD"
-    Warning (15610): No output dependent on input pin "SD_WP_N"
-    Warning (15610): No output dependent on input pin "AUD_ADCDAT"
-    Warning (15610): No output dependent on input pin "AUD_DACLRCK"
-    Warning (15610): No output dependent on input pin "ENET0_INT_N"
-    Warning (15610): No output dependent on input pin "ENET0_MDIO"
-    Warning (15610): No output dependent on input pin "ENET0_RX_CLK"
-    Warning (15610): No output dependent on input pin "ENET0_RX_COL"
-    Warning (15610): No output dependent on input pin "ENET0_RX_CRS"
-    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[0]"
-    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[1]"
-    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[2]"
-    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[3]"
-    Warning (15610): No output dependent on input pin "ENET0_RX_DV"
-    Warning (15610): No output dependent on input pin "ENET0_RX_ER"
-    Warning (15610): No output dependent on input pin "ENET0_TX_CLK"
-    Warning (15610): No output dependent on input pin "ENET0_LINK100"
-    Warning (15610): No output dependent on input pin "ENET1_INT_N"
-    Warning (15610): No output dependent on input pin "ENET1_MDIO"
-    Warning (15610): No output dependent on input pin "ENET1_RX_CLK"
-    Warning (15610): No output dependent on input pin "ENET1_RX_COL"
-    Warning (15610): No output dependent on input pin "ENET1_RX_CRS"
-    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[0]"
-    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[1]"
-    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[2]"
-    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[3]"
-    Warning (15610): No output dependent on input pin "ENET1_RX_DV"
-    Warning (15610): No output dependent on input pin "ENET1_RX_ER"
-    Warning (15610): No output dependent on input pin "ENET1_TX_CLK"
-    Warning (15610): No output dependent on input pin "ENET1_LINK100"
-    Warning (15610): No output dependent on input pin "TD_CLK27"
-    Warning (15610): No output dependent on input pin "TD_DATA[0]"
-    Warning (15610): No output dependent on input pin "TD_DATA[1]"
-    Warning (15610): No output dependent on input pin "TD_DATA[2]"
-    Warning (15610): No output dependent on input pin "TD_DATA[3]"
-    Warning (15610): No output dependent on input pin "TD_DATA[4]"
-    Warning (15610): No output dependent on input pin "TD_DATA[5]"
-    Warning (15610): No output dependent on input pin "TD_DATA[6]"
-    Warning (15610): No output dependent on input pin "TD_DATA[7]"
-    Warning (15610): No output dependent on input pin "TD_HS"
-    Warning (15610): No output dependent on input pin "TD_VS"
-    Warning (15610): No output dependent on input pin "OTG_INT"
-    Warning (15610): No output dependent on input pin "IRDA_RXD"
-    Warning (15610): No output dependent on input pin "FL_RY"
-    Warning (15610): No output dependent on input pin "HSMC_CLKIN_P1"
-    Warning (15610): No output dependent on input pin "HSMC_CLKIN_P2"
-    Warning (15610): No output dependent on input pin "HSMC_CLKIN0"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[0]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[1]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[2]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[3]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[4]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[5]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[6]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[7]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[8]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[9]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[10]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[11]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[12]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[13]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
-    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 758 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 92 input pins
-    Info (21059): Implemented 248 output pins
-    Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 277 logic cells
-    Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 534 warnings
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Sun Apr 28 05:24:52 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+Warning (10036): Verilog HDL or VHDL warning at SRAM.sv(44): object "SRAM_Q" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at SRAM.sv(44): truncated value with size 16 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at SRAM.sv(48): truncated value with size 20 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at SRAM.sv(128): truncated value with size 20 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at SRAM.sv(47): inferring latch(es) for variable "w_addr_follow", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at SRAM.sv(47): inferring latch(es) for variable "w_out_start_addr", which holds its previous value in one or more paths through the always construct
+Error (10166): SystemVerilog RTL Coding error at SRAM.sv(47): always_comb construct does not infer purely combinational logic. File: C:/Users/team06/Desktop/dclab_lab3/src/SRAM.sv Line: 47
+Info (10041): Inferred latch for "w_out_start_addr" at SRAM.sv(127)
+Info (10041): Inferred latch for "w_addr_follow" at SRAM.sv(127)
+Error (12152): Can't elaborate user hierarchy "Top:top|SRAM:sramController" File: C:/Users/team06/Desktop/dclab_lab3/src/Top.sv Line: 75
+Info (144001): Generated suppressed messages file C:/Users/team06/Desktop/dclab_lab3/output_files/DE2_115.map.smsg
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 71 warnings
+    Error: Peak virtual memory: 4810 megabytes
+    Error: Processing ended: Sun Apr 28 14:39:25 2019
+    Error: Elapsed time: 00:00:08
+    Error: Total CPU time (on all processors): 00:00:18
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/team06/Desktop/dclab_lab3/output_files/DE2_115.map.smsg.
 
 
