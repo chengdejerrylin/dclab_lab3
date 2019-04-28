@@ -92,7 +92,7 @@ module Top(
 	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
 	assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
 	assign HEX4 = play_speed[0] ? 7'b1111001 : 7'b1000000;
-	assign HEX3 = 7'h7F;
+	assign HEX3 = I2C_down ? 7'b1111001 : 7'b1000000;
 	assign HEX2 = state[2] ? 7'b1111001 : 7'b1000000;
 	assign HEX1 = state[1] ? 7'b1111001 : 7'b1000000;
 	assign HEX0 = state[0] ? 7'b1111001 : 7'b1000000;
