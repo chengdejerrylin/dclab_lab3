@@ -79,13 +79,13 @@ module Top(
 	wire [15:0] dsp_play_data;
 	I2S i2s (.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_BCLK), 
 		.AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .top_state(state), 
-		.record_data(record_data), .record_valid(record_valid), .request_play_data(I2S_request_data), 
-		.play_data(dsp_play_data), .play_valid(dsp_play_valid));
+		.record_data(record_data), .record_valid(record_valid), .request_play_data(dsp_request_data), 
+		.play_data(play_data), .play_valid(play_valid));
 
-	//dsp
-	DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
-		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
-		.request_data(dsp_request_data), .play_speed(play_speed));
+	// //dsp
+	// DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
+	// 	.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
+	// 	.request_data(dsp_request_data), .play_speed(play_speed));
 
 	//LED
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
