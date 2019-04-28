@@ -219,8 +219,12 @@ module SRAM(
             end
         end
         else begin
+            //add by Cheng-De Lin
             w_in_start_addr = r_in_start_addr;
             w_out_start_addr = r_out_start_addr;
+            w_addr_follow = r_addr_follow;
+
+            //origin
             w_out_signal = 16'b0;
             w_in_addr = in_addr;
             w_out_addr = out_addr;
