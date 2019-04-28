@@ -208,12 +208,11 @@ module I2S (
 	output reg record_valid,
 
 	//play
-	output reg request_play_data,
+	output request_play_data,
 	input [15:0] play_data,
 	input play_valid
 );
 //input output
-reg [15:0] n_record_data;
 reg n_record_valid, n_request_play_data;
 
 //ADC
@@ -229,14 +228,38 @@ reg dac_take_data, n_dac_take_data;
 DAC dac(.clk(AUD_BCLK), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), 
 	.start(subStart), .play_data(prepare_data), .take_data(n_dac_take_data));
 
+//IO
 assign AUD_XCK = clk;
+assign request_play_data = dataReady;
+
+//data from chip
+always_comb begin
+	if(adc_valid) n_record_valid = (top_state != 3'b110);
+	else n_record_valid = 1'd0;
+end
+
+//data to chip
+always_comb begin
+	if(top_state == 3'b010)begin
+		if(dataReady) begin
+			n_prepare_data = prepare_data;
+			n_dataReady = ~dac_take_data;
+		end else begin
+			n_prepare_data = play_data;
+			n_dataReady = play_valid;
+		end
+	end else begin
+		n_prepare_data = 16'd0;
+		n_dataReady = 1'd0;
+	end
+
+end
 
 always_ff @(posedge clk or negedge rst) begin
 	if(~rst) begin
 		//IO
 		record_data <= 16'd0;
 		record_valid <= 1'd0;
-		request_play_data <= 1'd0;
 
 		//ADC
 		subStart <= 1'd0;
@@ -248,7 +271,19 @@ always_ff @(posedge clk or negedge rst) begin
 		dataReady <= 1'd1;
 		dac_take_data <= 1'd0;
 	end else begin
-		
+		//IO
+		record_data <= adc_data;
+		record_valid <= n_record_valid;
+
+		//ADC
+		subStart <= (top_state != 3'b101);
+		adc_data <= n_adc_data;
+		adc_valid <= n_adc_valid;
+
+		//DAC
+		prepare_data <= n_prepare_data;
+		dataReady <= n_dataReady;
+		dac_take_data <= n_dac_take_data;
 	end
 end
 
