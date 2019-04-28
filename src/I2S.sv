@@ -216,7 +216,7 @@ module I2S (
 reg n_record_valid, n_request_play_data;
 
 //ADC
-reg subStart, adc_valid, n_adc_data;
+reg subStart, adc_valid;
 reg [15:0] adc_data, n_adc_data;
 ADC adc(.clk(AUD_BCLK), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
 	.record_data (n_adc_data), .record_valid(n_adc_valid));
