@@ -212,6 +212,44 @@ module I2S (
 	input [15:0] play_data,
 	input play_valid
 );
+//input output
+reg [15:0] n_record_data;
+reg n_record_valid, n_request_play_data;
+
+//ADC
+reg subStart, adc_valid, n_adc_data;
+reg [15:0] adc_data, n_adc_data;
+ADC adc(.clk(AUD_BCLK), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
+	.record_data (n_adc_data), .record_valid(n_adc_valid));
+
+//DAC
+reg [15:0] prepare_data, n_prepare_data;
+reg dataReady, n_dataReady;
+reg dac_take_data, n_dac_take_data;
+DAC dac(.clk(AUD_BCLK), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), 
+	.start(subStart), .play_data(prepare_data), .take_data(n_dac_take_data));
 
 assign AUD_XCK = clk;
+
+always_ff @(posedge clk or negedge rst) begin
+	if(~rst) begin
+		//IO
+		record_data <= 16'd0;
+		record_valid <= 1'd0;
+		request_play_data <= 1'd0;
+
+		//ADC
+		subStart <= 1'd0;
+		adc_data <= 16'd0;
+		adc_valid <= 1'd0;
+
+		//DAC
+		prepare_data <= 16'd0;
+		dataReady <= 1'd1;
+		dac_take_data <= 1'd0;
+	end else begin
+		
+	end
+end
+
 endmodule // I2S
