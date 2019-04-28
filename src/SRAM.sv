@@ -219,7 +219,8 @@ module SRAM(
             end
         end
         else begin
-				w_in_start_addr = r_in_start_addr;
+            w_in_start_addr = r_in_start_addr;
+            w_out_start_addr = r_out_start_addr;
             w_out_signal = 16'b0;
             w_in_addr = in_addr;
             w_out_addr = out_addr;
