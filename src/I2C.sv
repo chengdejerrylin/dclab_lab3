@@ -38,16 +38,16 @@ always_comb begin
 			n_state = START;
 			n_counter = 8'd0;
 			n_I2C_SCLK = 1'b1;
-			n_I2C_SDAT = 1'b1;
+			n_I2C_SDAT = 1'b0;
 			n_cmd = cmd;
 			n_done = 1'b0;
 		end
 		START : begin
 			n_state = SEND;
-			n_counter = 8'd0;
-			n_I2C_SCLK = 1'b1;
-			n_I2C_SDAT = 1'b0;
-			n_cmd = cmd;
+			n_counter = 8'd1;
+			n_I2C_SCLK = 1'b0;
+			n_I2C_SDAT = cmd[167];
+			n_cmd = {cmd[166:0], 1'b0};
 			n_done = 1'b0;
 		end
 
@@ -57,7 +57,7 @@ always_comb begin
 			n_I2C_SCLK = ~I2C_SCLK;
 
 			if(I2C_SCLK) begin
-				if(counter[3:0] == 3'd0 && counter != 8'd0) begin
+				if(counter[2:0] == 3'd0) begin
 					n_state = ACT;
 					n_counter = counter;
 					n_I2C_SDAT = 1'bz;
@@ -70,7 +70,7 @@ always_comb begin
 
 			end else begin
 				n_counter = counter;
-				n_I2C_SDAT = I2C_SDAT;
+				n_I2C_SDAT = _I2C_SDAT;
 				n_cmd = cmd;
 			end
 		end
@@ -85,11 +85,11 @@ always_comb begin
 			
 			if(I2C_SCLK & (~I2C_SDAT) ) begin
 				if(counter == 8'd168) begin
-					n_done = 1'd1;
+					n_done = 1'd0;
 					n_state = END;
 					n_counter = counter;
 					n_I2C_SCLK = 1'd1;
-					n_I2C_SDAT = 1'd1;
+					n_I2C_SDAT = 1'd0;
 					n_cmd = cmd;
 				end else begin
 					n_state = SEND;
@@ -116,8 +116,8 @@ always_ff @(posedge clk or negedge rst) begin
 	if(~rst) begin
 		state <= INIT;
 		counter <= 8'd0;
-		I2C_SCLK <= 1'b0;
-		_I2C_SDAT <= 1'bz;
+		I2C_SCLK <= 1'b1;
+		_I2C_SDAT <= 1'b1;
 		cmd <= {cmd1, cmd2, cmd3, cmd4, cmd5, cmd6, cmd7};
 		done <= 1'b0;
 	end else begin
