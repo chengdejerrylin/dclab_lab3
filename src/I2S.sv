@@ -3,7 +3,7 @@ module ADC (
 	input rst_n,  // Asynchronous reset active low
 
 	//WN8731
-	output reg AUD_ADCDAT,
+	input AUD_ADCDAT,
 	input AUD_ADCLRCK,
 
 	//I2S
@@ -11,13 +11,25 @@ module ADC (
 	output reg [15:0] record_data,
 	output reg record_valid
 );
+	//output
+	reg [15:0] n_record_data;
+	reg n_record_valid;
+
 	//contorl
 	localparam INIT = 'd0;
-	reg [:0] state n_state;
+	localparam WAITL = 'd1;
+	localparam READ = 'd2;
+	localparam WAITH = 'd3;
+
+	reg [:0] state, n_state;
+	reg [3:0] counter, n_counter;
 
 	always_ff @(posedge clk or negedge rst_n) begin
 		if(~rst_n) begin
 			state <= INIT;
+			counter <= 4'd0;
+			record_data <= 16'd0;
+			record_valid <= 1'd0;
 		end else begin
 
 		end
