@@ -176,8 +176,8 @@ module Top(
 		else changeSpeed();
 	end
 
-	always_ff @(posedge clk or posedge rst) begin
-		if(rst) begin
+	always_ff @(posedge clk or negedge rst) begin
+		if(~rst) begin
 			 state<= INIT;
 			 play_speed <= 4'd0;
 			 _mode <= 1'd1;

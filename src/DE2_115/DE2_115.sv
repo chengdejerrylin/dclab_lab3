@@ -136,35 +136,26 @@ module DE2_115(
 	output [16:0] HSMC_TX_D_P,
 	inout [6:0] EX_IO
 );
-	// inout port at this layer
-	logic i2c_oen, i2c_sdat;
-	logic [15:0] sram_wdata;
-	assign I2C_SDAT = i2c_oen ? i2c_sdat : 1'bz;
-	assign SRAM_DQ = /* TODO */;
-	/* TODO: Add PLL to generate a 100kHz clock (Google is your friend) */
-	I2CSender u_i2c(
-		// .i_clk(pll_clk),
-		.i_rst(KEY[0]),
-		.o_sclk(I2C_SCLK),
-		.o_sdat(i2c_sdat),
-		// you are outputing (you are not outputing only when you are "ack"ing.)
-		.o_oen(i2c_oen)
-	);
-	// And add your module here, it roughly looks like this
-	YourModule u_your_module(
-		.i_clk(AUD_BCLK),
-		.i_rst(KEY[0]),
-		.i_adc_dat(AUD_ADCDAT),
-		.i_adc_clk(AUD_ADCLRCK),
-		.o_dac_dat(AUD_DACDAT),
-		.i_dac_clk(AUD_DACLRCK),
-		.o_sram_adr(SRAM_ADDR),
-		.i_sram_rdata(SRAM_DQ),
-		.o_sram_wdata(sram_wdata),
-		.o_sram_cen(SRAM_CE_N),
-		.o_sram_lb(SRAM_LB_N),
-		.o_sram_ue(SRAM_UB_N),
-		.o_sram_oe(SRAM_OE_N),
-		.o_sram_we(SRAM_WE_N)
-	);
+	//altpll
+	wire clk_12m, clk_100k;
+	altpll altpll(.clk_clk(CLOCK_50), .reset_reset_n(SW[0]), .altpll_0_c0_clk(clk_12m), .altpll_0_c1_clk(clk_100k));
+
+	//I2C
+	wire i2c_done;
+	I2C i2c(.clk(clk_100k), .rst(SW[0]), .I2C_SCLK(I2C_SCLK), .I2C_SDAT(I2C_SDAT), .done(i2c_done));
+
+	//Debounce
+	wire playRecord, fast, slow, stop;
+	Debounce fast_buttom      (.i_in(KEY[0]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(fast));
+	Debounce playRecord_buttom(.i_in(KEY[1]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(playRecord));
+	Debounce stop_buttom      (.i_in(KEY[2]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(stop));
+	Debounce slow_buttom      (.i_in(KEY[3]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(slow));
+
+	//Top
+	Top top(.clk(clk_12m), .rst(SW[0]), .I2C_down(i2c_done), .playRecord (playRecord), .stop(stop), .fast(fast), .slow(slow),
+		.oneSlot(SW[1]), .mode(SW[2]), .SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), 
+		.SRAM_WE_N  (SRAM_WE_N), .SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), 
+		.AUD_BCLK   (AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .HEX0(HEX0), .HEX1(HEX1), 
+		.HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5), .HEX6(HEX6), .HEX7(HEX7), .LEDG(LEDG), .LEDR(LEDR), .LCD_BLON(LCD_BLON), 
+		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW));
 endmodule

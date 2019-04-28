@@ -112,8 +112,8 @@ always_comb begin
 	endcase
 end
 
-always_ff @(posedge clk or posedge rst) begin
-	if(rst) begin
+always_ff @(posedge clk or negedge rst) begin
+	if(~rst) begin
 		state <= INIT;
 		counter <= 8'd0;
 		I2C_SCLK <= 1'b0;
