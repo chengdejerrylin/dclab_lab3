@@ -84,7 +84,7 @@ always_comb begin
 			n_I2C_SDAT = 1'bz;
 			n_cmd = cmd;
 			
-			if(I2C_SCLK & (~I2C_SDAT) ) begin
+			if(I2C_SCLK & (I2C_SDAT === 1'b0) ) begin
 				if(counter == 8'd168) begin
 					n_done = 1'd0;
 					n_state = PRE_END;
