@@ -97,7 +97,7 @@ module Top(
 			debug_valid <= n_debug_valid;
 		end
 	end
-	assign n_debug_valid = state[2] ? (debug_valid | record_valid) : 1'd0;
+	assign n_debug_valid = debug_valid | record_valid;
 
 	assign LEDG = {5'h1f, sram_end, debug_valid, play_valid, dsp_request_data};
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
