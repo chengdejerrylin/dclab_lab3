@@ -8,17 +8,26 @@ module WN8731 (
 	input AUD_DACDAT,
 	output reg AUD_DACLRCK,
 	inout AUD_BCLK,
-	input AUD_XCK
+	input AUD_XCK,
+
+	input rst
 );
 
-assign AUD_BLCK = ~AUD_XCK;
+reg [4:0] counter;
 
-always #(`CYCLE) AUD_ADCDAT = ~AUD_ADCDAT;
-always #(20 * `CYCLE) AUD_DACLRCK = ~AUD_DACLRCK;
+assign AUD_BCLK = AUD_XCK;
+assign AUD_ADCLRCK = AUD_DACLRCK;
 
-initial begin
-	AUD_DACLRCK = 1'd0;
-	AUD_ADCDAT = 1'd1;
+always_ff @(negedge AUD_XCK or negedge rst) begin
+	if(~rst) begin
+		AUD_ADCDAT <= 1'd1;
+		AUD_DACLRCK <= 1'd0;
+		counter <= 5'd0;
+	end else begin
+		AUD_ADCDAT <= ~AUD_ADCDAT;
+		AUD_DACLRCK <= (counter == 5'd20) ? ~AUD_DACLRCK : AUD_DACLRCK;
+		counter <= (counter == 5'd20) ? 5'd0 : counter + 5'd1;
+	end
 end
 
 endmodule //WN8731
@@ -29,7 +38,7 @@ reg clk, rst;
 
 //WN8731
 WN8731 chip(.AUD_ADCDAT (AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_DACDAT (AUD_DACDAT), 
-			.AUD_DACLRCK(AUD_DACLRCK), .AUD_BCLK   (AUD_BCLK), .AUD_XCK    (AUD_XCK));
+			.AUD_DACLRCK(AUD_DACLRCK), .AUD_BCLK   (AUD_BCLK), .AUD_XCK    (AUD_XCK), .rst(rst));
 
 wire [2:0] top_state;
 wire [15:0] record_data;
