@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Mon Apr 29 21:41:33 2019
+Mon Apr 29 22:48:53 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -16,37 +16,42 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   8. Analysis & Synthesis IP Cores Summary
   9. State Machine - |DE2_115|Top:top|I2S:i2s|DAC:dac|state
  10. State Machine - |DE2_115|Top:top|I2S:i2s|ADC:adc|state
- 11. State Machine - |DE2_115|I2C:i2c|state
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for altpll:altpll|altpll_altpll_0:altpll_0
- 18. Source assignments for altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_stdsync_sv6:stdsync2|altpll_altpll_0_dffpipe_l2c:dffpipe3
- 19. Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 20. Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 21. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller
- 22. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 23. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 24. Parameter Settings for User Entity Instance: Debounce:fast_buttom
- 25. Parameter Settings for User Entity Instance: Debounce:playRecord_buttom
- 26. Parameter Settings for User Entity Instance: Debounce:stop_buttom
- 27. Parameter Settings for User Entity Instance: Debounce:slow_buttom
- 28. Parameter Settings for User Entity Instance: Top:top
- 29. Port Connectivity Checks: "Top:top|SRAM:sramController"
- 30. Port Connectivity Checks: "Debounce:slow_buttom"
- 31. Port Connectivity Checks: "Debounce:stop_buttom"
- 32. Port Connectivity Checks: "Debounce:playRecord_buttom"
- 33. Port Connectivity Checks: "Debounce:fast_buttom"
- 34. Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
- 35. Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller"
- 36. Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1"
- 37. Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0"
- 38. Post-Synthesis Netlist Statistics for Top Partition
- 39. Elapsed Time Per Partition
- 40. Analysis & Synthesis Messages
- 41. Analysis & Synthesis Suppressed Messages
+ 11. State Machine - |DE2_115|I2Cinitialize:i2c|state_r
+ 12. State Machine - |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|state_r
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for altpll:altpll|altpll_altpll_0:altpll_0
+ 19. Source assignments for altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_stdsync_sv6:stdsync2|altpll_altpll_0_dffpipe_l2c:dffpipe3
+ 20. Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 21. Source assignments for altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 22. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller
+ 23. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 24. Parameter Settings for User Entity Instance: altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 25. Parameter Settings for User Entity Instance: I2Cinitialize:i2c
+ 26. Parameter Settings for User Entity Instance: Debounce:fast_buttom
+ 27. Parameter Settings for User Entity Instance: Debounce:playRecord_buttom
+ 28. Parameter Settings for User Entity Instance: Debounce:stop_buttom
+ 29. Parameter Settings for User Entity Instance: Debounce:slow_buttom
+ 30. Parameter Settings for User Entity Instance: Top:top
+ 31. Port Connectivity Checks: "Top:top|I2S:i2s|ADC:adc"
+ 32. Port Connectivity Checks: "Top:top|SRAM:sramController"
+ 33. Port Connectivity Checks: "Top:top"
+ 34. Port Connectivity Checks: "Debounce:slow_buttom"
+ 35. Port Connectivity Checks: "Debounce:stop_buttom"
+ 36. Port Connectivity Checks: "Debounce:playRecord_buttom"
+ 37. Port Connectivity Checks: "Debounce:fast_buttom"
+ 38. Port Connectivity Checks: "I2Cinitialize:i2c"
+ 39. Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 40. Port Connectivity Checks: "altpll:altpll|altera_reset_controller:rst_controller"
+ 41. Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1"
+ 42. Port Connectivity Checks: "altpll:altpll|altpll_altpll_0:altpll_0"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+ 46. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -73,15 +78,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 29 21:41:33 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 29 22:48:52 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 546                                         ;
-;     Total combinational functions  ; 419                                         ;
-;     Dedicated logic registers      ; 370                                         ;
-; Total registers                    ; 370                                         ;
+; Total logic elements               ; 418                                         ;
+;     Total combinational functions  ; 398                                         ;
+;     Dedicated logic registers      ; 247                                         ;
+; Total registers                    ; 247                                         ;
 ; Total pins                         ; 480                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -199,7 +204,9 @@ agreement for further details.
 +---------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
 +---------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
-; altpll/synthesis/altpll.v                               ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/altpll.v                               ;         ;
+; src/I2Csender.sv                                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/I2Csender.sv                                        ;         ;
+; src/I2Cinitialize.sv                                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/I2Cinitialize.sv                                    ;         ;
+; altpll/synthesis/altpll.v                               ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/altpll.v                               ; altpll  ;
 ; altpll/synthesis/submodules/altera_reset_controller.v   ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/submodules/altera_reset_controller.v   ; altpll  ;
 ; altpll/synthesis/submodules/altera_reset_synchronizer.v ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/submodules/altera_reset_synchronizer.v ; altpll  ;
 ; altpll/synthesis/submodules/altpll_altpll_0.v           ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_lab3/altpll/synthesis/submodules/altpll_altpll_0.v           ; altpll  ;
@@ -207,7 +214,6 @@ agreement for further details.
 ; src/Top.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/Top.sv                                              ;         ;
 ; src/SRAM.sv                                             ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/SRAM.sv                                             ;         ;
 ; src/I2S.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/I2S.sv                                              ;         ;
-; src/I2C.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/I2C.sv                                              ;         ;
 ; src/Debounce.sv                                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_lab3/src/Debounce.sv                                         ;         ;
 +---------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
@@ -217,20 +223,20 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                   ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 546                                                                                     ;
+; Estimated Total logic elements              ; 418                                                                                     ;
 ;                                             ;                                                                                         ;
-; Total combinational functions               ; 419                                                                                     ;
+; Total combinational functions               ; 398                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                         ;
-;     -- 4 input functions                    ; 185                                                                                     ;
-;     -- 3 input functions                    ; 62                                                                                      ;
-;     -- <=2 input functions                  ; 172                                                                                     ;
+;     -- 4 input functions                    ; 198                                                                                     ;
+;     -- 3 input functions                    ; 85                                                                                      ;
+;     -- <=2 input functions                  ; 115                                                                                     ;
 ;                                             ;                                                                                         ;
 ; Logic elements by mode                      ;                                                                                         ;
-;     -- normal mode                          ; 352                                                                                     ;
-;     -- arithmetic mode                      ; 67                                                                                      ;
+;     -- normal mode                          ; 338                                                                                     ;
+;     -- arithmetic mode                      ; 60                                                                                      ;
 ;                                             ;                                                                                         ;
-; Total registers                             ; 370                                                                                     ;
-;     -- Dedicated logic registers            ; 370                                                                                     ;
+; Total registers                             ; 247                                                                                     ;
+;     -- Dedicated logic registers            ; 247                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                       ;
 ;                                             ;                                                                                         ;
 ; I/O pins                                    ; 480                                                                                     ;
@@ -241,9 +247,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                       ;
 ;                                             ;                                                                                         ;
 ; Maximum fan-out node                        ; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 372                                                                                     ;
-; Total fan-out                               ; 3280                                                                                    ;
-; Average fan-out                             ; 1.74                                                                                    ;
+; Maximum fan-out                             ; 249                                                                                     ;
+; Total fan-out                               ; 2861                                                                                    ;
+; Average fan-out                             ; 1.64                                                                                    ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------+
 
 
@@ -252,18 +258,19 @@ agreement for further details.
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
-; |DE2_115                                   ; 419 (0)           ; 370 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
+; |DE2_115                                   ; 398 (0)           ; 247 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
 ;    |Debounce:fast_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:fast_buttom                                                   ; work         ;
 ;    |Debounce:playRecord_buttom|            ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:playRecord_buttom                                             ; work         ;
 ;    |Debounce:slow_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:slow_buttom                                                   ; work         ;
 ;    |Debounce:stop_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:stop_buttom                                                   ; work         ;
-;    |I2C:i2c|                               ; 111 (111)         ; 185 (185)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2C:i2c                                                                ; work         ;
-;    |Top:top|                               ; 284 (34)          ; 165 (9)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top                                                                ; work         ;
-;       |I2S:i2s|                            ; 64 (21)           ; 73 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s                                                        ; work         ;
-;          |ADC:adc|                         ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|ADC:adc                                                ; work         ;
-;          |DAC:dac|                         ; 29 (29)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|DAC:dac                                                ; work         ;
-;       |SRAM:sramController|                ; 186 (186)         ; 83 (83)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|SRAM:sramController                                            ; work         ;
-;    |altpll:altpll|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll                                                          ; work         ;
+;    |I2Cinitialize:i2c|                     ; 93 (26)           ; 62 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2Cinitialize:i2c                                                      ; work         ;
+;       |I2Csender:i2csender|                ; 67 (67)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender                                  ; work         ;
+;    |Top:top|                               ; 281 (34)          ; 165 (9)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top                                                                ; work         ;
+;       |I2S:i2s|                            ; 62 (21)           ; 73 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s                                                        ; work         ;
+;          |ADC:adc|                         ; 11 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|ADC:adc                                                ; work         ;
+;          |DAC:dac|                         ; 30 (30)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|DAC:dac                                                ; work         ;
+;       |SRAM:sramController|                ; 185 (185)         ; 83 (83)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|SRAM:sramController                                            ; work         ;
+;    |altpll:altpll|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll                                                          ; altpll       ;
 ;       |altpll_altpll_0:altpll_0|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0                                 ; altpll       ;
 ;          |altpll_altpll_0_altpll_kpa2:sd1| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1 ; altpll       ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
@@ -275,6 +282,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
 ; Vendor ; IP Core Name            ; Version ; Release Date ; License Type ; Entity Instance                                               ; IP Include File ;
 +--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
+; N/A    ; Qsys                    ; 15.0    ; N/A          ; N/A          ; |DE2_115|altpll:altpll                                        ; altpll.qsys     ;
 ; Altera ; altpll                  ; 15.0    ; N/A          ; N/A          ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0               ; altpll.qsys     ;
 ; Altera ; altera_reset_controller ; 15.0    ; N/A          ; N/A          ; |DE2_115|altpll:altpll|altera_reset_controller:rst_controller ; altpll.qsys     ;
 +--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
@@ -307,18 +315,28 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------+
-; State Machine - |DE2_115|I2C:i2c|state                                                        ;
-+---------------+---------------+-----------+-----------+------------+-------------+------------+
-; Name          ; state.PRE_END ; state.END ; state.ACT ; state.SEND ; state.START ; state.INIT ;
-+---------------+---------------+-----------+-----------+------------+-------------+------------+
-; state.INIT    ; 0             ; 0         ; 0         ; 0          ; 0           ; 0          ;
-; state.START   ; 0             ; 0         ; 0         ; 0          ; 1           ; 1          ;
-; state.SEND    ; 0             ; 0         ; 0         ; 1          ; 0           ; 1          ;
-; state.ACT     ; 0             ; 0         ; 1         ; 0          ; 0           ; 1          ;
-; state.END     ; 0             ; 1         ; 0         ; 0          ; 0           ; 1          ;
-; state.PRE_END ; 1             ; 0         ; 0         ; 0          ; 0           ; 1          ;
-+---------------+---------------+-----------+-----------+------------+-------------+------------+
++-----------------------------------------------------------+
+; State Machine - |DE2_115|I2Cinitialize:i2c|state_r        ;
++--------------+--------------+--------------+--------------+
+; Name         ; state_r.DONE ; state_r.IDLE ; state_r.SEND ;
++--------------+--------------+--------------+--------------+
+; state_r.IDLE ; 0            ; 0            ; 0            ;
+; state_r.SEND ; 0            ; 1            ; 1            ;
+; state_r.DONE ; 1            ; 1            ; 0            ;
++--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------+
+; State Machine - |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|state_r           ;
++-----------------+---------------+---------------+--------------+-----------------+
+; Name            ; state_r.S_FIN ; state_r.S_ACK ; state_r.S_TX ; state_r.S_START ;
++-----------------+---------------+---------------+--------------+-----------------+
+; state_r.S_START ; 0             ; 0             ; 0            ; 0               ;
+; state_r.S_TX    ; 0             ; 0             ; 1            ; 1               ;
+; state_r.S_ACK   ; 0             ; 1             ; 0            ; 1               ;
+; state_r.S_FIN   ; 1             ; 0             ; 0            ; 1               ;
++-----------------+---------------+---------------+--------------+-----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -333,15 +351,17 @@ Encoding Type:  One-Hot
 ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  ; Lost fanout                                    ;
 ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0,1] ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|ADC:adc|_start                                                                                                           ; Merged with Top:top|I2S:i2s|DAC:dac|_start     ;
+; I2Cinitialize:i2c|data_r[8,14..17,19,22,23]                                                                                              ; Merged with I2Cinitialize:i2c|data_r[13]       ;
+; I2Cinitialize:i2c|data_r[20,21]                                                                                                          ; Merged with I2Cinitialize:i2c|data_r[18]       ;
+; I2Cinitialize:i2c|data_r[13]                                                                                                             ; Stuck at GND due to stuck port data_in         ;
 ; Top:top|I2S:i2s|DAC:dac|state~4                                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|DAC:dac|state~5                                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|ADC:adc|state~4                                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|ADC:adc|state~5                                                                                                          ; Lost fanout                                    ;
-; I2C:i2c|state~4                                                                                                                          ; Lost fanout                                    ;
-; I2C:i2c|state~5                                                                                                                          ; Lost fanout                                    ;
-; I2C:i2c|state~6                                                                                                                          ; Lost fanout                                    ;
+; I2Cinitialize:i2c|I2Csender:i2csender|state_r~4                                                                                          ; Lost fanout                                    ;
+; I2Cinitialize:i2c|I2Csender:i2csender|state_r~5                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|DAC:dac|state.INIT                                                                                                       ; Merged with Top:top|I2S:i2s|ADC:adc|state.INIT ;
-; Total Number of Removed Registers = 16                                                                                                   ;                                                ;
+; Total Number of Removed Registers = 26                                                                                                   ;                                                ;
 +------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 
 
@@ -352,7 +372,8 @@ Encoding Type:  One-Hot
 +---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 ; altpll:altpll|altpll_altpll_0:altpll_0|prev_reset ; Stuck at GND              ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out, ;
 ;                                                   ; due to stuck port data_in ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0],  ;
-;                                                   ;                           ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]   ;
+;                                                   ;                           ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1],  ;
+;                                                   ;                           ; I2Cinitialize:i2c|data_r[13]                                                                                                             ;
 +---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -361,94 +382,61 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 370   ;
-; Number of registers using Synchronous Clear  ; 2     ;
+; Total registers                              ; 247   ;
+; Number of registers using Synchronous Clear  ; 5     ;
 ; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 369   ;
+; Number of registers using Asynchronous Clear ; 246   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 240   ;
+; Number of registers using Clock Enable       ; 116   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; Top:top|state[0]                        ; 50      ;
-; Top:top|state[2]                        ; 75      ;
-; I2C:i2c|I2C_SCLK                        ; 13      ;
-; Top:top|SRAM:sramController|SRAM_CE_N   ; 1       ;
-; Top:top|I2S:i2s|dataReady               ; 3       ;
-; Top:top|_mode                           ; 5       ;
-; I2C:i2c|_I2C_SDAT                       ; 5       ;
-; I2C:i2c|cmd[165]                        ; 1       ;
-; I2C:i2c|cmd[164]                        ; 1       ;
-; I2C:i2c|cmd[162]                        ; 1       ;
-; I2C:i2c|cmd[156]                        ; 1       ;
-; I2C:i2c|cmd[155]                        ; 1       ;
-; I2C:i2c|cmd[154]                        ; 1       ;
-; I2C:i2c|cmd[153]                        ; 1       ;
-; I2C:i2c|cmd[141]                        ; 1       ;
-; I2C:i2c|cmd[140]                        ; 1       ;
-; I2C:i2c|cmd[138]                        ; 1       ;
-; I2C:i2c|cmd[131]                        ; 1       ;
-; I2C:i2c|cmd[124]                        ; 1       ;
-; I2C:i2c|cmd[122]                        ; 1       ;
-; I2C:i2c|cmd[120]                        ; 1       ;
-; I2C:i2c|cmd[117]                        ; 1       ;
-; I2C:i2c|cmd[116]                        ; 1       ;
-; I2C:i2c|cmd[114]                        ; 1       ;
-; I2C:i2c|cmd[107]                        ; 1       ;
-; I2C:i2c|cmd[105]                        ; 1       ;
-; I2C:i2c|cmd[93]                         ; 1       ;
-; I2C:i2c|cmd[92]                         ; 1       ;
-; I2C:i2c|cmd[90]                         ; 1       ;
-; I2C:i2c|cmd[83]                         ; 1       ;
-; I2C:i2c|cmd[82]                         ; 1       ;
-; I2C:i2c|cmd[69]                         ; 1       ;
-; I2C:i2c|cmd[68]                         ; 1       ;
-; I2C:i2c|cmd[66]                         ; 1       ;
-; I2C:i2c|cmd[59]                         ; 1       ;
-; I2C:i2c|cmd[58]                         ; 1       ;
-; I2C:i2c|cmd[57]                         ; 1       ;
-; I2C:i2c|cmd[54]                         ; 1       ;
-; I2C:i2c|cmd[49]                         ; 1       ;
-; I2C:i2c|cmd[45]                         ; 1       ;
-; I2C:i2c|cmd[44]                         ; 1       ;
-; I2C:i2c|cmd[42]                         ; 1       ;
-; I2C:i2c|cmd[36]                         ; 1       ;
-; I2C:i2c|cmd[28]                         ; 1       ;
-; I2C:i2c|cmd[27]                         ; 1       ;
-; I2C:i2c|cmd[24]                         ; 1       ;
-; I2C:i2c|cmd[21]                         ; 1       ;
-; I2C:i2c|cmd[20]                         ; 1       ;
-; I2C:i2c|cmd[18]                         ; 1       ;
-; I2C:i2c|cmd[12]                         ; 1       ;
-; I2C:i2c|cmd[9]                          ; 1       ;
-; I2C:i2c|cmd[0]                          ; 2       ;
-; Total number of inverted registers = 52 ;         ;
-+-----------------------------------------+---------+
++--------------------------------------------------------------+
+; Inverted Register Statistics                                 ;
++----------------------------------------------------+---------+
+; Inverted Register                                  ; Fan out ;
++----------------------------------------------------+---------+
+; Top:top|state[0]                                   ; 50      ;
+; Top:top|state[2]                                   ; 76      ;
+; I2Cinitialize:i2c|I2Csender:i2csender|scl_r        ; 12      ;
+; Top:top|SRAM:sramController|SRAM_CE_N              ; 1       ;
+; Top:top|I2S:i2s|dataReady                          ; 3       ;
+; Top:top|_mode                                      ; 5       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|o_bit_r      ; 2       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|oe_r         ; 2       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[21] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[20] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[18] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[12] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[11] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[10] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[9]  ; 1       ;
+; Total number of inverted registers = 15            ;         ;
++----------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|prepare_data[2]            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|out_signal[14] ;
-; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|SRAM_ADDR[10]  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|DAC:dac|data[1]            ;
-; 8:1                ; 123 bits  ; 615 LEs       ; 0 LEs                ; 615 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[133]                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|Top:top|play_speed[1]                      ;
-; 8:1                ; 44 bits   ; 220 LEs       ; 0 LEs                ; 220 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[44]                            ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter                          ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter                          ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_in_addr      ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_out_addr     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|prepare_data[4]                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|out_signal[5]           ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 0 LEs                ; 33 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|data_r[1]                         ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|count_r[3]                        ;
+; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|SRAM_ADDR[17]           ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|DAC:dac|data[9]                     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|I2Cinitialize:i2c|data_r[11]                        ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[0] ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[0]  ;
+; 11:1               ; 16 bits   ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[14]  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|Top:top|play_speed[1]                               ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 7 LEs                ; 42 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[20]  ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_in_addr               ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_out_addr              ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|Selector9     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
 +---------------------------------------------------------------+
@@ -544,6 +532,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: I2Cinitialize:i2c                                                   ;
++----------------+----------------------------------------------------------------------------------+--------------+
+; Parameter Name ; Value                                                                            ; Type         ;
++----------------+----------------------------------------------------------------------------------+--------------+
+; CONFIG_DATA    ; (001101000000000010010111,001101000000001010010111,001101000000010001111001,0011 ; Array/Record ;
+; CONFIG_DATA    ; 01000000011001111001,001101000000100000010101,001101000000101000000000,001101000 ;              ;
+; CONFIG_DATA    ; 000110000000000,001101000000111001000010,001101000001000000011001,00110100000100 ;              ;
+;                ; 1000000001)                                                                      ;              ;
++----------------+----------------------------------------------------------------------------------+--------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Debounce:fast_buttom ;
 +----------------+-------+------------------------------------------+
@@ -600,6 +601,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Top:top|I2S:i2s|ADC:adc"                                                                                    ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; debug_w ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Top:top|SRAM:sramController"                                                            ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -608,6 +618,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; in_addr  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; out_addr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Top:top"                                                                                                                                                                     ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; o_state     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; o_state[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -648,6 +668,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; o_debounced ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; o_pos       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "I2Cinitialize:i2c" ;
++---------+-------+----------+------------------+
+; Port    ; Type  ; Severity ; Details          ;
++---------+-------+----------+------------------+
+; i_start ; Input ; Info     ; Stuck at VCC     ;
++---------+-------+----------+------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -731,27 +760,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 370                         ;
-;     CLR               ; 105                         ;
+; cycloneiii_ff         ; 247                         ;
+;     CLR               ; 106                         ;
 ;     CLR SCLR          ; 2                           ;
 ;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 240                         ;
+;     ENA CLR           ; 113                         ;
+;     ENA CLR SCLR      ; 3                           ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 427                         ;
-;     arith             ; 67                          ;
-;         2 data inputs ; 65                          ;
+; cycloneiii_lcell_comb ; 404                         ;
+;     arith             ; 60                          ;
+;         2 data inputs ; 58                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 360                         ;
+;     normal            ; 344                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 74                          ;
-;         2 data inputs ; 39                          ;
-;         3 data inputs ; 60                          ;
-;         4 data inputs ; 185                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 83                          ;
+;         4 data inputs ; 198                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.50                        ;
-; Average LUT depth     ; 2.53                        ;
+; Max LUT depth         ; 8.50                        ;
+; Average LUT depth     ; 2.84                        ;
 +-----------------------+-----------------------------+
 
 
@@ -770,12 +800,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Mon Apr 29 21:41:24 2019
+    Info: Processing started: Mon Apr 29 22:48:43 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Warning (12090): Entity "altpll" obtained from "altpll/synthesis/altpll.v" instead of from Quartus II megafunction library
-Info (12021): Found 1 design units, including 1 entities, in source file altpll/synthesis/altpll.v
-    Info (12023): Found entity 1: altpll
+Info (12021): Found 1 design units, including 1 entities, in source file src/i2csender.sv
+    Info (12023): Found entity 1: I2Csender
+Info (12021): Found 1 design units, including 1 entities, in source file src/i2cinitialize.sv
+    Info (12023): Found entity 1: I2Cinitialize
 Warning (12090): Entity "altpll" obtained from "altpll/synthesis/altpll.v" instead of from Quartus II megafunction library
 Info (12021): Found 1 design units, including 1 entities, in source file altpll/synthesis/altpll.v
     Info (12023): Found entity 1: altpll
@@ -867,23 +898,27 @@ Info (12128): Elaborating entity "altpll_altpll_0_altpll_kpa2" for hierarchy "al
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller"
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1"
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
-Info (12128): Elaborating entity "I2C" for hierarchy "I2C:i2c"
-Warning (10036): Verilog HDL or VHDL warning at I2C.sv(14): object "ack" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at I2C.sv(79): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at I2C.sv(113): truncated value with size 32 to match size of target (8)
-Info (10264): Verilog HDL Case Statement information at I2C.sv(46): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "I2Cinitialize" for hierarchy "I2Cinitialize:i2c"
+Warning (10230): Verilog HDL assignment warning at I2Cinitialize.sv(62): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at I2Cinitialize.sv(71): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "I2Csender" for hierarchy "I2Cinitialize:i2c|I2Csender:i2csender"
+Warning (10230): Verilog HDL assignment warning at I2Csender.sv(66): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at I2Csender.sv(69): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at I2Csender.sv(73): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at I2Csender.sv(81): truncated value with size 32 to match size of target (2)
 Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:fast_buttom"
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(22): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(24): truncated value with size 32 to match size of target (3)
 Info (12128): Elaborating entity "Top" for hierarchy "Top:top"
-Warning (10036): Verilog HDL or VHDL warning at Top.sv(65): object "_oneSlot" assigned a value but never read
-Info (10264): Verilog HDL Case Statement information at Top.sv(147): all case item expressions in this case statement are onehot
+Warning (10036): Verilog HDL or VHDL warning at Top.sv(68): object "_oneSlot" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Top.sv(106): truncated value with size 3 to match size of target (1)
+Info (10264): Verilog HDL Case Statement information at Top.sv(152): all case item expressions in this case statement are onehot
 Warning (10034): Output port "LEDR" at Top.sv(45) has no driver
 Warning (10034): Output port "LCD_BLON" at Top.sv(48) has no driver
 Warning (10034): Output port "LCD_EN" at Top.sv(50) has no driver
 Warning (10034): Output port "LCD_ON" at Top.sv(51) has no driver
 Warning (10034): Output port "LCD_RS" at Top.sv(52) has no driver
-Warning (10034): Output port "LCD_RW" at Top.sv(54) has no driver
+Warning (10034): Output port "LCD_RW" at Top.sv(53) has no driver
 Info (12128): Elaborating entity "SRAM" for hierarchy "Top:top|SRAM:sramController"
 Warning (10036): Verilog HDL or VHDL warning at SRAM.sv(44): object "SRAM_Q" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at SRAM.sv(44): truncated value with size 16 to match size of target (1)
@@ -892,11 +927,7 @@ Warning (10230): Verilog HDL assignment warning at SRAM.sv(128): truncated value
 Info (12128): Elaborating entity "I2S" for hierarchy "Top:top|I2S:i2s"
 Info (12128): Elaborating entity "ADC" for hierarchy "Top:top|I2S:i2s|ADC:adc"
 Info (12128): Elaborating entity "DAC" for hierarchy "Top:top|I2S:i2s|DAC:dac"
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "I2C:i2c|n_I2C_SDAT" feeding internal logic into a wire
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "I2C_SDAT" and its non-tri-state driver.
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver
     Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver
@@ -1232,7 +1263,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HSMC_TX_D_P[15]" is stuck at GND
     Warning (13410): Pin "HSMC_TX_D_P[16]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/team06/Desktop/dclab_lab3/output_files/DE2_115.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
@@ -1321,17 +1352,17 @@ Warning (21074): Design contains 84 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 1071 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 944 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 590 logic cells
+    Info (21061): Implemented 463 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 490 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Mon Apr 29 21:41:34 2019
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 487 warnings
+    Info: Peak virtual memory: 4876 megabytes
+    Info: Processing ended: Mon Apr 29 22:48:53 2019
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:20
 
 
 +------------------------------------------+
