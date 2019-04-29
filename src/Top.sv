@@ -77,7 +77,7 @@ module Top(
 	//I2S
 	wire I2S_request_data, dsp_play_valid;
 	wire [15:0] dsp_play_data;
-	wire debug_w;
+	wire [1:0] debug_w;
 	I2S i2s (.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_BCLK), 
 		.AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .top_state(state), 
 		.record_data(record_data), .record_valid(record_valid), .request_play_data(dsp_request_data), 
@@ -98,13 +98,13 @@ module Top(
 			debug_valid <= n_debug_valid;
 		end
 	end
-	assign n_debug_valid = debug_valid | debug_w;
+	assign n_debug_valid = debug_valid | AUD_ADCLRCK;
 
 	assign LEDG = {5'h1f, sram_end, debug_valid, play_valid, dsp_request_data};
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
 	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
-	assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
-	assign HEX4 = play_speed[0] ? 7'b1111001 : 7'b1000000;
+	assign HEX5 = debug_w[1] ? 7'b1111001 : 7'b1000000;
+	assign HEX4 = debug_w[0] ? 7'b1111001 : 7'b1000000;
 	assign HEX3 = I2C_down ? 7'b1111001 : 7'b1000000;
 	assign HEX2 = state[2] ? 7'b1111001 : 7'b1000000;
 	assign HEX1 = state[1] ? 7'b1111001 : 7'b1000000;

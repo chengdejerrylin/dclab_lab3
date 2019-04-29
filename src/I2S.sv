@@ -1,4 +1,7 @@
 module ADC (
+	//debug
+	output [1:0] debug_w,
+
 	input clk,    // Clock
 	input rst_n,  // Asynchronous reset active low
 
@@ -23,6 +26,9 @@ module ADC (
 
 	reg [1:0] state, n_state;
 	reg [3:0] counter, n_counter;
+
+	//debug
+	assign debug_w = state;
 
 	always_comb begin
 		case (state)
@@ -189,7 +195,7 @@ module DAC (
 endmodule //DAC
 
 module I2S (
-	output debug_w,
+	output [1:0] debug_w,
 
 	//clock
 	input clk,
@@ -215,8 +221,6 @@ module I2S (
 	input [15:0] play_data,
 	input play_valid
 );
-//debug
-assign debug_w = AUD_ADCLRCK;
 
 //input output
 reg n_record_valid, n_request_play_data;
@@ -224,14 +228,14 @@ reg n_record_valid, n_request_play_data;
 //ADC
 reg subStart, adc_valid;
 reg [15:0] adc_data, n_adc_data;
-ADC adc(.clk(AUD_BCLK), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
-	.record_data (n_adc_data), .record_valid(n_adc_valid));
+ADC adc(.clk(clk), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
+	.record_data (n_adc_data), .record_valid(n_adc_valid), .debug_w(debug_w));
 
 //DAC
 reg [15:0] prepare_data, n_prepare_data;
 reg dataReady, n_dataReady;
 reg dac_take_data, n_dac_take_data;
-DAC dac(.clk(AUD_BCLK), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), 
+DAC dac(.clk(clk), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), 
 	.start(subStart), .play_data(prepare_data), .take_data(n_dac_take_data));
 
 //IO
