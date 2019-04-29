@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 `define CYCLE 20
-`define terminate 500
+`define terminate 1000
 
 module testfiture ();
 reg clk, rst;

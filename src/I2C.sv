@@ -19,10 +19,10 @@ assign I2C_SDAT = ack ? 1'bz : _I2C_SDAT;
 //cmd
 reg [263:0] cmd, n_cmd;
 localparam cmd1 = 24'b0011_0100_000_1111_0_0000_0000;
-localparam cmd_ext1 = 24'b0011010_0_000_0000_0_1001_0111, //Left Line In
-localparam cmd_ext2 = 24'b0011010_0_000_0001_0_1001_0111, //Right Line In
-localparam cmd_ext3 = 24'b0011010_0_000_0010_0_0111_1001, //Left Headphone out
-localparam cmd_ext4 = 24'b0011010_0_000_0011_0_0111_1001, //Right Headphone out
+localparam cmd_ext1 = 24'b0011010_0_000_0000_0_1001_0111; //Left Line In
+localparam cmd_ext2 = 24'b0011010_0_000_0001_0_1001_0111; //Right Line In
+localparam cmd_ext3 = 24'b0011010_0_000_0010_0_0111_1001; //Left Headphone out
+localparam cmd_ext4 = 24'b0011010_0_000_0011_0_0111_1001; //Right Headphone out
 localparam cmd2 = 24'b0011_0100_000_0100_0_0001_0101;
 localparam cmd3 = 24'b0011_0100_000_0101_0_0000_0000;
 localparam cmd4 = 24'b0011_0100_000_0110_0_0000_0000;
@@ -47,7 +47,7 @@ always_comb begin
 	case (state)
 		INIT : begin
 			n_state = START;
-			n_counter = 8'd0;
+			n_counter = 9'd0;
 			n_I2C_SCLK = 1'b1;
 			n_I2C_SDAT = 1'b0;
 			n_cmd = cmd;
@@ -56,7 +56,7 @@ always_comb begin
 		end
 		START : begin
 			n_state = SEND;
-			n_counter = 8'd1;
+			n_counter = 9'd1;
 			n_I2C_SCLK = 1'b0;
 			n_I2C_SDAT = cmd[263];
 			n_cmd = {cmd[262:0], 1'b0};
@@ -121,7 +121,7 @@ always_comb begin
 
 		PRE_END : begin
 			n_state = END;
-			n_counter = 8'd0;
+			n_counter = 9'd0;
 			n_I2C_SCLK = 1'b1;
 			n_I2C_SDAT = 1'b0;
 			n_cmd = cmd;
@@ -132,7 +132,7 @@ always_comb begin
 		//END
 		default : begin
 			n_state = END;
-			n_counter = 8'd0;
+			n_counter = 9'd0;
 			n_I2C_SCLK = 1'b1;
 			n_I2C_SDAT = 1'b1;
 			n_cmd = cmd;

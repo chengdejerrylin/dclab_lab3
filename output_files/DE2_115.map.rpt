@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Mon Apr 29 19:48:21 2019
+Mon Apr 29 20:31:08 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -73,15 +73,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 29 19:48:21 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 29 20:31:08 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 547                                         ;
-;     Total combinational functions  ; 420                                         ;
-;     Dedicated logic registers      ; 371                                         ;
-; Total registers                    ; 371                                         ;
+; Total logic elements               ; 652                                         ;
+;     Total combinational functions  ; 471                                         ;
+;     Dedicated logic registers      ; 468                                         ;
+; Total registers                    ; 468                                         ;
 ; Total pins                         ; 480                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -186,11 +186,12 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -217,20 +218,20 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 547         ;
+; Estimated Total logic elements              ; 652         ;
 ;                                             ;             ;
-; Total combinational functions               ; 420         ;
+; Total combinational functions               ; 471         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 179         ;
-;     -- 3 input functions                    ; 70          ;
-;     -- <=2 input functions                  ; 171         ;
+;     -- 4 input functions                    ; 187         ;
+;     -- 3 input functions                    ; 72          ;
+;     -- <=2 input functions                  ; 212         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 353         ;
-;     -- arithmetic mode                      ; 67          ;
+;     -- normal mode                          ; 403         ;
+;     -- arithmetic mode                      ; 68          ;
 ;                                             ;             ;
-; Total registers                             ; 371         ;
-;     -- Dedicated logic registers            ; 371         ;
+; Total registers                             ; 468         ;
+;     -- Dedicated logic registers            ; 468         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 480         ;
@@ -241,9 +242,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; SW[0]~input ;
-; Maximum fan-out                             ; 370         ;
-; Total fan-out                               ; 3282        ;
-; Average fan-out                             ; 1.73        ;
+; Maximum fan-out                             ; 467         ;
+; Total fan-out                               ; 3747        ;
+; Average fan-out                             ; 1.84        ;
 +---------------------------------------------+-------------+
 
 
@@ -252,12 +253,12 @@ agreement for further details.
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
-; |DE2_115                                   ; 420 (0)           ; 371 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
+; |DE2_115                                   ; 471 (0)           ; 468 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
 ;    |Debounce:fast_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:fast_buttom                                                   ; work         ;
 ;    |Debounce:playRecord_buttom|            ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:playRecord_buttom                                             ; work         ;
 ;    |Debounce:slow_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:slow_buttom                                                   ; work         ;
 ;    |Debounce:stop_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:stop_buttom                                                   ; work         ;
-;    |I2C:i2c|                               ; 110 (110)         ; 186 (186)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2C:i2c                                                                ; work         ;
+;    |I2C:i2c|                               ; 161 (161)         ; 283 (283)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2C:i2c                                                                ; work         ;
 ;    |Top:top|                               ; 286 (34)          ; 165 (9)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top                                                                ; work         ;
 ;       |I2S:i2s|                            ; 62 (21)           ; 73 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s                                                        ; work         ;
 ;          |ADC:adc|                         ; 11 (11)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|ADC:adc                                                ; work         ;
@@ -361,12 +362,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 371   ;
+; Total registers                              ; 468   ;
 ; Number of registers using Synchronous Clear  ; 2     ;
 ; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 370   ;
+; Number of registers using Asynchronous Clear ; 467   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 240   ;
+; Number of registers using Clock Enable       ; 336   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -376,20 +377,56 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; Top:top|state[0]                        ; 54      ;
+; Top:top|state[0]                        ; 55      ;
 ; Top:top|state[2]                        ; 74      ;
-; I2C:i2c|I2C_SCLK                        ; 10      ;
+; I2C:i2c|I2C_SCLK                        ; 14      ;
 ; Top:top|SRAM:sramController|SRAM_CE_N   ; 1       ;
 ; Top:top|I2S:i2s|dataReady               ; 3       ;
 ; Top:top|_mode                           ; 5       ;
 ; I2C:i2c|_I2C_SDAT                       ; 2       ;
+; I2C:i2c|cmd[261]                        ; 1       ;
+; I2C:i2c|cmd[260]                        ; 1       ;
+; I2C:i2c|cmd[258]                        ; 1       ;
+; I2C:i2c|cmd[252]                        ; 1       ;
+; I2C:i2c|cmd[251]                        ; 1       ;
+; I2C:i2c|cmd[250]                        ; 1       ;
+; I2C:i2c|cmd[249]                        ; 1       ;
+; I2C:i2c|cmd[237]                        ; 1       ;
+; I2C:i2c|cmd[236]                        ; 1       ;
+; I2C:i2c|cmd[234]                        ; 1       ;
+; I2C:i2c|cmd[223]                        ; 1       ;
+; I2C:i2c|cmd[220]                        ; 1       ;
+; I2C:i2c|cmd[218]                        ; 1       ;
+; I2C:i2c|cmd[217]                        ; 1       ;
+; I2C:i2c|cmd[216]                        ; 1       ;
+; I2C:i2c|cmd[213]                        ; 1       ;
+; I2C:i2c|cmd[212]                        ; 1       ;
+; I2C:i2c|cmd[210]                        ; 1       ;
+; I2C:i2c|cmd[201]                        ; 1       ;
+; I2C:i2c|cmd[199]                        ; 1       ;
+; I2C:i2c|cmd[196]                        ; 1       ;
+; I2C:i2c|cmd[194]                        ; 1       ;
+; I2C:i2c|cmd[193]                        ; 1       ;
+; I2C:i2c|cmd[192]                        ; 1       ;
+; I2C:i2c|cmd[189]                        ; 1       ;
+; I2C:i2c|cmd[188]                        ; 1       ;
+; I2C:i2c|cmd[186]                        ; 1       ;
+; I2C:i2c|cmd[178]                        ; 1       ;
+; I2C:i2c|cmd[174]                        ; 1       ;
+; I2C:i2c|cmd[173]                        ; 1       ;
+; I2C:i2c|cmd[172]                        ; 1       ;
+; I2C:i2c|cmd[171]                        ; 1       ;
+; I2C:i2c|cmd[168]                        ; 1       ;
 ; I2C:i2c|cmd[165]                        ; 1       ;
 ; I2C:i2c|cmd[164]                        ; 1       ;
 ; I2C:i2c|cmd[162]                        ; 1       ;
-; I2C:i2c|cmd[156]                        ; 1       ;
-; I2C:i2c|cmd[155]                        ; 1       ;
 ; I2C:i2c|cmd[154]                        ; 1       ;
 ; I2C:i2c|cmd[153]                        ; 1       ;
+; I2C:i2c|cmd[150]                        ; 1       ;
+; I2C:i2c|cmd[149]                        ; 1       ;
+; I2C:i2c|cmd[148]                        ; 1       ;
+; I2C:i2c|cmd[147]                        ; 1       ;
+; I2C:i2c|cmd[144]                        ; 1       ;
 ; I2C:i2c|cmd[141]                        ; 1       ;
 ; I2C:i2c|cmd[140]                        ; 1       ;
 ; I2C:i2c|cmd[138]                        ; 1       ;
@@ -428,7 +465,7 @@ Encoding Type:  One-Hot
 ; I2C:i2c|cmd[12]                         ; 1       ;
 ; I2C:i2c|cmd[9]                          ; 1       ;
 ; I2C:i2c|cmd[0]                          ; 2       ;
-; Total number of inverted registers = 52 ;         ;
+; Total number of inverted registers = 88 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -437,15 +474,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|prepare_data[15]          ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|out_signal[8] ;
-; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|SRAM_ADDR[1]  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|DAC:dac|data[2]           ;
-; 8:1                ; 123 bits  ; 615 LEs       ; 0 LEs                ; 615 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[76]                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|Top:top|play_speed[2]                     ;
-; 8:1                ; 44 bits   ; 220 LEs       ; 0 LEs                ; 220 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[44]                           ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter                         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|prepare_data[7]           ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|out_signal[0] ;
+; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|SRAM_ADDR[12] ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|DAC:dac|data[10]          ;
+; 8:1                ; 183 bits  ; 915 LEs       ; 0 LEs                ; 915 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[99]                           ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|Top:top|play_speed[1]                     ;
+; 8:1                ; 80 bits   ; 400 LEs       ; 0 LEs                ; 400 LEs                ; Yes        ; |DE2_115|I2C:i2c|cmd[217]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE2_115|I2C:i2c|n_counter                         ;
 ; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_in_addr     ;
 ; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_out_addr    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
@@ -731,27 +768,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 371                         ;
-;     CLR               ; 106                         ;
+; cycloneiii_ff         ; 468                         ;
+;     CLR               ; 107                         ;
 ;     CLR SCLR          ; 2                           ;
 ;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 240                         ;
+;     ENA CLR           ; 336                         ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 426                         ;
-;     arith             ; 67                          ;
-;         2 data inputs ; 65                          ;
+; cycloneiii_lcell_comb ; 477                         ;
+;     arith             ; 68                          ;
+;         2 data inputs ; 66                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 359                         ;
+;     normal            ; 409                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 72                          ;
-;         2 data inputs ; 38                          ;
-;         3 data inputs ; 68                          ;
-;         4 data inputs ; 179                         ;
+;         1 data inputs ; 114                         ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 70                          ;
+;         4 data inputs ; 187                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.30                        ;
-; Average LUT depth     ; 2.47                        ;
+; Average LUT depth     ; 2.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -770,7 +807,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Mon Apr 29 19:48:12 2019
+    Info: Processing started: Mon Apr 29 20:30:58 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Warning (12090): Entity "altpll" obtained from "altpll/synthesis/altpll.v" instead of from Quartus II megafunction library
@@ -868,9 +905,7 @@ Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altpll
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1"
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
 Info (12128): Elaborating entity "I2C" for hierarchy "I2C:i2c"
-Warning (10230): Verilog HDL assignment warning at I2C.sv(73): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at I2C.sv(107): truncated value with size 32 to match size of target (8)
-Info (10264): Verilog HDL Case Statement information at I2C.sv(40): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at I2C.sv(47): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:fast_buttom"
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(22): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(24): truncated value with size 32 to match size of target (3)
@@ -1317,16 +1352,16 @@ Warning (21074): Design contains 84 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 1072 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1177 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 591 logic cells
+    Info (21061): Implemented 696 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 488 warnings
-    Info: Peak virtual memory: 4876 megabytes
-    Info: Processing ended: Mon Apr 29 19:48:21 2019
-    Info: Elapsed time: 00:00:09
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 486 warnings
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Mon Apr 29 20:31:08 2019
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:20
 
 
