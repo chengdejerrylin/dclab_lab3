@@ -1105,7 +1105,15 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_global_assignment -name VERILOG_FILE altpll/synthesis/altpll.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE src/ledGController.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/I2Csender.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/I2Cinitialize.sv
+set_global_assignment -name VERILOG_FILE altpll/synthesis/altpll.v -library altpll
 set_global_assignment -name QIP_FILE altpll/synthesis/altpll.qip
 set_global_assignment -name SYSTEMVERILOG_FILE src/DE2_115/DE2_115.sv
 set_global_assignment -name SDC_FILE src/DE2_115/DE2_115.sdc
@@ -1117,9 +1125,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE src/I2S.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/I2C.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/DSP_LOGIC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/Debounce.sv
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

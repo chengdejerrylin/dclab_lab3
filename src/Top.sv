@@ -50,10 +50,7 @@ module Top(
 	output LCD_EN,
 	output LCD_ON,
 	output LCD_RS,
-	output LCD_RW,
-
-	//I2C
-	output o_state
+	output LCD_RW
 );
 	//state
 	parameter INIT          = 3'b101;
@@ -66,7 +63,6 @@ module Top(
 	reg [2:0] state, n_state;
 	reg [3:0] play_speed, n_play_speed;
 	reg _mode, _oneSlot;
-	assign o_state = state;
 
 	//sram controller
 	wire [19:0] play_addr, record_addr;
@@ -91,7 +87,7 @@ module Top(
 		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
 		.request_data(dsp_request_data), .play_speed(play_speed));
 
-	ledGController ledG (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), .LEDG(LEDG));
+	ledGController ledG (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), .LEDG(LEDG), .top_state(state));
 
 	//seven segment
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
