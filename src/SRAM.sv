@@ -15,272 +15,162 @@ module SRAM(
     output reg [19:0] SRAM_ADDR,
     inout      [15:0] SRAM_DQ,
     output reg        SRAM_CE_N,
-    output reg        SRAM_OE_N,
+    output            SRAM_OE_N,
     output reg        SRAM_WE_N,
-    output reg        SRAM_UB_N,
-    output reg        SRAM_LB_N
+    output            SRAM_UB_N,
+    output            SRAM_LB_N
 );
 	
-    logic [15:0] w_out_signal;
-    logic [19:0] w_in_addr, w_out_addr;
-    logic        w_out_signal_valid;
-    logic        w_full;
+    //input  output
+    logic [15:0] n_out_signal;
+    logic [19:0] n_in_addr, n_out_addr;
+    logic n_out_sigal_valid, n_full;
 
-    logic [19:0] w_SRAM_ADDR;
-    logic [15:0] w_SRAM_DQ;
-    logic [15:0] r_SRAM_DQ;
-    logic        w_SRAM_CE_N;
-    logic        w_SRAM_OE_N;
-    logic        w_SRAM_WE_N;
-    logic        w_SRAM_UB_N;
-    logic        w_SRAM_LB_N;
+    logic [19:0] n_SRAM_ADDR;
+    logic [15:0] _SRAM_DQ, n_SRAM_DQ;
+    logic SRAM_DQ_z, n_SRAM_DQ_z;
+    logic n_SRAM_CE_N, n_SRAM_WE_N;
+    assign SRAM_DQ = SRAM_DQ_z ? 16'dz : _SRAM_DQ;
+    assign SRAM_UB_N = 1'd0;
+    assign SRAM_LB_N = 1'd0;
+    assign SRAM_OE_N = 1'd0;
 
-    logic        w_in_start_addr, w_out_start_addr;
-    logic        r_in_start_addr, r_out_start_addr;
+    //state
+    logic isRead, n_isRead;
+    logic [19:0] record_ptr, n_record_ptr;
 
-    logic        w_addr_follow; 
-    logic        r_addr_follow;
+    assign n_full = (top_state[2]) ? (in_addr == 20'hfffff) : (out_addr == in_addr);
 
-    assign SRAM_Q = r_SRAM_DQ;
-
-	always_comb begin
-        if( top_state[2] == 1'b1 & top_state != 3'b101 & in_addr != 1'b0) begin //record, write
-            if( in_signal_valid ) w_in_start_addr = in_addr; //remember the addr when first recording
-            else w_in_start_addr = r_in_start_addr;
-
-            case( top_state[1:0] ) 
-                //RECORD_STOP
-                2'b00: begin        
-                    w_SRAM_DQ = 16'b0;
-                    w_in_addr = in_addr;   
-                    w_addr_follow = r_in_start_addr;       
-                    w_SRAM_ADDR = SRAM_ADDR;    
-                    w_SRAM_CE_N = 1'b1;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'bx;
-                    w_SRAM_UB_N = 1'bx;
-                    w_SRAM_LB_N = 1'bx;
-                end
-
-                //RECORD_RECORD
-                2'b10: begin  
-                    w_SRAM_DQ = in_signal;
-
-                    if( r_addr_follow == r_in_start_addr ) begin
-                        w_in_addr = r_in_start_addr;   
-                        w_addr_follow = r_in_start_addr;       
-                        w_SRAM_ADDR = r_in_start_addr; 
-                    end
-                    else begin   
-                        w_in_addr = in_addr + 1'b1;   
-                        w_addr_follow = r_addr_follow + 1'b1;       
-                        w_SRAM_ADDR = SRAM_ADDR + 1'b1; 
-                    end 
-                       
-                    w_SRAM_CE_N = 1'b0;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'b0;
-                    w_SRAM_UB_N = 1'b0;
-                    w_SRAM_LB_N = 1'b0;
-                end
-
-                //RECORD_PAUSE
-                2'b11: begin        
-                    w_SRAM_DQ = 16'b0;
-                    w_in_addr = in_addr;   
-                    w_addr_follow = r_addr_follow;       
-                    w_SRAM_ADDR = SRAM_ADDR;    
-                    w_SRAM_CE_N = 1'b1;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'bx;
-                    w_SRAM_UB_N = 1'bx;
-                    w_SRAM_LB_N = 1'bx;
-                end
-
-                default: begin
-                    w_SRAM_DQ = 16'b0;
-                    w_in_addr = in_addr;   
-                    w_addr_follow = r_addr_follow;       
-                    w_SRAM_ADDR = SRAM_ADDR;    
-                    w_SRAM_CE_N = 1'b1;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'bx;
-                    w_SRAM_UB_N = 1'bx;
-                    w_SRAM_LB_N = 1'bx;
-                end
-            endcase
-
-            //unchanged
-            w_out_signal = 16'b0;
-            w_out_addr = out_addr;
-            w_out_signal_valid = out_signal_valid;
-            w_out_start_addr = r_out_start_addr;
-
-            if( top_state[2] == 1'b1 & top_state != 3'b101 & in_addr == 20'b1 ) begin   //write full
-                w_full = 1'b1;
-            end
-            else begin
-                //unchanged
-                w_full = 1'b0;
-            end
-        end
-        else if( top_state[2] == 1'b0 ) begin //play, read
-            if( request_out_signal ) w_out_start_addr = out_addr; //remember the addr when first playing
-            else w_out_start_addr = r_out_start_addr;
-
-            case( top_state[1:0] ) 
-                //PLAY_STOP
-                2'b00: begin        
-                    w_out_signal_valid = 1'b0;       
-                    w_out_signal = 16'b0;
-                    w_SRAM_DQ = 16'bz; 
-
-                    w_addr_follow = r_out_start_addr;
-                    w_out_addr = out_addr;
-                    w_SRAM_ADDR = SRAM_ADDR; 
-
-                    w_SRAM_CE_N = 1'b1;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'bx;
-                    w_SRAM_UB_N = 1'bx;
-                    w_SRAM_LB_N = 1'bx;
-                end
-
-                //PLAY_PLAY
-                2'b10: begin  
-                    w_out_signal_valid = 1'b1;
-                    w_out_signal = SRAM_DQ;
-                    w_SRAM_DQ = 16'bz;
-
-                    if( r_addr_follow == r_out_start_addr ) begin
-                        w_addr_follow = r_out_start_addr;
-                        w_out_addr = r_out_start_addr;
-                        w_SRAM_ADDR = r_out_start_addr; 
-                    end
-                    else begin   
-                        w_addr_follow =r_addr_follow + 1'b1;
-                        w_out_addr = out_addr + 1'b1;
-                        w_SRAM_ADDR = SRAM_ADDR + 1'b1;
-                    end 
-                       
-                    w_SRAM_CE_N = 1'b0;
-                    w_SRAM_OE_N = 1'b0;
-                    w_SRAM_WE_N = 1'b1;
-                    w_SRAM_UB_N = 1'b0;
-                    w_SRAM_LB_N = 1'b0;
-                end
-
-                //PLAY_PAUSE
-                2'b11: begin 
-                    w_out_signal_valid = 1'b0;       
-                    w_out_signal = 16'b0;
-                    w_SRAM_DQ = 16'bz; 
-
-                    w_addr_follow =r_addr_follow;
-                    w_out_addr = out_addr;
-                    w_SRAM_ADDR = SRAM_ADDR; 
-
-                    w_SRAM_CE_N = 1'b1;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'bx;
-                    w_SRAM_UB_N = 1'bx;
-                    w_SRAM_LB_N = 1'bx;
-                end
-
-                default: begin
-                    w_out_signal_valid = 1'b0;       
-                    w_out_signal = 16'b0;
-                    w_SRAM_DQ = 16'bz; 
-
-                    w_addr_follow = r_addr_follow;
-                    w_out_addr = out_addr;
-                    w_SRAM_ADDR = SRAM_ADDR; 
-
-                    w_SRAM_CE_N = 1'b1;
-                    w_SRAM_OE_N = 1'bx;
-                    w_SRAM_WE_N = 1'bx;
-                    w_SRAM_UB_N = 1'bx;
-                    w_SRAM_LB_N = 1'bx; 
-                end
-            endcase
-
-            
-
-            //unchanged
-            w_in_addr = in_addr;
-            w_in_start_addr = r_in_start_addr;
-
-            if( top_state[2] == 1'b0 & in_addr == w_out_addr & in_addr != 20'b0 & out_addr != 20'b0) begin   //read full
-                w_full = 1'b1;
-            end
-            else begin
-                //unchanged
-                w_full = 1'b0;
-            end
-        end
+    //out_addr
+    always_comb begin
+        if (top_state[2]) n_out_addr = 20'd0;
         else begin
-            //add by Cheng-De Lin
-            w_in_start_addr = r_in_start_addr;
-            w_out_start_addr = r_out_start_addr;
-            w_addr_follow = r_addr_follow;
-
-            //original
-            w_out_signal = 16'b0;
-            w_in_addr = in_addr;
-            w_out_addr = out_addr;
-            w_out_signal_valid = 1'b0;
-            w_full = full;
-            w_SRAM_ADDR = SRAM_ADDR;
-            w_SRAM_DQ = SRAM_DQ;
-            w_SRAM_CE_N = 1'b1;
-            w_SRAM_OE_N = 1'bx;
-            w_SRAM_WE_N = 1'bx;
-            w_SRAM_UB_N = 1'bx;
-            w_SRAM_LB_N = 1'bx;
+            case (top_state[1:0])
+                2'b00 : n_out_addr = 20'd0;
+                2'b01 : n_out_addr = 20'd0;
+                2'b10 : n_out_addr = request_out_signal ? out_addr + 20'd1 : out_addr;
+                2'b11 : n_out_addr = out_addr;
+            endcase // top_state[1:0]
         end
-	end
+    end
 
+    //in_addr
+    always_comb begin
+        if(~top_state[2]) begin
+            n_in_addr = in_addr;
+            n_record_ptr = 20'd0;
+        end else begin
+            case (top_state[1:0])
+                2'b10 : begin 
+                    if(in_signal_valid) begin
+                        n_in_addr = record_ptr + 20'd1;
+                        n_record_ptr = record_ptr + 20'd1;
+                    end else begin
+                        n_in_addr = record_ptr;
+                        n_record_ptr = record_ptr;
+                    end
+                end
 
-	always_ff@(posedge i_clk or negedge i_rst) begin
+                2'b11 : begin
+                    n_in_addr = in_addr;
+                    n_record_ptr = record_ptr;
+                end
+
+                //2'b00 2'b01
+                default : begin
+                    n_in_addr = in_addr;
+                    n_record_ptr = 20'd0;
+                end
+                
+            endcase
+        end
+    
+    end
+
+    //state && SRAM
+    always_comb begin
+        if(top_state[1:0] != 2'b10 ) begin
+            n_isRead = 1'd0;
+            n_SRAM_CE_N = 1'd1;
+            n_SRAM_WE_N = 1'd0;
+            n_SRAM_ADDR = 20'd0;
+            n_SRAM_DQ = 16'd0;
+            n_SRAM_DQ_z = 1'd1;
+        end else if (in_signal_valid) begin
+            n_isRead = 1'd0;
+            n_SRAM_CE_N = 1'd0;
+            n_SRAM_WE_N = 1'd0;
+            n_SRAM_ADDR = in_addr;
+            n_SRAM_DQ = in_signal;
+            n_SRAM_DQ_z = 1'd0;
+        end else if (request_out_signal) begin
+            n_isRead = 1'd1;
+            n_SRAM_CE_N = 1'd0;
+            n_SRAM_WE_N = 1'd1;
+            n_SRAM_ADDR = out_addr;
+            n_SRAM_DQ = 16'd0;
+            n_SRAM_DQ_z = 1'd1;
+        end else begin
+            n_isRead = 1'd0;
+            n_SRAM_CE_N = 1'd1;
+            n_SRAM_WE_N = 1'd0;
+            n_SRAM_ADDR = 20'd0;
+            n_SRAM_DQ = 16'd0;
+            n_SRAM_DQ_z = 1'd1;
+        end
+    end
+
+    //output
+    always_comb begin
+        if(isRead) begin
+            n_out_signal = SRAM_DQ;
+            n_out_sigal_valid = 1'd1;
+        end else begin
+            n_out_signal = out_signal;
+            n_out_sigal_valid = 1'd0;
+        end
+    
+    end
+
+    always_ff @(posedge i_clk or negedge i_rst) begin
         if(~i_rst) begin
-            out_signal       <= 16'b0;
-            in_addr          <= 20'b0;
-            out_addr         <= 20'b0;
-            out_signal_valid <= 1'b0;
-            full             <= 1'b0;
+            //input output
+            out_signal <= 16'd0;
+            in_addr <= 20'd0;
+            out_addr <= 20'd0;
+            out_signal_valid <= 1'd0;
+            full <= 1'd1;
 
-            r_in_start_addr <= 1'b0;
-            r_out_start_addr <= 1'b0;
-            r_addr_follow <= 1'b0;
+            SRAM_ADDR <= 20'd0;
+            SRAM_CE_N <= 1'd1;
+            SRAM_WE_N <= 1'd0;
+            _SRAM_DQ <= 16'd0;
+            SRAM_DQ_z <= 1'd1;
 
-            SRAM_ADDR <= 20'b0;
-            r_SRAM_DQ <= 16'b0; 
-            SRAM_CE_N <= 1'b1;
-            SRAM_OE_N <= 1'bx;
-            SRAM_WE_N <= 1'bx;
-            SRAM_UB_N <= 1'bx;
-            SRAM_LB_N <= 1'bx;
+            //state
+            isRead <= 1'd0;
+            record_ptr <= 20'd0;
+
+
+        end else begin
+            //input output
+            out_signal <= n_out_signal;
+            in_addr <= n_in_addr;
+            out_addr <= n_out_addr;
+            out_signal_valid <= n_out_sigal_valid;
+            full <= n_full;
+
+            SRAM_ADDR <= n_SRAM_ADDR;
+            SRAM_CE_N <= n_SRAM_CE_N;
+            SRAM_WE_N <= n_SRAM_WE_N;
+            _SRAM_DQ <= n_SRAM_DQ;
+            SRAM_DQ_z <= n_SRAM_DQ_z;
+
+            //state
+            isRead <= n_isRead;
+            record_ptr <= n_record_ptr;
+
         end
-        else begin
-            out_signal       <= w_out_signal;
-            in_addr          <= w_in_addr; 
-            out_addr         <= w_out_addr;
-            out_signal_valid <= w_out_signal_valid;
-            full             <= w_full;
-
-            r_in_start_addr <= w_in_start_addr;
-            r_out_start_addr <= w_out_start_addr;
-            r_addr_follow <= w_addr_follow;
-
-            SRAM_ADDR <= w_SRAM_ADDR;
-            r_SRAM_DQ <= w_SRAM_DQ; 
-            SRAM_CE_N <= w_SRAM_CE_N;
-            SRAM_OE_N <= w_SRAM_OE_N;
-            SRAM_WE_N <= w_SRAM_WE_N;
-            SRAM_UB_N <= w_SRAM_UB_N;
-            SRAM_LB_N <= w_SRAM_LB_N;
-            
-        end
-	end
+    end
 
 endmodule // SRAM

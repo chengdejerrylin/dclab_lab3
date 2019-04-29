@@ -50,7 +50,10 @@ module Top(
 	output LCD_EN,
 	output LCD_ON,
 	output LCD_RS,
-	output LCD_RW
+	output LCD_RW,
+
+	//state
+	output o_state
 );
 	//state
 	parameter INIT          = 3'b101;
@@ -77,28 +80,29 @@ module Top(
 	//I2S
 	wire I2S_request_data, dsp_play_valid;
 	wire [15:0] dsp_play_data;
+	wire [1:0] debug_w;
 	I2S i2s (.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_BCLK), 
 		.AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .top_state(state), 
-		.record_data(record_data), .record_valid(record_valid), .request_play_data(I2S_request_data), 
-		.play_data(dsp_play_data), .play_valid(dsp_play_valid));
+		.record_data(record_data), .record_valid(record_valid), .request_play_data(dsp_request_data), 
+		.play_data(play_data), .play_valid(play_valid), .debug_w(debug_w));
 
-	//dsp
-	DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
-		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
-		.request_data(dsp_request_data), .play_speed(play_speed));
+	// //dsp
+	// DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
+	// 	.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
+	// 	.request_data(dsp_request_data), .play_speed(play_speed));
 
 	//volumn
 	wire volRed;
 	volumnLed volLed (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), 
 		.LEDG(LEDG), .top_state(state), .LEDR(volRed));
 
-	assign LEDR = {17'd0, volRed};
+	assign LEDR = {record_addr[15:0], sram_end,volRed};
 
 	//seven segment
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
 	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
-	assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
-	assign HEX4 = play_speed[0] ? 7'b1111001 : 7'b1000000;
+	assign HEX5 = debug_w[1] ? 7'b1111001 : 7'b1000000;
+	assign HEX4 = debug_w[0] ? 7'b1111001 : 7'b1000000;
 	assign HEX3 = I2C_down ? 7'b1111001 : 7'b1000000;
 	assign HEX2 = state[2] ? 7'b1111001 : 7'b1000000;
 	assign HEX1 = state[1] ? 7'b1111001 : 7'b1000000;
