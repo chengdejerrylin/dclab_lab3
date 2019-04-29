@@ -14,7 +14,7 @@ module I2C (
 reg ack, n_ack;
 //input output
 reg _I2C_SDAT, n_I2C_SDAT, n_I2C_SCLK, n_done;
-assign I2C_SDAT = ack ? 1'bz : _I2C_SDAT;
+assign I2C_SDAT =  _I2C_SDAT;
 
 //cmd
 reg [167:0] cmd, n_cmd;
