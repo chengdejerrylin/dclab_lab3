@@ -240,7 +240,6 @@ DAC dac(.clk(clk), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLR
 
 //IO
 assign AUD_XCK = clk;
-assign debug_w = {subStart, adc_valid};
 
 //data from chip
 always_comb begin

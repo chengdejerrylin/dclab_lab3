@@ -91,21 +91,14 @@ module Top(
 	// 	.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
 	// 	.request_data(dsp_request_data), .play_speed(play_speed));
 
-	//debug
-	reg debug_valid;
-	wire n_debug_valid;
-	always_ff @(posedge clk or negedge rst) begin
-		if(~rst) begin
-			debug_valid <= 1'd0;
-		end else begin
-			debug_valid <= n_debug_valid;
-		end
-	end
-	assign n_debug_valid = debug_valid | record_valid;
+	//volumn
+	wire volRed;
+	volumnLed volLed (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), 
+		.LEDG(LEDG), .top_state(state), .LEDR(volRed));
 
-	assign o_state = state;
+	assign LEDR = {17'd0, volRed};
 
-	assign LEDG = {5'h1f, sram_end, debug_valid, play_valid, dsp_request_data};
+	//seven segment
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
 	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
 	assign HEX5 = debug_w[1] ? 7'b1111001 : 7'b1000000;
@@ -165,7 +158,7 @@ module Top(
 			case(state[1:0] )
 				2'b00 : begin // stop
 					n_state = (_mode != state[2]) ? {_mode, 2'b00} :
-							  playRecord ? {state[2], 2'b10} : 
+							  (playRecord & (~sram_end))? {state[2], 2'b10} : 
 							  state;
 				end
 

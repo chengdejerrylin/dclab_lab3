@@ -142,7 +142,6 @@ module DE2_115(
 
 	//I2C
 	wire i2c_done;
-	wire [2:0] state;
 	I2Cinitialize i2c(.i_clk(clk_100k), .i_start(1'd1), .i_rst(SW[0]), .o_scl(I2C_SCLK), .o_finished(i2c_done), .o_sda(I2C_SDAT));
 
 	//Debounce
