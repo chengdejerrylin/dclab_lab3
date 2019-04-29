@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Mon Apr 29 22:09:14 2019
+Mon Apr 29 22:36:52 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -77,15 +77,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 29 22:09:14 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 29 22:36:52 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 325                                         ;
-;     Total combinational functions  ; 306                                         ;
-;     Dedicated logic registers      ; 185                                         ;
-; Total registers                    ; 185                                         ;
+; Total logic elements               ; 419                                         ;
+;     Total combinational functions  ; 399                                         ;
+;     Dedicated logic registers      ; 247                                         ;
+; Total registers                    ; 247                                         ;
 ; Total pins                         ; 480                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -222,20 +222,20 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                   ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 325                                                                                     ;
+; Estimated Total logic elements              ; 419                                                                                     ;
 ;                                             ;                                                                                         ;
-; Total combinational functions               ; 306                                                                                     ;
+; Total combinational functions               ; 399                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                         ;
-;     -- 4 input functions                    ; 151                                                                                     ;
-;     -- 3 input functions                    ; 56                                                                                      ;
-;     -- <=2 input functions                  ; 99                                                                                      ;
+;     -- 4 input functions                    ; 199                                                                                     ;
+;     -- 3 input functions                    ; 82                                                                                      ;
+;     -- <=2 input functions                  ; 118                                                                                     ;
 ;                                             ;                                                                                         ;
 ; Logic elements by mode                      ;                                                                                         ;
-;     -- normal mode                          ; 246                                                                                     ;
+;     -- normal mode                          ; 339                                                                                     ;
 ;     -- arithmetic mode                      ; 60                                                                                      ;
 ;                                             ;                                                                                         ;
-; Total registers                             ; 185                                                                                     ;
-;     -- Dedicated logic registers            ; 185                                                                                     ;
+; Total registers                             ; 247                                                                                     ;
+;     -- Dedicated logic registers            ; 247                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                       ;
 ;                                             ;                                                                                         ;
 ; I/O pins                                    ; 480                                                                                     ;
@@ -246,9 +246,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                       ;
 ;                                             ;                                                                                         ;
 ; Maximum fan-out node                        ; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 187                                                                                     ;
-; Total fan-out                               ; 2316                                                                                    ;
-; Average fan-out                             ; 1.45                                                                                    ;
+; Maximum fan-out                             ; 249                                                                                     ;
+; Total fan-out                               ; 2862                                                                                    ;
+; Average fan-out                             ; 1.64                                                                                    ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------+
 
 
@@ -257,16 +257,18 @@ agreement for further details.
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------+--------------+
-; |DE2_115                                   ; 306 (0)           ; 185 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
+; |DE2_115                                   ; 399 (0)           ; 247 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                        ; work         ;
 ;    |Debounce:fast_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:fast_buttom                                                   ; work         ;
 ;    |Debounce:playRecord_buttom|            ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:playRecord_buttom                                             ; work         ;
 ;    |Debounce:slow_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:slow_buttom                                                   ; work         ;
 ;    |Debounce:stop_buttom|                  ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:stop_buttom                                                   ; work         ;
-;    |Top:top|                               ; 282 (31)          ; 165 (9)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top                                                                ; work         ;
+;    |I2Cinitialize:i2c|                     ; 93 (26)           ; 62 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2Cinitialize:i2c                                                      ; work         ;
+;       |I2Csender:i2csender|                ; 67 (67)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender                                  ; work         ;
+;    |Top:top|                               ; 282 (34)          ; 165 (9)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top                                                                ; work         ;
 ;       |I2S:i2s|                            ; 64 (21)           ; 73 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s                                                        ; work         ;
 ;          |ADC:adc|                         ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|ADC:adc                                                ; work         ;
 ;          |DAC:dac|                         ; 29 (29)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|I2S:i2s|DAC:dac                                                ; work         ;
-;       |SRAM:sramController|                ; 187 (187)         ; 83 (83)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|SRAM:sramController                                            ; work         ;
+;       |SRAM:sramController|                ; 184 (184)         ; 83 (83)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top|SRAM:sramController                                            ; work         ;
 ;    |altpll:altpll|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll                                                          ; altpll       ;
 ;       |altpll_altpll_0:altpll_0|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0                                 ; altpll       ;
 ;          |altpll_altpll_0_altpll_kpa2:sd1| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1 ; altpll       ;
@@ -350,90 +352,28 @@ Encoding Type:  One-Hot
 ; Top:top|I2S:i2s|ADC:adc|_start                                                                                                           ; Merged with Top:top|I2S:i2s|DAC:dac|_start     ;
 ; I2Cinitialize:i2c|data_r[8,14..17,19,22,23]                                                                                              ; Merged with I2Cinitialize:i2c|data_r[13]       ;
 ; I2Cinitialize:i2c|data_r[20,21]                                                                                                          ; Merged with I2Cinitialize:i2c|data_r[18]       ;
-; I2Cinitialize:i2c|send_start_r                                                                                                           ; Stuck at GND due to stuck port data_in         ;
-; I2Cinitialize:i2c|data_r[0..7,9..13,18]                                                                                                  ; Lost fanout                                    ;
+; I2Cinitialize:i2c|data_r[13]                                                                                                             ; Stuck at GND due to stuck port data_in         ;
 ; Top:top|I2S:i2s|DAC:dac|state~4                                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|DAC:dac|state~5                                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|ADC:adc|state~4                                                                                                          ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|ADC:adc|state~5                                                                                                          ; Lost fanout                                    ;
 ; I2Cinitialize:i2c|I2Csender:i2csender|state_r~4                                                                                          ; Lost fanout                                    ;
 ; I2Cinitialize:i2c|I2Csender:i2csender|state_r~5                                                                                          ; Lost fanout                                    ;
-; I2Cinitialize:i2c|count_r[0..3]                                                                                                          ; Lost fanout                                    ;
-; I2Cinitialize:i2c|I2Csender:i2csender|o_finished_r                                                                                       ; Lost fanout                                    ;
-; I2Cinitialize:i2c|state_r.SEND                                                                                                           ; Lost fanout                                    ;
-; I2Cinitialize:i2c|state_r.IDLE                                                                                                           ; Lost fanout                                    ;
-; I2Cinitialize:i2c|state_r.DONE                                                                                                           ; Lost fanout                                    ;
 ; Top:top|I2S:i2s|DAC:dac|state.INIT                                                                                                       ; Merged with Top:top|I2S:i2s|ADC:adc|state.INIT ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_TX                                                                                       ; Stuck at GND due to stuck port data_in         ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_ACK                                                                                      ; Stuck at GND due to stuck port data_in         ;
-; I2Cinitialize:i2c|I2Csender:i2csender|clk_cnt_r[0,1]                                                                                     ; Stuck at GND due to stuck port clock_enable    ;
-; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[1..23]                                                                                    ; Lost fanout                                    ;
-; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[0]                                                                                        ; Stuck at GND due to stuck port data_in         ;
-; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[0..3]                                                                                    ; Stuck at GND due to stuck port clock_enable    ;
-; I2Cinitialize:i2c|I2Csender:i2csender|oe_r                                                                                               ; Stuck at VCC due to stuck port clock_enable    ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_FIN                                                                                      ; Stuck at GND due to stuck port data_in         ;
-; I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[0,1]                                                                                    ; Lost fanout                                    ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_START                                                                                    ; Stuck at GND due to stuck port data_in         ;
-; I2Cinitialize:i2c|I2Csender:i2csender|scl_r                                                                                              ; Stuck at VCC due to stuck port data_in         ;
-; I2Cinitialize:i2c|I2Csender:i2csender|o_bit_r                                                                                            ; Stuck at VCC due to stuck port data_in         ;
-; Total Number of Removed Registers = 87                                                                                                   ;                                                ;
+; Total Number of Removed Registers = 26                                                                                                   ;                                                ;
 +------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                ;
-+-----------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register                                                                                                   ;
-+-----------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; altpll:altpll|altpll_altpll_0:altpll_0|prev_reset   ; Stuck at GND              ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out, ;
-;                                                     ; due to stuck port data_in ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0],  ;
-;                                                     ;                           ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1],  ;
-;                                                     ;                           ; I2Cinitialize:i2c|send_start_r, I2Cinitialize:i2c|data_r[0],                                                                             ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[18], I2Cinitialize:i2c|data_r[13],                                                                              ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[12], I2Cinitialize:i2c|data_r[11],                                                                              ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[10], I2Cinitialize:i2c|data_r[9],                                                                               ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[7], I2Cinitialize:i2c|data_r[6],                                                                                ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[5], I2Cinitialize:i2c|data_r[4],                                                                                ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[3], I2Cinitialize:i2c|data_r[2],                                                                                ;
-;                                                     ;                           ; I2Cinitialize:i2c|data_r[1], I2Cinitialize:i2c|I2Csender:i2csender|clk_cnt_r[1],                                                         ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|clk_cnt_r[0],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[23],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[22],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[21],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[20],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[19],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[18],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[17],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[16],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[15],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[14],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[13],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[12],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[11],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[10],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[9],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[8],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[7],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[6],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[5],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[4],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[3],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[2],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[1],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[0],                                                                                       ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[3],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[2],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[1],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[0],                                                                                      ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|oe_r,                                                                                              ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|scl_r,                                                                                             ;
-;                                                     ;                           ; I2Cinitialize:i2c|I2Csender:i2csender|o_bit_r                                                                                            ;
-; I2Cinitialize:i2c|count_r[3]                        ; Lost Fanouts              ; I2Cinitialize:i2c|count_r[2], I2Cinitialize:i2c|count_r[1],                                                                              ;
-;                                                     ;                           ; I2Cinitialize:i2c|count_r[0], I2Cinitialize:i2c|state_r.SEND                                                                             ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r~4     ; Lost Fanouts              ; I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[1]                                                                                      ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_ACK ; Stuck at GND              ; I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[0]                                                                                      ;
-;                                                     ; due to stuck port data_in ;                                                                                                                                          ;
-+-----------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                              ;
++---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                     ; Reason for Removal        ; Registers Removed due to This Register                                                                                                   ;
++---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; altpll:altpll|altpll_altpll_0:altpll_0|prev_reset ; Stuck at GND              ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out, ;
+;                                                   ; due to stuck port data_in ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0],  ;
+;                                                   ;                           ; altpll:altpll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1],  ;
+;                                                   ;                           ; I2Cinitialize:i2c|data_r[13]                                                                                                             ;
++---------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -441,28 +381,38 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 185   ;
-; Number of registers using Synchronous Clear  ; 2     ;
+; Total registers                              ; 247   ;
+; Number of registers using Synchronous Clear  ; 5     ;
 ; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 184   ;
+; Number of registers using Asynchronous Clear ; 246   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 73    ;
+; Number of registers using Clock Enable       ; 116   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; Top:top|state[0]                       ; 50      ;
-; Top:top|state[2]                       ; 74      ;
-; Top:top|SRAM:sramController|SRAM_CE_N  ; 1       ;
-; Top:top|I2S:i2s|dataReady              ; 3       ;
-; Top:top|_mode                          ; 3       ;
-; Total number of inverted registers = 5 ;         ;
-+----------------------------------------+---------+
++--------------------------------------------------------------+
+; Inverted Register Statistics                                 ;
++----------------------------------------------------+---------+
+; Inverted Register                                  ; Fan out ;
++----------------------------------------------------+---------+
+; Top:top|state[0]                                   ; 50      ;
+; Top:top|state[2]                                   ; 75      ;
+; I2Cinitialize:i2c|I2Csender:i2csender|scl_r        ; 12      ;
+; Top:top|SRAM:sramController|SRAM_CE_N              ; 1       ;
+; Top:top|I2S:i2s|dataReady                          ; 3       ;
+; Top:top|_mode                                      ; 5       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|o_bit_r      ; 2       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|oe_r         ; 2       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[21] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[20] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[18] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[12] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[11] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[10] ; 1       ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[9]  ; 1       ;
+; Total number of inverted registers = 15            ;         ;
++----------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -470,20 +420,21 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|prepare_data[10]                    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|out_signal[4]           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|I2Cinitialize:i2c|count_r[3]                        ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[0] ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[1]  ;
-; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|SRAM_ADDR[1]            ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|DAC:dac|data[5]                     ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[15]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|prepare_data[8]                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|out_signal[10]          ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 0 LEs                ; 33 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|data_r[10]                        ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|count_r[2]                        ;
+; 7:1                ; 19 bits   ; 76 LEs        ; 19 LEs               ; 57 LEs                 ; Yes        ; |DE2_115|Top:top|SRAM:sramController|SRAM_ADDR[7]            ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2_115|Top:top|I2S:i2s|DAC:dac|data[14]                    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|I2Cinitialize:i2c|data_r[18]                        ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[1] ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[3]  ;
+; 11:1               ; 16 bits   ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[23]  ;
 ; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|Top:top|play_speed[2]                               ;
-; 10:1               ; 7 bits    ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[9]   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|I2Cinitialize:i2c|Selector2                         ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 7 LEs                ; 42 LEs                 ; Yes        ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[9]   ;
 ; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_in_addr               ;
 ; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |DE2_115|Top:top|SRAM:sramController|w_out_addr              ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; No         ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|Selector11    ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender|Selector11    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
@@ -659,13 +610,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Top:top"                                                                                                                                                                 ;
-+---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                                               ;
-+---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; o_state ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
-+---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Top:top"                                                                                                                                                                     ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; o_state     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; o_state[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -708,13 +660,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "I2Cinitialize:i2c"                                                                        ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; o_finished ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------+
+; Port Connectivity Checks: "I2Cinitialize:i2c" ;
++---------+-------+----------+------------------+
+; Port    ; Type  ; Severity ; Details          ;
++---------+-------+----------+------------------+
+; i_start ; Input ; Info     ; Stuck at VCC     ;
++---------+-------+----------+------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -798,27 +750,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 185                         ;
-;     CLR               ; 87                          ;
+; cycloneiii_ff         ; 247                         ;
+;     CLR               ; 106                         ;
 ;     CLR SCLR          ; 2                           ;
 ;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 73                          ;
+;     ENA CLR           ; 113                         ;
+;     ENA CLR SCLR      ; 3                           ;
 ;     plain             ; 1                           ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 313                         ;
+; cycloneiii_lcell_comb ; 407                         ;
 ;     arith             ; 60                          ;
 ;         2 data inputs ; 58                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 253                         ;
+;     normal            ; 347                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 36                          ;
-;         3 data inputs ; 54                          ;
-;         4 data inputs ; 151                         ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 199                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.50                        ;
-; Average LUT depth     ; 3.01                        ;
+; Max LUT depth         ; 9.50                        ;
+; Average LUT depth     ; 2.92                        ;
 +-----------------------+-----------------------------+
 
 
@@ -837,7 +790,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Mon Apr 29 22:09:04 2019
+    Info: Processing started: Mon Apr 29 22:36:43 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file src/i2csender.sv
@@ -874,7 +827,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file src/dsp
     Info (12023): Found entity 1: DSP_LOGIC
 Info (12021): Found 1 design units, including 1 entities, in source file src/debounce.sv
     Info (12023): Found entity 1: Debounce
-Warning (10236): Verilog HDL Implicit Net warning at DE2_115.sv(146): created implicit net for "I2C_down"
 Warning (10236): Verilog HDL Implicit Net warning at SRAM.sv(44): created implicit net for "SRAM_Q"
 Warning (10236): Verilog HDL Implicit Net warning at I2S.sv(232): created implicit net for "n_adc_valid"
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
@@ -1108,8 +1060,6 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "EX_IO[6]" has no driver
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "I2Cinitialize:i2c|I2Csender:i2csender|o_sda~synth"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SMA_CLKOUT" is stuck at GND
     Warning (13410): Pin "LEDG[4]" is stuck at VCC
@@ -1144,12 +1094,8 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX2[1]" is stuck at GND
     Warning (13410): Pin "HEX2[2]" is stuck at GND
     Warning (13410): Pin "HEX2[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[0]" is stuck at GND
     Warning (13410): Pin "HEX3[1]" is stuck at GND
     Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at GND
-    Warning (13410): Pin "HEX3[4]" is stuck at GND
-    Warning (13410): Pin "HEX3[5]" is stuck at GND
     Warning (13410): Pin "HEX3[6]" is stuck at VCC
     Warning (13410): Pin "HEX4[1]" is stuck at GND
     Warning (13410): Pin "HEX4[2]" is stuck at GND
@@ -1201,7 +1147,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
     Warning (13410): Pin "VGA_VS" is stuck at GND
     Warning (13410): Pin "EEP_I2C_SCLK" is stuck at GND
-    Warning (13410): Pin "I2C_SCLK" is stuck at VCC
     Warning (13410): Pin "ENET0_GTX_CLK" is stuck at GND
     Warning (13410): Pin "ENET0_MDC" is stuck at GND
     Warning (13410): Pin "ENET0_RST_N" is stuck at GND
@@ -1304,11 +1249,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HSMC_TX_D_P[15]" is stuck at GND
     Warning (13410): Pin "HSMC_TX_D_P[16]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 56 registers lost all their fanouts during netlist optimizations.
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/team06/Desktop/dclab_lab3/output_files/DE2_115.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (15899): PLL "altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|pll7" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected
 Warning (21074): Design contains 84 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK2_50"
     Warning (15610): No output dependent on input pin "CLOCK3_50"
@@ -1394,17 +1338,17 @@ Warning (21074): Design contains 84 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 849 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 945 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 368 logic cells
+    Info (21061): Implemented 464 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 496 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Mon Apr 29 22:09:14 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 487 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Mon Apr 29 22:36:52 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +------------------------------------------+

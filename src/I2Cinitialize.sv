@@ -84,8 +84,8 @@ module I2Cinitialize (
         endcase
     end
 
-    always_ff @(posedge i_clk or posedge i_rst) begin
-        if (i_rst) begin
+    always_ff @(posedge i_clk or negedge i_rst) begin
+        if (~i_rst) begin
             state_r     <= IDLE;
             count_r     <= 0;
             finished_r  <= 0;

@@ -102,8 +102,8 @@ module I2Csender (
         endcase
     end
     
-    always_ff @(posedge i_clk or posedge i_rst) begin
-        if (i_rst) begin
+    always_ff @(posedge i_clk or negedge i_rst) begin
+        if (~i_rst) begin
             state_r      <= S_START;
             o_bit_r      <= 1;
             o_finished_r <= 0;
