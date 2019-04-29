@@ -84,7 +84,7 @@ module Top(
 	I2S i2s (.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_BCLK), 
 		.AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .top_state(state), 
 		.record_data(record_data), .record_valid(record_valid), .request_play_data(dsp_request_data), 
-		.play_data(play_data), .play_valid(play_valid), .debug_w(debug_w));
+		.play_data(play_data), .play_valid(play_valid));
 
 	// //dsp
 	// DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
