@@ -271,7 +271,7 @@ always_ff @(posedge clk or negedge rst) begin
 
 		//DAC
 		prepare_data <= 16'd0;
-		dataReady <= 1'd1;
+		dataReady <= 1'd0;
 		dac_take_data <= 1'd0;
 	end else begin
 		//IO
