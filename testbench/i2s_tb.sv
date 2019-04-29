@@ -3,17 +3,12 @@
 `define terminate 500
 
 module testfiture ();
+
 reg clk, rst;
-wire done, I2C_SDAT, I2C_SCLK;
-reg _I2C_SDAT;
-
-assign I2C_SDAT = _I2C_SDAT;
-I2C u_i2c(.clk(clk), .rst(rst), .I2C_SCLK(I2C_SCLK), .I2C_SDAT(I2C_SDAT), .done(done));
-
 always #(`CYCLE/2) clk = ~clk;
 
 initial begin
-	$fsdbDumpfile("I2C.fsdb");
+	$fsdbDumpfile("I2S.fsdb");
 	$fsdbDumpvars;
 	$fsdbDumpMDA;
 
@@ -23,6 +18,20 @@ initial begin
 	#(`CYCLE/4) rst = 1'd0;
 	#(`CYCLE*3) rst = 1'd1;
 end
+
+reg AUD_ADCDAT, _AUD_LRCK, _AUD_BCLK;
+wire AUD_ADCLRCK, AUD_BCLK, AUD_XCK;
+reg [2:0] top_state;
+wire [15:0] record_data;
+wire record_valid, request_play_data;
+reg [15:0] play_data;
+reg play_valid;
+
+assign AUD_LRCK = _AUD_LRCK;
+assign AUD_BCLK = _AUD_BCLK;
+I2S u_i2s(.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_LRCK), .AUD_BCLK(AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), 
+	.AUD_DACLRCK(AUD_LRCK), .AUD_XCK(AUD_XCK), .top_state(top_state), .record_data(record_data), .record_valid(record_valid), 
+	.request_play_data(request_play_data), .play_data(play_data), .play_valid(play_valid));
 
 initial begin
 	@(posedge done);
@@ -47,11 +56,6 @@ initial begin
 	$display("Time out!! The simulation didn't finish after %d cycles!!, Please check it!!!", `terminate); 
 	$display("================================================================================================================");
 	$finish;
-end
-
-always_ff @(posedge I2C_SCLK or negedge rst)  begin 
-	if (~rst) _I2C_SDAT = 1'dz;
-	else _I2C_SDAT = (I2C_SDAT === 1'dz) ? 1'd0 : 1'dz; 
 end
 
 endmodule
