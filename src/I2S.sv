@@ -229,7 +229,7 @@ reg n_record_valid, n_request_play_data;
 reg subStart, adc_valid;
 reg [15:0] adc_data, n_adc_data;
 ADC adc(.clk(clk), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
-	.record_data (n_adc_data), .record_valid(n_adc_valid), .debug_w(debug_w));
+	.record_data (n_adc_data), .record_valid(n_adc_valid));
 
 //DAC
 reg [15:0] prepare_data, n_prepare_data;
@@ -240,6 +240,7 @@ DAC dac(.clk(clk), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLR
 
 //IO
 assign AUD_XCK = clk;
+assign debug_w = {subStart, adc_valid};
 
 //data from chip
 always_comb begin

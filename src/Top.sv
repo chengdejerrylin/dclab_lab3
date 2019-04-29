@@ -101,7 +101,7 @@ module Top(
 			debug_valid <= n_debug_valid;
 		end
 	end
-	assign n_debug_valid = debug_valid | AUD_ADCLRCK;
+	assign n_debug_valid = debug_valid | record_valid;
 
 	assign o_state = state;
 
