@@ -9,9 +9,12 @@ module I2C (
 	output reg done
 );
 
+
+//act
+reg ack, n_ack;
 //input output
 reg _I2C_SDAT, n_I2C_SDAT, n_I2C_SCLK, n_done;
-assign I2C_SDAT = _I2C_SDAT;
+assign I2C_SDAT = ack ? 1'bz : _I2C_SDAT;
 
 //cmd
 reg [167:0] cmd, n_cmd;
@@ -42,6 +45,7 @@ always_comb begin
 			n_I2C_SDAT = 1'b0;
 			n_cmd = cmd;
 			n_done = 1'b0;
+			n_ack = 1'b0;
 		end
 		START : begin
 			n_state = SEND;
@@ -50,6 +54,7 @@ always_comb begin
 			n_I2C_SDAT = cmd[167];
 			n_cmd = {cmd[166:0], 1'b0};
 			n_done = 1'b0;
+			n_ack = 1'b0;
 		end
 
 		SEND : begin
@@ -63,16 +68,19 @@ always_comb begin
 					n_counter = counter;
 					n_I2C_SDAT = 1'bz;
 					n_cmd = cmd;
+					n_ack = 1'b1;
 				end else begin
 					n_counter = counter +1;
 					n_I2C_SDAT = cmd[167];
 					n_cmd = {cmd[166:0], 1'b0};
+					n_ack = 1'b0;
 				end
 
 			end else begin
 				n_counter = counter;
 				n_I2C_SDAT = _I2C_SDAT;
 				n_cmd = cmd;
+				n_ack = 1'b0;
 			end
 		end
 
@@ -83,6 +91,7 @@ always_comb begin
 			n_I2C_SCLK = ~I2C_SCLK;
 			n_I2C_SDAT = 1'bz;
 			n_cmd = cmd;
+			n_ack = 1'b1;
 			
 			if(I2C_SCLK & (I2C_SDAT === 1'b0) ) begin
 				if(counter == 8'd168) begin
@@ -92,11 +101,13 @@ always_comb begin
 					n_I2C_SCLK = 1'd0;
 					n_I2C_SDAT = 1'd0;
 					n_cmd = cmd;
+					n_ack = 1'b0;
 				end else begin
 					n_state = SEND;
 					n_counter = counter +1;
 					n_I2C_SDAT = cmd[167];
 					n_cmd = {cmd[166:0], 1'b0};
+					n_ack = 1'b1;
 				end
 			end 
 		end
@@ -108,6 +119,7 @@ always_comb begin
 			n_I2C_SDAT = 1'b0;
 			n_cmd = cmd;
 			n_done = 1'b0;
+			n_ack = 1'b0;
 		end
 
 		//END
@@ -118,6 +130,7 @@ always_comb begin
 			n_I2C_SDAT = 1'b1;
 			n_cmd = cmd;
 			n_done = 1'b1;
+			n_ack = 1'b0;
 		end
 	endcase
 end
@@ -130,6 +143,7 @@ always_ff @(posedge clk or negedge rst) begin
 		_I2C_SDAT <= 1'b1;
 		cmd <= {cmd1, cmd2, cmd3, cmd4, cmd5, cmd6, cmd7};
 		done <= 1'b0;
+		ack <= 1'b0;
 	end else begin
 		state <= n_state;
 		counter <= n_counter;
@@ -137,6 +151,7 @@ always_ff @(posedge clk or negedge rst) begin
 		_I2C_SDAT <= n_I2C_SDAT;
 		cmd <= n_cmd;
 		done <= n_done;
+		ack <= n_ack;
 	end
 end
 
