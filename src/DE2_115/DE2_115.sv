@@ -142,7 +142,8 @@ module DE2_115(
 
 	//I2C
 	wire i2c_done;
-	I2C i2c(.clk(clk_100k), .rst(SW[0]), .I2C_SCLK(I2C_SCLK), .I2C_SDAT(I2C_SDAT), .done(i2c_done));
+	wire [2:0] state;
+	I2Cinitialize i2c(.i_clk(clk_100k), .i_start(state == 3'b101), .i_rst(~SW[0]), .o_scl(I2C_SCLK), .o_finished(I2C_down), .o_sda(I2C_SDAT));
 
 	//Debounce
 	wire playRecord, fast, slow, stop;
@@ -157,5 +158,5 @@ module DE2_115(
 		.SRAM_WE_N  (SRAM_WE_N), .SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), 
 		.AUD_BCLK   (AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .HEX0(HEX0), .HEX1(HEX1), 
 		.HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5), .HEX6(HEX6), .HEX7(HEX7), .LEDG(LEDG), .LEDR(LEDR), .LCD_BLON(LCD_BLON), 
-		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW));
+		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW), .o_state(state));
 endmodule

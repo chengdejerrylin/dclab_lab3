@@ -50,7 +50,10 @@ module Top(
 	output LCD_EN,
 	output LCD_ON,
 	output LCD_RS,
-	output LCD_RW
+	output LCD_RW,
+
+	//state
+	output o_state
 );
 	//state
 	parameter INIT          = 3'b101;
@@ -99,6 +102,8 @@ module Top(
 		end
 	end
 	assign n_debug_valid = debug_valid | AUD_ADCLRCK;
+
+	assign o_state = state;
 
 	assign LEDG = {5'h1f, sram_end, debug_valid, play_valid, dsp_request_data};
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
