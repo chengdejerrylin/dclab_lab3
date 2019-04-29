@@ -116,7 +116,7 @@ module SRAM(
             w_out_signal_valid = out_signal_valid;
             w_out_start_addr = r_out_start_addr;
 
-            if( top_state[2] == 1'b1 & top_state != 3'b101 & w_in_addr == 20'b1 ) begin   //write full
+            if( top_state[2] == 1'b1 & top_state != 3'b101 & in_addr == 20'b1 ) begin   //write full
                 w_full = 1'b1;
             end
             else begin
@@ -210,7 +210,7 @@ module SRAM(
             w_in_addr = in_addr;
             w_in_start_addr = r_in_start_addr;
 
-            if( top_state[2] == 1'b0 & w_in_addr == w_out_addr & w_in_addr != 20'b0 & w_out_addr != 20'b0) begin   //read full
+            if( top_state[2] == 1'b0 & in_addr == w_out_addr & in_addr != 20'b0 & out_addr != 20'b0) begin   //read full
                 w_full = 1'b1;
             end
             else begin
