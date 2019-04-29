@@ -60,7 +60,7 @@ module ADC (
 	
 	end
 
-	always_ff @(negedge clk or negedge rst_n) begin
+	always_ff @(posedge clk or negedge rst_n) begin
 		if(~rst_n) begin
 			state <= INIT;
 			counter <= 4'd0;
@@ -167,7 +167,7 @@ module DAC (
 		endcase
 	end
 
-	always_ff @(negedge clk or negedge rst_n) begin
+	always_ff @(posedge clk or negedge rst_n) begin
 		if(~rst_n) begin
 			state <= INIT;
 			counter <= 4'd0;
