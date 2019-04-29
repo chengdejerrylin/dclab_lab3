@@ -245,7 +245,7 @@ always_comb begin
 			n_prepare_data = prepare_data;
 			n_dataReady = ~dac_take_data;
 			n_request_play_data = dac_take_data;
-			n_haveRequested = 1'd0;
+			n_haveRequested = 1'd1;
 		end else begin
 			n_prepare_data = play_data;
 			n_dataReady = play_valid;
