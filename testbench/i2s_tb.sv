@@ -61,7 +61,7 @@ end
 
 always_comb begin
 	n_play_data = request_play_data ? play_data + 16'd1; : play_data;
-	n_play_data = request_play_data;
+	n_play_valid = request_play_data;
 
 end
 
