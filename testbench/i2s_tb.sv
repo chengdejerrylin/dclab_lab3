@@ -7,7 +7,7 @@ module WN8731 (
 	inout AUD_ADCLRCK,
 	input AUD_DACDAT,
 	output reg AUD_DACLRCK,
-	inout AUD_BLCK,
+	inout AUD_BCLK,
 	input AUD_XCK
 );
 
@@ -29,16 +29,16 @@ reg clk, rst;
 
 //WN8731
 WN8731 chip(.AUD_ADCDAT (AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_DACDAT (AUD_DACDAT), 
-			.AUD_DACLRCK(AUD_DACLRCK), .AUD_BLCK   (AUD_BLCK), .AUD_XCK    (AUD_XCK));
+			.AUD_DACLRCK(AUD_DACLRCK), .AUD_BCLK   (AUD_BCLK), .AUD_XCK    (AUD_XCK));
 
 wire [2:0] top_state;
 wire [15:0] record_data;
 wire record_valid, request_play_data;
 reg [15:0] play_data, n_play_data;
-reg play_valid, n_play_data;
+reg play_valid, n_play_valid;
 
-I2S u_i2s(.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_LRCK), .AUD_BCLK(AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), 
-	.AUD_DACLRCK(AUD_LRCK), .AUD_XCK(AUD_XCK), .top_state(top_state), .record_data(record_data), .record_valid(record_valid), 
+I2S u_i2s(.clk(clk), .rst(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), 
+	.AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .top_state(top_state), .record_data(record_data), .record_valid(record_valid), 
 	.request_play_data(request_play_data), .play_data(play_data), .play_valid(play_valid));
 
 always #(`CYCLE/2) clk = ~clk;
@@ -60,7 +60,7 @@ always_ff @(posedge clk or negedge rst) begin
 end
 
 always_comb begin
-	n_play_data = request_play_data ? play_data + 16'd1; : play_data;
+	n_play_data = request_play_data ? play_data + 16'd1 : play_data;
 	n_play_valid = request_play_data;
 
 end
