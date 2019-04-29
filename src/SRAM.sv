@@ -44,7 +44,7 @@ module SRAM(
     assign SRAM_Q = r_SRAM_DQ;
 
 	always_comb begin
-        if( top_state[2] == 1 & top_state != 3'b101 ) begin //record, write
+        if( top_state[2] == 1'b1 & top_state != 3'b101 & in_addr != 1'b0) begin //record, write
             if( in_signal_valid ) w_in_start_addr = in_addr; //remember the addr when first recording
             else w_in_start_addr = r_in_start_addr;
 
@@ -116,7 +116,7 @@ module SRAM(
             w_out_signal_valid = out_signal_valid;
             w_out_start_addr = r_out_start_addr;
 
-            if( top_state[2] == 1 & top_state != 3'b101 & w_in_addr == 20'b1 ) begin   //write full
+            if( top_state[2] == 1'b1 & top_state != 3'b101 & w_in_addr == 20'b1 ) begin   //write full
                 w_full = 1'b1;
             end
             else begin
@@ -124,7 +124,7 @@ module SRAM(
                 w_full = 1'b0;
             end
         end
-        else if( top_state[2] == 0 ) begin //play, read
+        else if( top_state[2] == 1'b0 ) begin //play, read
             if( request_out_signal ) w_out_start_addr = out_addr; //remember the addr when first playing
             else w_out_start_addr = r_out_start_addr;
 
@@ -210,7 +210,7 @@ module SRAM(
             w_in_addr = in_addr;
             w_in_start_addr = r_in_start_addr;
 
-            if( top_state[2] == 0 & w_in_addr == w_out_addr & w_in_addr != 0 & w_out_addr != 0) begin   //read full
+            if( top_state[2] == 1'b0 & w_in_addr == w_out_addr & w_in_addr != 1'b0 & w_out_addr != 1'b0) begin   //read full
                 w_full = 1'b1;
             end
             else begin
