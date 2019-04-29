@@ -29,6 +29,7 @@ localparam START = 3'd1;
 localparam SEND = 3'd2;
 localparam ACT = 3'd3;
 localparam END = 3'd4;
+localparam PRE_END = 3'd5;
 reg [2:0] state, n_state;
 reg [7:0] counter, n_counter;
 
@@ -86,9 +87,9 @@ always_comb begin
 			if(I2C_SCLK & (~I2C_SDAT) ) begin
 				if(counter == 8'd168) begin
 					n_done = 1'd0;
-					n_state = END;
+					n_state = PRE_END;
 					n_counter = counter;
-					n_I2C_SCLK = 1'd1;
+					n_I2C_SCLK = 1'd0;
 					n_I2C_SDAT = 1'd0;
 					n_cmd = cmd;
 				end else begin
@@ -98,6 +99,15 @@ always_comb begin
 					n_cmd = {cmd[166:0], 1'b0};
 				end
 			end 
+		end
+
+		PRE_END : begin
+			n_state = END;
+			n_counter = 8'd0;
+			n_I2C_SCLK = 1'b1;
+			n_I2C_SDAT = 1'b0;
+			n_cmd = cmd;
+			n_done = 1'b0;
 		end
 
 		//END

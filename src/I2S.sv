@@ -189,6 +189,9 @@ module DAC (
 endmodule //DAC
 
 module I2S (
+	output debug_w,
+
+	//clock
 	input clk,
 	input rst,
 
@@ -212,6 +215,9 @@ module I2S (
 	input [15:0] play_data,
 	input play_valid
 );
+//debug
+assign debug_w = AUD_ADCLRCK;
+
 //input output
 reg n_record_valid, n_request_play_data;
 
