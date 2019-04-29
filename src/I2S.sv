@@ -1,7 +1,4 @@
 module ADC (
-	//debug
-	output [1:0] debug_w,
-
 	input clk,    // Clock
 	input rst_n,  // Asynchronous reset active low
 
@@ -26,9 +23,6 @@ module ADC (
 
 	reg [1:0] state, n_state;
 	reg [3:0] counter, n_counter;
-
-	//debug
-	assign debug_w = state;
 
 	always_comb begin
 		case (state)
@@ -66,7 +60,7 @@ module ADC (
 	
 	end
 
-	always_ff @(posedge clk or negedge rst_n) begin
+	always_ff @(negedge clk or negedge rst_n) begin
 		if(~rst_n) begin
 			state <= INIT;
 			counter <= 4'd0;
@@ -173,7 +167,7 @@ module DAC (
 		endcase
 	end
 
-	always_ff @(posedge clk or negedge rst_n) begin
+	always_ff @(negedge clk or negedge rst_n) begin
 		if(~rst_n) begin
 			state <= INIT;
 			counter <= 4'd0;
@@ -195,9 +189,6 @@ module DAC (
 endmodule //DAC
 
 module I2S (
-	output [1:0] debug_w,
-
-	//clock
 	input clk,
 	input rst,
 
@@ -221,21 +212,21 @@ module I2S (
 	input [15:0] play_data,
 	input play_valid
 );
-
 //input output
 reg n_record_valid, n_request_play_data;
+reg haveRequested, n_haveRequested;
 
 //ADC
 reg subStart, adc_valid;
 reg [15:0] adc_data, n_adc_data;
-ADC adc(.clk(clk), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
+ADC adc(.clk(AUD_BCLK), .rst_n(rst), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), .start(subStart), 
 	.record_data (n_adc_data), .record_valid(n_adc_valid));
 
 //DAC
 reg [15:0] prepare_data, n_prepare_data;
 reg dataReady, n_dataReady;
 reg dac_take_data, n_dac_take_data;
-DAC dac(.clk(clk), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), 
+DAC dac(.clk(AUD_BCLK), .rst_n(rst), .AUD_DACDAT (AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), 
 	.start(subStart), .play_data(prepare_data), .take_data(n_dac_take_data));
 
 //IO
@@ -254,15 +245,18 @@ always_comb begin
 			n_prepare_data = prepare_data;
 			n_dataReady = ~dac_take_data;
 			n_request_play_data = dac_take_data;
+			n_haveRequested = 1'd1;
 		end else begin
 			n_prepare_data = play_data;
 			n_dataReady = play_valid;
-			n_request_play_data = ~play_valid;
+			n_request_play_data = ~haveRequested;
+			n_haveRequested = 1'd1;
 		end
 	end else begin
 		n_prepare_data = 16'd0;
 		n_dataReady = 1'd0;
 		n_request_play_data = 1'd0;
+		n_haveRequested = 1'd0;
 	end
 
 end
@@ -273,6 +267,7 @@ always_ff @(posedge clk or negedge rst) begin
 		record_data <= 16'd0;
 		record_valid <= 1'd0;
 		request_play_data <= 1'd0;
+		haveRequested <= 1'd0;
 
 		//ADC
 		subStart <= 1'd0;
@@ -281,13 +276,14 @@ always_ff @(posedge clk or negedge rst) begin
 
 		//DAC
 		prepare_data <= 16'd0;
-		dataReady <= 1'd1;
+		dataReady <= 1'd0;
 		dac_take_data <= 1'd0;
 	end else begin
 		//IO
 		record_data <= adc_data;
 		record_valid <= n_record_valid;
 		request_play_data <= n_request_play_data;
+		haveRequested <= n_haveRequested;
 
 		//ADC
 		subStart <= (top_state != 3'b101);
