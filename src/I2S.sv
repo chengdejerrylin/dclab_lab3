@@ -214,6 +214,7 @@ module I2S (
 );
 //input output
 reg n_record_valid, n_request_play_data;
+reg haveRequested, n_haveRequested;
 
 //ADC
 reg subStart, adc_valid;
@@ -244,15 +245,18 @@ always_comb begin
 			n_prepare_data = prepare_data;
 			n_dataReady = ~dac_take_data;
 			n_request_play_data = dac_take_data;
+			n_haveRequested = 1'd1;
 		end else begin
 			n_prepare_data = play_data;
 			n_dataReady = play_valid;
-			n_request_play_data = ~play_valid;
+			n_request_play_data = ~haveRequested;
+			n_haveRequested = 1'd1;
 		end
 	end else begin
 		n_prepare_data = 16'd0;
 		n_dataReady = 1'd0;
 		n_request_play_data = 1'd0;
+		n_haveRequested = 1'd0;
 	end
 
 end
@@ -263,6 +267,7 @@ always_ff @(posedge clk or negedge rst) begin
 		record_data <= 16'd0;
 		record_valid <= 1'd0;
 		request_play_data <= 1'd0;
+		haveRequested <= 1'd0;
 
 		//ADC
 		subStart <= 1'd0;
@@ -271,13 +276,14 @@ always_ff @(posedge clk or negedge rst) begin
 
 		//DAC
 		prepare_data <= 16'd0;
-		dataReady <= 1'd1;
+		dataReady <= 1'd0;
 		dac_take_data <= 1'd0;
 	end else begin
 		//IO
 		record_data <= adc_data;
 		record_valid <= n_record_valid;
 		request_play_data <= n_request_play_data;
+		haveRequested <= n_haveRequested;
 
 		//ADC
 		subStart <= (top_state != 3'b101);
