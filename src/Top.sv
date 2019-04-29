@@ -50,7 +50,10 @@ module Top(
 	output LCD_EN,
 	output LCD_ON,
 	output LCD_RS,
-	output LCD_RW
+	output LCD_RW,
+
+	//I2C
+	output o_state
 );
 	//state
 	parameter INIT          = 3'b101;
@@ -63,6 +66,7 @@ module Top(
 	reg [2:0] state, n_state;
 	reg [3:0] play_speed, n_play_speed;
 	reg _mode, _oneSlot;
+	assign o_state = state;
 
 	//sram controller
 	wire [19:0] play_addr, record_addr;
