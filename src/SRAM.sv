@@ -146,7 +146,7 @@ module SRAM(
                     w_SRAM_LB_N = 1'bx;
                 end
 
-                //PLAY_RECORD
+                //PLAY_PLAY
                 2'b10: begin  
                     w_out_signal_valid = 1'b1;
                     w_out_signal = SRAM_DQ;
@@ -210,7 +210,7 @@ module SRAM(
             w_in_addr = in_addr;
             w_in_start_addr = r_in_start_addr;
 
-            if( top_state[2] == 0 & w_in_addr == w_out_addr ) begin   //read full
+            if( top_state[2] == 0 & w_in_addr == w_out_addr & w_in_addr != 0 & w_out_addr != 0) begin   //read full
                 w_full = 1'b1;
             end
             else begin
@@ -224,7 +224,7 @@ module SRAM(
             w_out_start_addr = r_out_start_addr;
             w_addr_follow = r_addr_follow;
 
-            //origin
+            //original
             w_out_signal = 16'b0;
             w_in_addr = in_addr;
             w_out_addr = out_addr;
