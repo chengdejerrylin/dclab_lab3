@@ -2,6 +2,27 @@
 `define CYCLE 20
 `define terminate 500
 
+module WN8731 (
+	output reg AUD_ADCDAT,
+	inout AUD_ADCLRCK,
+	input AUD_DACDAT,
+	output reg AUD_DACLRCK,
+	inout AUD_BLCK,
+	input AUD_XCK
+);
+
+assign AUD_BLCK = ~AUD_XCK;
+
+always #(`CYCLE) AUD_ADCDAT = ~AUD_ADCDAT;
+always #(20 * `CYCLE) AUD_DACLRCK = ~AUD_DACLRCK;
+
+initial begin
+	AUD_DACLRCK = 1'd0;
+	AUD_ADCDAT = 1'd1;
+end
+
+endmodule //WN8731
+
 module testfiture ();
 
 reg clk, rst;
