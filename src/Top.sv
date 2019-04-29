@@ -87,7 +87,12 @@ module Top(
 		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
 		.request_data(dsp_request_data), .play_speed(play_speed));
 
-	ledGController ledG (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), .LEDG(LEDG), .top_state(state));
+	//volumn
+	wire volRed;
+	volumnLed volLed (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), 
+		.LEDG(LEDG), .top_state(state), .LEDR(volRed));
+
+	assign LEDR = {17'd0, volRed};
 
 	//seven segment
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
