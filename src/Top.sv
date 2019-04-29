@@ -96,7 +96,7 @@ module Top(
 	volumnLed volLed (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), 
 		.LEDG(LEDG), .top_state(state), .LEDR(volRed));
 
-	assign LEDR = {17'd0, volRed};
+	assign LEDR = {record_addr[16:0], volRed};
 
 	//seven segment
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
