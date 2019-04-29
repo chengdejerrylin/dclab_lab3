@@ -247,7 +247,7 @@ always_comb begin
 		end else begin
 			n_prepare_data = play_data;
 			n_dataReady = play_valid;
-			n_request_play_data = ~play_valid;
+			n_request_play_data = 1'd0;
 		end
 	end else begin
 		n_prepare_data = 16'd0;
