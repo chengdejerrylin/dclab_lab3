@@ -9,7 +9,8 @@ module SRAM(
     input             in_signal_valid,  
 	output reg        out_signal_valid, 
     output reg        full,             
-    input      [2:0]  top_state,        //
+    input      [2:0]  top_state,
+    input             reverse,
 
     //SRAM
     output reg [19:0] SRAM_ADDR,
@@ -39,16 +40,22 @@ module SRAM(
     logic isRead, n_isRead;
     logic [19:0] record_ptr, n_record_ptr;
 
-    assign n_full = (top_state[2]) ? (in_addr == 20'hfffff) : (out_addr == in_addr);
+    always_comb begin
+        if (top_state[2]) n_full = (in_addr == 20'hfffff);
+        else n_full = reverse ? (out_addr == 20'd0) : (out_addr == in_addr);
+    end
 
     //out_addr
     always_comb begin
-        if (top_state[2]) n_out_addr = 20'd0;
+        if (top_state[2]) n_out_addr = reverse ? in_addr : 20'd0;
         else begin
             case (top_state[1:0])
-                2'b00 : n_out_addr = 20'd0;
-                2'b01 : n_out_addr = 20'd0;
-                2'b10 : n_out_addr = request_out_signal ? out_addr + 20'd1 : out_addr;
+                2'b00 : n_out_addr = reverse ? in_addr : 20'd0;
+                2'b01 : n_out_addr = reverse ? in_addr : 20'd0;
+                2'b10 : begin
+                    if (request_out_signal) n_out_addr = reverse ? out_addr - 20'd1 : out_addr + 20'd1;
+                    else n_out_addr = out_addr;
+                end
                 2'b11 : n_out_addr = out_addr;
             endcase // top_state[1:0]
         end

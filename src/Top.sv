@@ -12,6 +12,7 @@ module Top(
 	input slow,
 	input oneSlot,
 	input mode,
+	input reverse,
 
 	//SRAM
     output [19:0] SRAM_ADDR,
@@ -65,7 +66,7 @@ module Top(
 	parameter RECORD_PAUSE  = 3'b111;
 	reg [2:0] state, n_state;
 	reg [3:0] play_speed, n_play_speed;
-	reg _mode, _oneSlot;
+	reg _mode, _oneSlot, _reverse;
 
 	//sram controller
 	wire [19:0] play_addr, record_addr;
@@ -75,7 +76,7 @@ module Top(
 	SRAM sramController(.i_clk(clk), .i_rst(rst), .in_signal(record_data), .out_signal(play_data), .in_addr(record_addr), 
 		.out_addr(play_addr), .in_signal_valid(record_valid), .out_signal_valid(play_valid), .full(sram_end), .top_state(state),
 		.SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), .SRAM_WE_N(SRAM_WE_N), 
-		.SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .request_out_signal(dsp_request_data));
+		.SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .request_out_signal(dsp_request_data), .reverse(_reverse));
 
 	//I2S
 	wire I2S_request_data, dsp_play_valid;
@@ -193,11 +194,13 @@ module Top(
 			 play_speed <= 4'd0;
 			 _mode <= 1'd1;
 			 _oneSlot <= 1'd0;
+			 _reverse <= 1'd0;
 		end else begin
 			 state <= n_state;
 			 play_speed <= n_play_speed;
 			 _mode <= mode;
 			 _oneSlot <= oneSlot;
+			 _reverse <= reverse;
 		end
 	end
 
