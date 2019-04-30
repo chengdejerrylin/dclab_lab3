@@ -8,14 +8,14 @@ module DSP_LOGIC(
 	input slot_way, 
 	input [3:0] play_speed, 
 
-	output reg request_data,
-	output reg signed [15:0] data_out, 
-	output reg valid 
+	output request_data,
+	output [15:0] data_out, 
+	output valid 
 );
 
-	reg request_data_n;
-	reg signed [15:0] data_out_n;
-	reg valid_n;
+	reg request_data, request_data_n;
+	reg signed [15:0] data_out, data_out_n;
+	reg valid, valid_n;
 
 	reg signed [15:0] store_1, store_2;
 	reg signed [15:0] store_1_n, store_2_n;
@@ -190,7 +190,7 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.5 + $signed (store_2) * 0.5;
+								data_out_n = $signed (store_1) / 2 + $signed (store_2) / 2;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
@@ -241,13 +241,13 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.66 + $signed (store_2) * 0.33;
+								data_out_n = $signed (store_1) * 2 / 3 + $signed (store_2) / 3;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.33 + $signed (store_2) * 0.66;
+								data_out_n = $signed (store_1) / 3 + $signed (store_2) * 2 / 3;
 								record_n = record + 1;
 							end
 							if (record == 6) begin
@@ -299,19 +299,19 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.75 + $signed (store_2) * 0.25;
+								data_out_n = $signed (store_1) * 3 / 4 + $signed (store_2) / 4;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.5 + $signed (store_2) * 0.5;
+								data_out_n = $signed (store_1) / 2 + $signed (store_2) / 2;
 								record_n = record + 1;
 							end
 							if (record == 6) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.75 + $signed (store_2) * 0.25;
+								data_out_n = $signed (store_1) * 3 / 4 + $signed (store_2) / 4;
 								record_n = record + 1;
 							end
 							if (record == 7) begin
@@ -362,25 +362,25 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.8 + $signed (store_2) * 0.2;
+								data_out_n = $signed (store_1) * 4 / 5 + $signed (store_2) / 5;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.6 + $signed (store_2) * 0.4;
+								data_out_n = $signed (store_1) * 3 / 5 + $signed (store_2) * 2 / 5;
 								record_n = record + 1;
 							end
 							if (record == 6) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.4 + $signed (store_2) * 0.6;
+								data_out_n = $signed (store_1) * 2 / 5 + $signed (store_2) * 3 / 5;
 								record_n = record + 1;
 							end
 							if (record == 7) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.8 + $signed (store_2) * 0.2;
+								data_out_n = $signed (store_1) / 5 + $signed (store_2) * 4 / 5;
 								record_n = record + 1;
 							end
 							if (record == 8) begin
@@ -431,31 +431,31 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.84 + $signed (store_2) * 0.16;
+								data_out_n = $signed (store_1) * 5 / 6 + $signed (store_2) / 6;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.68 + $signed (store_2) * 0.32;
+								data_out_n = $signed (store_1) * 4 / 6 + $signed (store_2) * 2 / 6;
 								record_n = record + 1;
 							end
 							if (record == 6) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.52 + $signed (store_2) * 0.48;
+								data_out_n = $signed (store_1) * 3 / 6 + $signed (store_2) * 3 / 6;
 								record_n = record + 1;
 							end
 							if (record == 7) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.32 + $signed (store_2) * 0.68;
+								data_out_n = $signed (store_1) * 2 / 6 + $signed (store_2) * 4 / 6;
 								record_n = record + 1;								
 							end
 							if (record == 8) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.16 + $signed (store_2) * 0.84;
+								data_out_n = $signed (store_1) / 6 + $signed (store_2) * 5 / 6;
 								record_n = record + 1;								
 							end
 							if (record == 9) begin
@@ -506,37 +506,37 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.86 + $signed (store_2) * 0.14;
+								data_out_n = $signed (store_1) * 6 / 7 + $signed (store_2) / 7;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.72 + $signed (store_2) * 0.28;
+								data_out_n = $signed (store_1) * 5 / 7 + $signed (store_2) * 2 / 7;
 								record_n = record + 1;
 							end
 							if (record == 6) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.58 + $signed (store_2) * 0.42;
+								data_out_n = $signed (store_1) * 4 / 7 + $signed (store_2) * 3 / 7;
 								record_n = record + 1;
 							end
 							if (record == 7) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.44 + $signed (store_2) * 0.56;
+								data_out_n = $signed (store_1) * 3 / 7 + $signed (store_2) * 4 / 7;
 								record_n = record + 1;								
 							end
 							if (record == 8) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.28 + $signed (store_2) * 0.72;
+								data_out_n = $signed (store_1) * 2 / 7 + $signed (store_2) * 5 / 7;
 								record_n = record + 1;								
 							end
 							if (record == 9) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.14 + $signed (store_2) * 0.86;
+								data_out_n = $signed (store_1) / 7 + $signed (store_2) * 6 / 7;
 								record_n = record + 1;								
 							end
 							if (record == 10) begin
@@ -586,43 +586,43 @@ module DSP_LOGIC(
 							if (record == 4) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.875 + $signed (store_2) * 0.125;
+								data_out_n = $signed (store_1) * 7 / 8 + $signed (store_2) / 8;
 								record_n = record + 1;
 							end
 							if (record == 5) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.75 + $signed (store_2) * 0.25;
+								data_out_n = $signed (store_1) * 6 / 8 + $signed (store_2) * 2 / 8;
 								record_n = record + 1;
 							end
 							if (record == 6) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.625 + $signed (store_2) * 0.375;
+								data_out_n = $signed (store_1) * 5 / 8 + $signed (store_2) * 3 / 8;
 								record_n = record + 1;
 							end
 							if (record == 7) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.5 + $signed (store_2) * 0.5;
+								data_out_n = $signed (store_1) * 4 / 8 + $signed (store_2) * 4 / 8;
 								record_n = record + 1;								
 							end
 							if (record == 8) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.375 + $signed (store_2) * 0.625;
+								data_out_n = $signed (store_1) * 3 / 8 + $signed (store_2) * 5 / 8;
 								record_n = record + 1;								
 							end
 							if (record == 9) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.25 + $signed (store_2) * 0.75;
+								data_out_n = $signed (store_1) * 2 / 8 + $signed (store_2) * 6 / 8;
 								record_n = record + 1;								
 							end
 							if (record == 10) begin
 								request_data_n = 0;
 								valid_n = 1;
-								data_out_n = $signed (store_1) * 0.125 + $signed (store_2) * 0.875;
+								data_out_n = $signed (store_1) / 8 + $signed (store_2) * 7 / 8;
 								record_n = record + 1;								
 							end
 							if (record == 11) begin
