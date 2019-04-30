@@ -159,7 +159,7 @@ module Top(
 			case(state[1:0] )
 				2'b00 : begin // stop
 					n_state = (_mode != state[2]) ? {_mode, 2'b00} :
-							  (playRecord & (~sram_end))? {state[2], 2'b10} : 
+							  (playRecord )? {state[2], 2'b10} : 
 							  state;
 				end
 
