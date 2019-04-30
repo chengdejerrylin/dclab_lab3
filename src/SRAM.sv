@@ -100,7 +100,7 @@ module SRAM(
             n_isRead = 1'd0;
             n_SRAM_CE_N = 1'd1;
             n_SRAM_WE_N = 1'd0;
-            n_SRAM_ADDR = 20'd0;
+            n_SRAM_ADDR = SRAM_ADDR;
             n_SRAM_DQ = 16'd0;
             n_SRAM_DQ_z = 1'd1;
         end else if (in_signal_valid) begin
@@ -121,7 +121,7 @@ module SRAM(
             n_isRead = 1'd0;
             n_SRAM_CE_N = 1'd1;
             n_SRAM_WE_N = 1'd0;
-            n_SRAM_ADDR = 20'd0;
+            n_SRAM_ADDR = SRAM_ADDR;
             n_SRAM_DQ = 16'd0;
             n_SRAM_DQ_z = 1'd1;
         end

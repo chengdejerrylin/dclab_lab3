@@ -94,30 +94,36 @@ module Top(
 	//volumn
 	wire volRed;
 	volumnLed volLed (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), 
-		.LEDG(LEDG), .top_state(state), .LEDR(volRed));
+		.LEDG(LEDG), .top_state(state), .LEDR(LEDR));
 
-	//debug
-	logic [16:0] debug, n_debug;
-	always_ff @(posedge clk or negedge rst) begin
-		if(~rst) begin
-			debug <= 17'd0;
-		end else begin
-			debug <= n_debug;
-		end
-	end
-	assign n_debug = debug | {13'd0, I2S_request_data, dsp_request_data, play_valid, dsp_play_valid};
+	
 
-	assign LEDR = {debug[14:0], I2S_request_data, sram_end, volRed};
+	SevenHexDecoder_State HexState(
+	  .i_state(state),
+	  .i_speed(play_speed),
+	  .o_seven_5(HEX5),
+	  .o_seven_4(HEX4), 
+	  .o_seven_3(HEX3),
+	  .o_seven_2(HEX2),
+	  .o_seven_1(HEX1),
+	  .o_seven_0(HEX0)
+	);  
+
+	SevenHexDecoder Hex(
+	   .i_addr(SRAM_ADDR), // SRAM address
+		.o_seven_ten(HEX7),
+		.o_seven_one(HEX6)
+	);
 
 	//seven segment
-	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
-	assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
-	assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
-	assign HEX4 = play_speed[0] ? 7'b1111001 : 7'b1000000;
-	assign HEX3 = I2C_down ? 7'b1111001 : 7'b1000000;
-	assign HEX2 = state[2] ? 7'b1111001 : 7'b1000000;
-	assign HEX1 = state[1] ? 7'b1111001 : 7'b1000000;
-	assign HEX0 = state[0] ? 7'b1111001 : 7'b1000000;
+	// assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
+	// assign HEX6 = play_speed[2] ? 7'b1111001 : 7'b1000000;
+	// assign HEX5 = play_speed[1] ? 7'b1111001 : 7'b1000000;
+	// assign HEX4 = play_speed[0] ? 7'b1111001 : 7'b1000000;
+	// assign HEX3 = I2C_down ? 7'b1111001 : 7'b1000000;
+	// assign HEX2 = state[2] ? 7'b1111001 : 7'b1000000;
+	// assign HEX1 = state[1] ? 7'b1111001 : 7'b1000000;
+	// assign HEX0 = state[0] ? 7'b1111001 : 7'b1000000;
 
 	task fastSpeed;
 		begin
