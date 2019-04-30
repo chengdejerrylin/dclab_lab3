@@ -8,14 +8,14 @@ module DSP_LOGIC(
 	input slot_way, 
 	input [3:0] play_speed, 
 
-	output reg request_data,
-	output reg signed [15:0] data_out, 
-	output reg valid 
+	output request_data,
+	output [15:0] data_out, 
+	output valid 
 );
 
-	reg request_data_n;
-	reg signed [15:0] data_out_n;
-	reg valid_n;
+	reg request_data, request_data_n;
+	reg signed [15:0] data_out, data_out_n;
+	reg valid, valid_n;
 
 	reg signed [15:0] store_1, store_2;
 	reg signed [15:0] store_1_n, store_2_n;
