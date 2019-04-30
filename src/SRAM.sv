@@ -41,7 +41,7 @@ module SRAM(
     logic [19:0] record_ptr, n_record_ptr;
 
     always_comb begin
-        if (top_state[2]) n_full = (in_addr == 20'hfffff);
+        if (top_state[2]) n_full =  (record_ptr == 20'hfffff);
         else n_full = reverse ? (out_addr == 20'd0) : (out_addr == in_addr);
     end
 
