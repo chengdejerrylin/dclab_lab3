@@ -226,7 +226,7 @@ module DSP_LOGIC(
 							request_data_n = 0;
 							valid_n = 1;
 							data_out_n = $signed (store_1) / 2 + $signed (store_2) / 2;
-							record_n = record + 1;
+							record_n = 1;
 						end
 					end					 						
 				end
@@ -272,6 +272,12 @@ module DSP_LOGIC(
 							request_data_n = 0;
 							valid_n = 1;
 							data_out_n = $signed (store_1) / 2 + $signed (store_2) / 2;
+							record_n = 1;
+						end
+						if (record == 5) begin
+							request_data_n = 0;
+							valid_n = 1;
+							data_out_n = store_2;
 							record_n = 1;
 						end
 					end					
