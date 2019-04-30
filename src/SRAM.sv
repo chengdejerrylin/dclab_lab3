@@ -53,7 +53,7 @@ module SRAM(
                 2'b00 : n_out_addr = reverse ? in_addr : 20'd0;
                 2'b01 : n_out_addr = reverse ? in_addr : 20'd0;
                 2'b10 : begin
-                    if (request_out_signal) n_out_addr = reverse ? out_addr - 20'd1 : out_addr + 20'd1;
+                    if (request_out_signal & (~isRead) & (~out_signal_valid)) n_out_addr = reverse ? out_addr - 20'd1 : out_addr + 20'd1;
                     else n_out_addr = out_addr;
                 end
                 2'b11 : n_out_addr = out_addr;
@@ -110,7 +110,7 @@ module SRAM(
             n_SRAM_ADDR = in_addr;
             n_SRAM_DQ = in_signal;
             n_SRAM_DQ_z = 1'd0;
-        end else if (request_out_signal) begin
+        end else if (request_out_signal & (~isRead) & (~out_signal_valid)) begin
             n_isRead = 1'd1;
             n_SRAM_CE_N = 1'd0;
             n_SRAM_WE_N = 1'd1;

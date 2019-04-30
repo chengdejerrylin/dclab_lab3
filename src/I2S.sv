@@ -249,7 +249,7 @@ always_comb begin
 		end else begin
 			n_prepare_data = play_data;
 			n_dataReady = play_valid;
-			n_request_play_data = ~haveRequested;
+			n_request_play_data = ~play_valid;
 			n_haveRequested = 1'd1;
 		end
 	end else begin

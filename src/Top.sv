@@ -96,7 +96,18 @@ module Top(
 	volumnLed volLed (.clk(clk), .rst(rst), .record_valid(record_valid), .record_data (record_data), 
 		.LEDG(LEDG), .top_state(state), .LEDR(volRed));
 
-	assign LEDR = {17'd0, volRed};
+	//debug
+	logic [16:0] debug, n_debug;
+	always_ff @(posedge clk or negedge rst) begin
+		if(~rst) begin
+			debug <= 17'd0;
+		end else begin
+			debug <= n_debug;
+		end
+	end
+	assign n_debug = debug | {13'd0, I2S_request_data, dsp_request_data, play_valid, dsp_play_valid};
+
+	assign LEDR = {debug[14:0], I2S_request_data, sram_end, volRed};
 
 	//seven segment
 	assign HEX7 = play_speed[3] ? 7'b1111001 : 7'b1000000;
