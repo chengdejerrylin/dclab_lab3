@@ -1,5 +1,5 @@
 Fitter report for DE2_115
-Tue Apr 30 12:44:36 2019
+Tue Apr 30 13:01:10 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -72,15 +72,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Apr 30 12:44:36 2019       ;
+; Fitter Status                      ; Successful - Tue Apr 30 13:01:09 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 448 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 367 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 452 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 369 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 341 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 341                                         ;
 ; Total pins                         ; 518 / 529 ( 98 % )                          ;
@@ -157,12 +157,12 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.50        ;
+; Average used               ; 1.40        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  16.7%      ;
+;     Processors 2-4         ;  13.3%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -635,8 +635,8 @@ agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1857 ) ; 0.00 % ( 0 / 1857 )        ; 0.00 % ( 0 / 1857 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1857 ) ; 0.00 % ( 0 / 1857 )        ; 0.00 % ( 0 / 1857 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1859 ) ; 0.00 % ( 0 / 1859 )        ; 0.00 % ( 0 / 1859 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1859 ) ; 0.00 % ( 0 / 1859 )        ; 0.00 % ( 0 / 1859 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -659,7 +659,7 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1846 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1848 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 11 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -675,26 +675,26 @@ The pin-out file can be found in C:/Users/team06/Desktop/dclab_lab3/output_files
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 448 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 107                     ;
-;     -- Register only                        ; 81                      ;
-;     -- Combinational with a register        ; 260                     ;
+; Total logic elements                        ; 452 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 111                     ;
+;     -- Register only                        ; 83                      ;
+;     -- Combinational with a register        ; 258                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 226                     ;
-;     -- 3 input functions                    ; 85                      ;
-;     -- <=2 input functions                  ; 56                      ;
-;     -- Register only                        ; 81                      ;
+;     -- 4 input functions                    ; 222                     ;
+;     -- 3 input functions                    ; 83                      ;
+;     -- <=2 input functions                  ; 64                      ;
+;     -- Register only                        ; 83                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 326                     ;
+;     -- normal mode                          ; 328                     ;
 ;     -- arithmetic mode                      ; 41                      ;
 ;                                             ;                         ;
 ; Total registers*                            ; 341 / 117,053 ( < 1 % ) ;
 ;     -- Dedicated logic registers            ; 341 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 36 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 35 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 518 / 529 ( 98 % )      ;
 ;     -- Clock pins                           ; 7 / 7 ( 100 % )         ;
@@ -712,8 +712,8 @@ The pin-out file can be found in C:/Users/team06/Desktop/dclab_lab3/output_files
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.5% / 0.5% / 0.6%      ;
-; Peak interconnect usage (total/H/V)         ; 3.9% / 3.2% / 6.2%      ;
+; Average interconnect usage (total/H/V)      ; 0.5% / 0.4% / 0.6%      ;
+; Peak interconnect usage (total/H/V)         ; 5.4% / 3.7% / 7.8%      ;
 ; Maximum fan-out                             ; 341                     ;
 ; Highest non-global fan-out                  ; 341                     ;
 ; Total fan-out                               ; 3379                    ;
@@ -730,26 +730,26 @@ The pin-out file can be found in C:/Users/team06/Desktop/dclab_lab3/output_files
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 448 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 107                    ; 0                              ;
-;     -- Register only                        ; 81                     ; 0                              ;
-;     -- Combinational with a register        ; 260                    ; 0                              ;
+; Total logic elements                        ; 452 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 111                    ; 0                              ;
+;     -- Register only                        ; 83                     ; 0                              ;
+;     -- Combinational with a register        ; 258                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 226                    ; 0                              ;
-;     -- 3 input functions                    ; 85                     ; 0                              ;
-;     -- <=2 input functions                  ; 56                     ; 0                              ;
-;     -- Register only                        ; 81                     ; 0                              ;
+;     -- 4 input functions                    ; 222                    ; 0                              ;
+;     -- 3 input functions                    ; 83                     ; 0                              ;
+;     -- <=2 input functions                  ; 64                     ; 0                              ;
+;     -- Register only                        ; 83                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 326                    ; 0                              ;
+;     -- normal mode                          ; 328                    ; 0                              ;
 ;     -- arithmetic mode                      ; 41                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Total registers                             ; 341                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 341 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 36 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 35 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 518                    ; 0                              ;
@@ -767,7 +767,7 @@ The pin-out file can be found in C:/Users/team06/Desktop/dclab_lab3/output_files
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
 ;     -- Total Connections                    ; 3372                   ; 283                            ;
-;     -- Registered Connections               ; 1534                   ; 0                              ;
+;     -- Registered Connections               ; 1528                   ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 280                    ; 276                            ;
@@ -2265,19 +2265,19 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                             ; Library Name ;
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+--------------+
-; |DE2_115                                   ; 448 (0)     ; 341 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 518  ; 0            ; 107 (0)      ; 81 (0)            ; 260 (0)          ; |DE2_115                                                                        ; work         ;
+; |DE2_115                                   ; 452 (0)     ; 341 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 518  ; 0            ; 111 (0)      ; 83 (0)            ; 258 (0)          ; |DE2_115                                                                        ; work         ;
 ;    |Debounce:fast_buttom|                  ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; |DE2_115|Debounce:fast_buttom                                                   ; work         ;
 ;    |Debounce:playRecord_buttom|            ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; |DE2_115|Debounce:playRecord_buttom                                             ; work         ;
 ;    |Debounce:slow_buttom|                  ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; |DE2_115|Debounce:slow_buttom                                                   ; work         ;
 ;    |Debounce:stop_buttom|                  ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; |DE2_115|Debounce:stop_buttom                                                   ; work         ;
-;    |I2Cinitialize:i2c|                     ; 97 (27)     ; 62 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (5)       ; 0 (0)             ; 62 (22)          ; |DE2_115|I2Cinitialize:i2c                                                      ; work         ;
+;    |I2Cinitialize:i2c|                     ; 98 (28)     ; 62 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (6)       ; 1 (1)             ; 61 (21)          ; |DE2_115|I2Cinitialize:i2c                                                      ; work         ;
 ;       |I2Csender:i2csender|                ; 70 (70)     ; 40 (40)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 40 (40)          ; |DE2_115|I2Cinitialize:i2c|I2Csender:i2csender                                  ; work         ;
-;    |Top:top|                               ; 327 (32)    ; 259 (9)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 68 (23)      ; 81 (0)            ; 178 (8)          ; |DE2_115|Top:top                                                                ; work         ;
-;       |I2S:i2s|                            ; 131 (57)    ; 122 (55)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (2)        ; 62 (28)           ; 60 (27)          ; |DE2_115|Top:top|I2S:i2s                                                        ; work         ;
-;          |ADC:adc|                         ; 27 (27)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 17 (17)           ; 9 (9)            ; |DE2_115|Top:top|I2S:i2s|ADC:adc                                                ; work         ;
-;          |DAC:dac|                         ; 47 (47)     ; 41 (41)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 17 (17)           ; 24 (24)          ; |DE2_115|Top:top|I2S:i2s|DAC:dac                                                ; work         ;
-;       |SRAM:sramController|                ; 150 (150)   ; 118 (118)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (31)      ; 19 (19)           ; 100 (100)        ; |DE2_115|Top:top|SRAM:sramController                                            ; work         ;
-;       |volumnLed:volLed|                   ; 23 (23)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 18 (18)          ; |DE2_115|Top:top|volumnLed:volLed                                               ; work         ;
+;    |Top:top|                               ; 330 (34)    ; 259 (9)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 71 (24)      ; 82 (1)            ; 177 (9)          ; |DE2_115|Top:top                                                                ; work         ;
+;       |I2S:i2s|                            ; 130 (57)    ; 122 (55)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (2)        ; 63 (30)           ; 59 (25)          ; |DE2_115|Top:top|I2S:i2s                                                        ; work         ;
+;          |ADC:adc|                         ; 27 (27)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 16 (16)           ; 10 (10)          ; |DE2_115|Top:top|I2S:i2s|ADC:adc                                                ; work         ;
+;          |DAC:dac|                         ; 47 (47)     ; 41 (41)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 17 (17)           ; 25 (25)          ; |DE2_115|Top:top|I2S:i2s|DAC:dac                                                ; work         ;
+;       |SRAM:sramController|                ; 149 (149)   ; 118 (118)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (31)      ; 18 (18)           ; 100 (100)        ; |DE2_115|Top:top|SRAM:sramController                                            ; work         ;
+;       |volumnLed:volLed|                   ; 23 (23)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 15 (15)          ; |DE2_115|Top:top|volumnLed:volLed                                               ; work         ;
 ;    |altpll:altpll|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |DE2_115|altpll:altpll                                                          ; altpll       ;
 ;       |altpll_altpll_0:altpll_0|           ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0                                 ; altpll       ;
 ;          |altpll_altpll_0_altpll_kpa2:sd1| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |DE2_115|altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1 ; altpll       ;
@@ -2742,10 +2742,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LCD_DATA[6]        ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; LCD_DATA[7]        ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; AUD_ADCLRCK        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; AUD_BCLK           ; Bidir    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
+; AUD_BCLK           ; Bidir    ; --            ; (0) 0 ps      ; --                    ; --  ; --   ;
 ; I2C_SDAT           ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[0]         ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SRAM_DQ[1]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[1]         ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SRAM_DQ[2]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[3]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[4]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -2765,10 +2765,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLOCK_50           ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; SW[3]              ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[2]              ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; KEY[2]             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; KEY[1]             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; KEY[2]             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; KEY[0]             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; KEY[3]             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; KEY[3]             ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; AUD_ADCDAT         ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; HSMC_CLKIN_P1(n)   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; HSMC_CLKIN_P2(n)   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
@@ -3027,25 +3027,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|I2S:i2s|ADC:adc|counter[3]                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|counter[2]                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|counter[1]                    ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|AUD_DACDAT                    ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|AUD_DACDAT                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[15]                      ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|state.READ                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|state.WAITL                   ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|state.WAITH                   ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[15]                ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[15]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[14]                      ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|state.INIT                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|counter[3]                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|counter[2]                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|counter[1]                    ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|counter[0]                    ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|counter[0]                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|_start                        ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_valid                  ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_data[15]               ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_data[11]               ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_data[12]               ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[14]               ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[13]               ; 1                 ; 0       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_data[12]               ; 1                 ; 0       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_data[11]               ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[10]               ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[9]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[8]                ; 1                 ; 0       ;
@@ -3057,45 +3055,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[2]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[1]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[0]                ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[14]                ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_data[15]               ; 1                 ; 0       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_valid                  ; 1                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[14]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[13]                      ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|take_data                     ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|state.READ                    ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|counter[0]                    ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[13]                ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[13]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[12]                      ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|state.WAITL                   ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[12]                ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[12]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[11]                      ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|ADC:adc|state.WAITH                   ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[11]                ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[11]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[10]                      ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[10]                ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[10]                ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[9]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[9]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[9]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[8]                       ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|_play_data[8]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[7]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[7]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[7]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[6]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[6]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[6]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[5]                       ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|_play_data[5]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[4]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[4]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[4]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[3]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[3]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[3]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[2]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[2]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[2]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[1]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[1]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[1]                 ; 1                 ; 0       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[0]                       ; 1                 ; 0       ;
-;      - Top:top|I2S:i2s|DAC:dac|_play_data[0]                 ; 0                 ; 0       ;
+;      - Top:top|I2S:i2s|DAC:dac|_play_data[0]                 ; 1                 ; 0       ;
 ; I2C_SDAT                                                     ;                   ;         ;
 ; SRAM_DQ[0]                                                   ;                   ;         ;
-;      - Top:top|SRAM:sramController|out_signal[0]~feeder      ; 1                 ; 6       ;
+;      - Top:top|SRAM:sramController|out_signal[0]             ; 1                 ; 6       ;
 ; SRAM_DQ[1]                                                   ;                   ;         ;
-;      - Top:top|SRAM:sramController|out_signal[1]~feeder      ; 0                 ; 6       ;
+;      - Top:top|SRAM:sramController|out_signal[1]             ; 1                 ; 6       ;
 ; SRAM_DQ[2]                                                   ;                   ;         ;
 ;      - Top:top|SRAM:sramController|out_signal[2]~feeder      ; 0                 ; 6       ;
 ; SRAM_DQ[3]                                                   ;                   ;         ;
@@ -3103,7 +3103,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[4]                                                   ;                   ;         ;
 ;      - Top:top|SRAM:sramController|out_signal[4]~feeder      ; 0                 ; 6       ;
 ; SRAM_DQ[5]                                                   ;                   ;         ;
-;      - Top:top|SRAM:sramController|out_signal[5]             ; 0                 ; 6       ;
+;      - Top:top|SRAM:sramController|out_signal[5]~feeder      ; 0                 ; 6       ;
 ; SRAM_DQ[6]                                                   ;                   ;         ;
 ;      - Top:top|SRAM:sramController|out_signal[6]             ; 0                 ; 6       ;
 ; SRAM_DQ[7]                                                   ;                   ;         ;
@@ -3113,11 +3113,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[9]                                                   ;                   ;         ;
 ;      - Top:top|SRAM:sramController|out_signal[9]~feeder      ; 0                 ; 6       ;
 ; SRAM_DQ[10]                                                  ;                   ;         ;
-;      - Top:top|SRAM:sramController|out_signal[10]            ; 0                 ; 6       ;
+;      - Top:top|SRAM:sramController|out_signal[10]~feeder     ; 0                 ; 6       ;
 ; SRAM_DQ[11]                                                  ;                   ;         ;
-;      - Top:top|SRAM:sramController|out_signal[11]            ; 0                 ; 6       ;
+;      - Top:top|SRAM:sramController|out_signal[11]~feeder     ; 0                 ; 6       ;
 ; SRAM_DQ[12]                                                  ;                   ;         ;
-;      - Top:top|SRAM:sramController|out_signal[12]~feeder     ; 0                 ; 6       ;
+;      - Top:top|SRAM:sramController|out_signal[12]            ; 0                 ; 6       ;
 ; SRAM_DQ[13]                                                  ;                   ;         ;
 ;      - Top:top|SRAM:sramController|out_signal[13]~feeder     ; 0                 ; 6       ;
 ; SRAM_DQ[14]                                                  ;                   ;         ;
@@ -3165,7 +3165,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|SRAM:sramController|in_addr[13]               ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|in_addr[14]               ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|in_addr[15]               ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|record_valid                          ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|record_data[0]                        ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|record_data[1]                        ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|record_data[2]                        ; 0                 ; 6       ;
@@ -3183,8 +3182,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|I2S:i2s|record_data[14]                       ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|record_data[15]                       ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|DAC:dac|AUD_DACDAT                    ; 0                 ; 6       ;
-;      - Top:top|volumnLed:volLed|LEDG[0]                      ; 0                 ; 6       ;
 ;      - Top:top|volumnLed:volLed|LEDG[8]                      ; 0                 ; 6       ;
+;      - Top:top|volumnLed:volLed|LEDG[0]                      ; 0                 ; 6       ;
 ;      - Top:top|volumnLed:volLed|LEDG[1]                      ; 0                 ; 6       ;
 ;      - Top:top|volumnLed:volLed|LEDG[2]                      ; 0                 ; 6       ;
 ;      - Top:top|volumnLed:volLed|LEDG[3]                      ; 0                 ; 6       ;
@@ -3192,7 +3191,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|volumnLed:volLed|LEDG[5]                      ; 0                 ; 6       ;
 ;      - Top:top|volumnLed:volLed|LEDG[6]                      ; 0                 ; 6       ;
 ;      - Top:top|volumnLed:volLed|LEDG[7]                      ; 0                 ; 6       ;
-;      - Top:top|volumnLed:volLed|LEDR                         ; 0                 ; 6       ;
 ;      - Top:top|play_speed[3]                                 ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[1]   ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|record_ptr[0]             ; 0                 ; 6       ;
@@ -3241,19 +3239,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|SRAM:sramController|out_addr[17]              ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|out_addr[18]              ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|out_addr[19]              ; 0                 ; 6       ;
+;      - Top:top|volumnLed:volLed|LEDR                         ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|full                      ; 0                 ; 6       ;
 ;      - Top:top|state[0]                                      ; 0                 ; 6       ;
 ;      - Top:top|state[2]                                      ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|I2Csender:i2csender|scl_r           ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|SRAM_CE_N                 ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|record_valid                          ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|in_addr[17]               ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|in_addr[18]               ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|in_addr[19]               ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|in_addr[16]               ; 0                 ; 6       ;
 ;      - Top:top|_reverse                                      ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|neg_r                            ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|neg_r                      ; 0                 ; 6       ;
 ;      - Top:top|_mode                                         ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|neg_r                            ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|state_r.IDLE                        ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|state_r.SEND                        ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|count_r[0]                          ; 0                 ; 6       ;
@@ -3272,12 +3272,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - I2Cinitialize:i2c|I2Csender:i2csender|clk_cnt_r[1]    ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_ACK   ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|request_play_data                     ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|adc_valid                             ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|adc_data[15]                          ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|adc_data[11]                          ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|adc_data[12]                          ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[14]                          ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[13]                          ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|adc_data[12]                          ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|adc_data[11]                          ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[10]                          ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[9]                           ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[8]                           ; 0                 ; 6       ;
@@ -3289,14 +3287,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|I2S:i2s|adc_data[2]                           ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[1]                           ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|adc_data[0]                           ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|o_debounced_r                    ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|counter_r[2]                     ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|counter_r[1]                     ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|counter_r[0]                     ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|adc_data[15]                          ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|adc_valid                             ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|o_debounced_r              ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|counter_r[2]               ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|counter_r[1]               ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|counter_r[0]               ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|o_debounced_r                    ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|counter_r[2]                     ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|counter_r[1]                     ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|counter_r[0]                     ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|state_r.DONE                        ; 0                 ; 6       ;
 ;      - I2Cinitialize:i2c|I2Csender:i2csender|o_finished_r    ; 0                 ; 6       ;
 ;      - Debounce:fast_buttom|o_debounced_r                    ; 0                 ; 6       ;
@@ -3344,12 +3344,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|SRAM:sramController|_SRAM_DQ[13]              ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|_SRAM_DQ[14]              ; 0                 ; 6       ;
 ;      - Top:top|SRAM:sramController|_SRAM_DQ[15]              ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_valid                  ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_data[15]               ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_data[11]               ; 0                 ; 6       ;
-;      - Top:top|I2S:i2s|ADC:adc|record_data[12]               ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[14]               ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[13]               ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_data[12]               ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_data[11]               ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[10]               ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[9]                ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[8]                ; 0                 ; 6       ;
@@ -3361,6 +3359,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[2]                ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[1]                ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[0]                ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_data[15]               ; 0                 ; 6       ;
+;      - Top:top|I2S:i2s|ADC:adc|record_valid                  ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|prepare_data[15]                      ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|DAC:dac|_play_data[14]                ; 0                 ; 6       ;
 ;      - Top:top|I2S:i2s|DAC:dac|data[13]                      ; 0                 ; 6       ;
@@ -3477,22 +3477,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Top:top|_reverse                                      ; 1                 ; 6       ;
 ; SW[2]                                                        ;                   ;         ;
 ;      - Top:top|_mode~0                                       ; 0                 ; 6       ;
-; KEY[2]                                                       ;                   ;         ;
-;      - Debounce:stop_buttom|always0~0                        ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|counter_w[1]~1                   ; 0                 ; 6       ;
-;      - Debounce:stop_buttom|counter_w[0]~2                   ; 0                 ; 6       ;
 ; KEY[1]                                                       ;                   ;         ;
 ;      - Debounce:playRecord_buttom|always0~0                  ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|counter_w[1]~1             ; 0                 ; 6       ;
 ;      - Debounce:playRecord_buttom|counter_w[0]~2             ; 0                 ; 6       ;
+; KEY[2]                                                       ;                   ;         ;
+;      - Debounce:stop_buttom|always0~0                        ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|counter_w[1]~1                   ; 0                 ; 6       ;
+;      - Debounce:stop_buttom|counter_w[0]~2                   ; 0                 ; 6       ;
 ; KEY[0]                                                       ;                   ;         ;
 ;      - Debounce:fast_buttom|always0~0                        ; 0                 ; 6       ;
 ;      - Debounce:fast_buttom|counter_w[1]~1                   ; 0                 ; 6       ;
 ;      - Debounce:fast_buttom|counter_w[0]~2                   ; 0                 ; 6       ;
 ; KEY[3]                                                       ;                   ;         ;
-;      - Debounce:slow_buttom|always0~0                        ; 0                 ; 6       ;
-;      - Debounce:slow_buttom|counter_w[1]~1                   ; 0                 ; 6       ;
-;      - Debounce:slow_buttom|counter_w[0]~2                   ; 0                 ; 6       ;
+;      - Debounce:slow_buttom|always0~0                        ; 1                 ; 6       ;
+;      - Debounce:slow_buttom|counter_w[1]~1                   ; 1                 ; 6       ;
+;      - Debounce:slow_buttom|counter_w[0]~2                   ; 1                 ; 6       ;
 ; AUD_ADCDAT                                                   ;                   ;         ;
 ;      - Top:top|I2S:i2s|ADC:adc|record_data[0]~feeder         ; 1                 ; 6       ;
 ; HSMC_CLKIN_P1(n)                                             ;                   ;         ;
@@ -3524,29 +3524,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; AUD_BCLK                                                                                ; PIN_F2             ; 67      ; Clock                     ; no     ; --                   ; --               ; --                        ;
 ; CLOCK_50                                                                                ; PIN_Y2             ; 1       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|Selector1~1                                       ; LCCOMB_X24_Y43_N30 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[3]~0                                    ; LCCOMB_X25_Y43_N2  ; 4       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[0]~0                                   ; LCCOMB_X26_Y43_N30 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[23]~3                                    ; LCCOMB_X25_Y43_N30 ; 23      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|oe_r                                              ; FF_X25_Y43_N7      ; 2       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_ACK                                     ; FF_X26_Y43_N15     ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_START                                   ; FF_X24_Y43_N3      ; 36      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|count_r[3]                                                            ; FF_X23_Y44_N15     ; 15      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; I2Cinitialize:i2c|data_r[11]~0                                                          ; LCCOMB_X23_Y44_N8  ; 13      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|Selector1~1                                       ; LCCOMB_X25_Y70_N26 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|bit_cnt_r[3]~0                                    ; LCCOMB_X24_Y70_N10 ; 4       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|byte_cnt_r[0]~0                                   ; LCCOMB_X25_Y70_N28 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|i_data_r[23]~3                                    ; LCCOMB_X25_Y70_N18 ; 23      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|oe_r                                              ; FF_X24_Y70_N15     ; 2       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_ACK                                     ; FF_X25_Y70_N5      ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|I2Csender:i2csender|state_r.S_START                                   ; FF_X23_Y70_N15     ; 36      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|count_r[3]                                                            ; FF_X24_Y67_N23     ; 15      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; I2Cinitialize:i2c|data_r[11]~0                                                          ; LCCOMB_X25_Y67_N26 ; 13      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 ; SW[0]                                                                                   ; PIN_AB28           ; 341     ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; Top:top|I2S:i2s|ADC:adc|state.READ                                                      ; FF_X1_Y61_N29      ; 22      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; Top:top|I2S:i2s|DAC:dac|data[14]~1                                                      ; LCCOMB_X1_Y61_N8   ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Top:top|I2S:i2s|prepare_data[14]~0                                                      ; LCCOMB_X1_Y59_N28  ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Top:top|I2S:i2s|record_valid                                                            ; FF_X9_Y56_N19      ; 52      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; Top:top|SRAM:sramController|SRAM_DQ_z                                                   ; FF_X11_Y44_N5      ; 16      ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; Top:top|SRAM:sramController|isRead                                                      ; FF_X11_Y44_N7      ; 17      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Top:top|SRAM:sramController|out_addr[12]~22                                             ; LCCOMB_X30_Y45_N4  ; 20      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; Top:top|SRAM:sramController|out_addr[12]~23                                             ; LCCOMB_X30_Y45_N30 ; 20      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; Top:top|SRAM:sramController|out_addr[12]~24                                             ; LCCOMB_X11_Y44_N0  ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Top:top|play_speed[2]~3                                                                 ; LCCOMB_X88_Y17_N8  ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Top:top|state[2]                                                                        ; FF_X2_Y59_N17      ; 59      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; Top:top|volumnLed:volLed|LEDG[3]~0                                                      ; LCCOMB_X29_Y46_N2  ; 21      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; Top:top|volumnLed:volLed|LEDG[3]~1                                                      ; LCCOMB_X9_Y56_N30  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|I2S:i2s|ADC:adc|state.READ                                                      ; FF_X4_Y60_N31      ; 22      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; Top:top|I2S:i2s|DAC:dac|data[14]~1                                                      ; LCCOMB_X1_Y61_N30  ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|I2S:i2s|prepare_data[15]~0                                                      ; LCCOMB_X5_Y60_N26  ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|I2S:i2s|record_valid                                                            ; FF_X5_Y60_N1       ; 51      ; Sync. clear, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; Top:top|SRAM:sramController|SRAM_DQ_z                                                   ; FF_X8_Y59_N25      ; 16      ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; Top:top|SRAM:sramController|isRead                                                      ; FF_X8_Y59_N27      ; 17      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|SRAM:sramController|out_addr[12]~22                                             ; LCCOMB_X9_Y59_N2   ; 20      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; Top:top|SRAM:sramController|out_addr[12]~23                                             ; LCCOMB_X8_Y59_N18  ; 20      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; Top:top|SRAM:sramController|out_addr[12]~24                                             ; LCCOMB_X8_Y59_N28  ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|play_speed[2]~3                                                                 ; LCCOMB_X73_Y30_N20 ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|state[2]                                                                        ; FF_X5_Y60_N21      ; 61      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; Top:top|volumnLed:volLed|LEDG[0]~0                                                      ; LCCOMB_X8_Y59_N4   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Top:top|volumnLed:volLed|LEDG[0]~1                                                      ; LCCOMB_X9_Y59_N4   ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 ; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[0] ; PLL_1              ; 213     ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[1] ; PLL_1              ; 62      ; Clock                     ; yes    ; Global Clock         ; GCLK2            ; --                        ;
 +-----------------------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
@@ -3557,7 +3557,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                    ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[0] ; PLL_1    ; 213     ; 18                                   ; Global Clock         ; GCLK3            ; --                        ;
+; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[0] ; PLL_1    ; 213     ; 17                                   ; Global Clock         ; GCLK3            ; --                        ;
 ; altpll:altpll|altpll_altpll_0:altpll_0|altpll_altpll_0_altpll_kpa2:sd1|wire_pll7_clk[1] ; PLL_1    ; 62      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
 +-----------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
@@ -3567,64 +3567,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 564 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 219 / 10,120 ( 2 % )    ;
-; C4 interconnects      ; 717 / 209,544 ( < 1 % ) ;
-; Direct links          ; 118 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 588 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 232 / 10,120 ( 2 % )    ;
+; C4 interconnects      ; 658 / 209,544 ( < 1 % ) ;
+; Direct links          ; 140 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )         ;
-; Local interconnects   ; 229 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 187 / 9,963 ( 2 % )     ;
-; R4 interconnects      ; 536 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 223 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 172 / 9,963 ( 2 % )     ;
+; R4 interconnects      ; 429 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.44) ; Number of LABs  (Total = 36) ;
+; Number of Logic Elements  (Average = 12.91) ; Number of LABs  (Total = 35) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 3                            ;
-; 2                                           ; 2                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 3                            ;
 ; 7                                           ; 1                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 0                            ;
+; 9                                           ; 2                            ;
 ; 10                                          ; 0                            ;
-; 11                                          ; 0                            ;
+; 11                                          ; 2                            ;
 ; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
-; 14                                          ; 1                            ;
-; 15                                          ; 3                            ;
-; 16                                          ; 22                           ;
+; 14                                          ; 2                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 21                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.44) ; Number of LABs  (Total = 36) ;
+; LAB-wide Signals  (Average = 2.57) ; Number of LABs  (Total = 35) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 34                           ;
+; 1 Async. clear                     ; 33                           ;
 ; 1 Clock                            ; 27                           ;
-; 1 Clock enable                     ; 11                           ;
-; 1 Sync. clear                      ; 6                            ;
+; 1 Clock enable                     ; 13                           ;
+; 1 Sync. clear                      ; 7                            ;
 ; 1 Sync. load                       ; 2                            ;
-; 2 Clock enables                    ; 1                            ;
-; 2 Clocks                           ; 7                            ;
+; 2 Clock enables                    ; 2                            ;
+; 2 Clocks                           ; 6                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 21.31) ; Number of LABs  (Total = 36) ;
+; Number of Signals Sourced  (Average = 22.09) ; Number of LABs  (Total = 35) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 1                            ;
-; 2                                            ; 3                            ;
+; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 2                            ;
 ; 5                                            ; 0                            ;
@@ -3639,47 +3639,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 0                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 1                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 1                            ;
+; 23                                           ; 0                            ;
 ; 24                                           ; 2                            ;
-; 25                                           ; 1                            ;
+; 25                                           ; 2                            ;
 ; 26                                           ; 2                            ;
-; 27                                           ; 4                            ;
+; 27                                           ; 0                            ;
 ; 28                                           ; 2                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 3                            ;
-; 31                                           ; 1                            ;
-; 32                                           ; 5                            ;
+; 29                                           ; 3                            ;
+; 30                                           ; 2                            ;
+; 31                                           ; 2                            ;
+; 32                                           ; 4                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.83) ; Number of LABs  (Total = 36) ;
+; Number of Signals Sourced Out  (Average = 8.51) ; Number of LABs  (Total = 35) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 8                            ;
-; 2                                               ; 3                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 3                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 4                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 3                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 2                            ;
 ; 8                                               ; 4                            ;
-; 9                                               ; 3                            ;
+; 9                                               ; 2                            ;
 ; 10                                              ; 1                            ;
-; 11                                              ; 0                            ;
+; 11                                              ; 3                            ;
 ; 12                                              ; 1                            ;
 ; 13                                              ; 1                            ;
 ; 14                                              ; 2                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 3                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 4                            ;
 ; 17                                              ; 0                            ;
 ; 18                                              ; 1                            ;
 ; 19                                              ; 0                            ;
@@ -3694,41 +3694,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.53) ; Number of LABs  (Total = 36) ;
+; Number of Distinct Inputs  (Average = 12.43) ; Number of LABs  (Total = 35) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 7                            ;
-; 4                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 3                            ;
+; 4                                            ; 2                            ;
 ; 5                                            ; 4                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 1                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 2                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 0                            ;
 ; 11                                           ; 1                            ;
-; 12                                           ; 1                            ;
+; 12                                           ; 5                            ;
 ; 13                                           ; 1                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 2                            ;
 ; 17                                           ; 1                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 1                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 3                            ;
 ; 20                                           ; 1                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 0                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 2                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 0                            ;
-; 32                                           ; 1                            ;
+; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -4269,8 +4267,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLOCK_50           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[3]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[2]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; KEY[2]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; KEY[2]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[3]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; AUD_ADCDAT         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -4356,7 +4354,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+----------------------+-------------------+
 ; Source Clock(s)                 ; Destination Clock(s) ; Delay Added in ns ;
 +---------------------------------+----------------------+-------------------+
-; altpll|altpll_0|sd1|pll7|clk[0] ; AUD_BCLK             ; 82.3              ;
+; altpll|altpll_0|sd1|pll7|clk[0] ; AUD_BCLK             ; 79.2              ;
 +---------------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -4367,32 +4365,34 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------------+----------------------------------------+-------------------+
 ; Source Register                        ; Destination Register                   ; Delay Added in ns ;
 +----------------------------------------+----------------------------------------+-------------------+
-; Top:top|I2S:i2s|prepare_data[8]        ; Top:top|I2S:i2s|DAC:dac|_play_data[8]  ; 5.101             ;
-; Top:top|I2S:i2s|prepare_data[5]        ; Top:top|I2S:i2s|DAC:dac|_play_data[5]  ; 5.101             ;
-; Top:top|I2S:i2s|prepare_data[7]        ; Top:top|I2S:i2s|DAC:dac|_play_data[7]  ; 4.971             ;
-; Top:top|I2S:i2s|prepare_data[6]        ; Top:top|I2S:i2s|DAC:dac|_play_data[6]  ; 4.971             ;
-; Top:top|I2S:i2s|prepare_data[4]        ; Top:top|I2S:i2s|DAC:dac|_play_data[4]  ; 4.971             ;
-; Top:top|I2S:i2s|prepare_data[3]        ; Top:top|I2S:i2s|DAC:dac|_play_data[3]  ; 4.971             ;
-; Top:top|I2S:i2s|prepare_data[2]        ; Top:top|I2S:i2s|DAC:dac|_play_data[2]  ; 4.971             ;
-; Top:top|I2S:i2s|prepare_data[1]        ; Top:top|I2S:i2s|DAC:dac|_play_data[1]  ; 4.971             ;
-; Top:top|I2S:i2s|prepare_data[0]        ; Top:top|I2S:i2s|DAC:dac|_play_data[0]  ; 4.971             ;
-; Top:top|I2S:i2s|subStart               ; Top:top|I2S:i2s|ADC:adc|_start         ; 4.758             ;
-; Top:top|I2S:i2s|prepare_data[15]       ; Top:top|I2S:i2s|DAC:dac|_play_data[15] ; 4.642             ;
-; Top:top|I2S:i2s|prepare_data[14]       ; Top:top|I2S:i2s|DAC:dac|_play_data[14] ; 4.642             ;
-; Top:top|I2S:i2s|prepare_data[13]       ; Top:top|I2S:i2s|DAC:dac|_play_data[13] ; 4.642             ;
-; Top:top|I2S:i2s|prepare_data[12]       ; Top:top|I2S:i2s|DAC:dac|_play_data[12] ; 4.642             ;
-; Top:top|I2S:i2s|prepare_data[11]       ; Top:top|I2S:i2s|DAC:dac|_play_data[11] ; 4.642             ;
-; Top:top|I2S:i2s|prepare_data[10]       ; Top:top|I2S:i2s|DAC:dac|_play_data[10] ; 4.642             ;
-; Top:top|I2S:i2s|prepare_data[9]        ; Top:top|I2S:i2s|DAC:dac|_play_data[9]  ; 4.642             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[15] ; Top:top|I2S:i2s|DAC:dac|data[15]       ; 0.073             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[14] ; Top:top|I2S:i2s|DAC:dac|data[14]       ; 0.033             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[13] ; Top:top|I2S:i2s|DAC:dac|data[13]       ; 0.033             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[12] ; Top:top|I2S:i2s|DAC:dac|data[12]       ; 0.033             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[11] ; Top:top|I2S:i2s|DAC:dac|data[11]       ; 0.033             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[10] ; Top:top|I2S:i2s|DAC:dac|data[10]       ; 0.033             ;
-; Top:top|I2S:i2s|DAC:dac|_play_data[9]  ; Top:top|I2S:i2s|DAC:dac|data[9]        ; 0.033             ;
+; Top:top|I2S:i2s|subStart               ; Top:top|I2S:i2s|ADC:adc|_start         ; 4.926             ;
+; Top:top|I2S:i2s|prepare_data[15]       ; Top:top|I2S:i2s|DAC:dac|_play_data[15] ; 4.878             ;
+; Top:top|I2S:i2s|prepare_data[14]       ; Top:top|I2S:i2s|DAC:dac|_play_data[14] ; 4.878             ;
+; Top:top|I2S:i2s|prepare_data[5]        ; Top:top|I2S:i2s|DAC:dac|_play_data[5]  ; 4.878             ;
+; Top:top|I2S:i2s|prepare_data[3]        ; Top:top|I2S:i2s|DAC:dac|_play_data[3]  ; 4.878             ;
+; Top:top|I2S:i2s|prepare_data[0]        ; Top:top|I2S:i2s|DAC:dac|_play_data[0]  ; 4.878             ;
+; Top:top|I2S:i2s|prepare_data[7]        ; Top:top|I2S:i2s|DAC:dac|_play_data[7]  ; 4.634             ;
+; Top:top|I2S:i2s|prepare_data[13]       ; Top:top|I2S:i2s|DAC:dac|_play_data[13] ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[12]       ; Top:top|I2S:i2s|DAC:dac|_play_data[12] ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[11]       ; Top:top|I2S:i2s|DAC:dac|_play_data[11] ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[10]       ; Top:top|I2S:i2s|DAC:dac|_play_data[10] ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[9]        ; Top:top|I2S:i2s|DAC:dac|_play_data[9]  ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[8]        ; Top:top|I2S:i2s|DAC:dac|_play_data[8]  ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[6]        ; Top:top|I2S:i2s|DAC:dac|_play_data[6]  ; 4.548             ;
+; Top:top|I2S:i2s|prepare_data[4]        ; Top:top|I2S:i2s|DAC:dac|_play_data[4]  ; 4.483             ;
+; Top:top|I2S:i2s|prepare_data[2]        ; Top:top|I2S:i2s|DAC:dac|_play_data[2]  ; 4.483             ;
+; Top:top|I2S:i2s|prepare_data[1]        ; Top:top|I2S:i2s|DAC:dac|_play_data[1]  ; 4.483             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[4]  ; Top:top|I2S:i2s|DAC:dac|data[4]        ; 0.108             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[2]  ; Top:top|I2S:i2s|DAC:dac|data[2]        ; 0.108             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[1]  ; Top:top|I2S:i2s|DAC:dac|data[1]        ; 0.108             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[13] ; Top:top|I2S:i2s|DAC:dac|data[13]       ; 0.048             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[12] ; Top:top|I2S:i2s|DAC:dac|data[12]       ; 0.048             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[11] ; Top:top|I2S:i2s|DAC:dac|data[11]       ; 0.048             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[10] ; Top:top|I2S:i2s|DAC:dac|data[10]       ; 0.048             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[9]  ; Top:top|I2S:i2s|DAC:dac|data[9]        ; 0.048             ;
+; Top:top|I2S:i2s|DAC:dac|_play_data[8]  ; Top:top|I2S:i2s|DAC:dac|data[8]        ; 0.048             ;
 +----------------------------------------+----------------------------------------+-------------------+
-Note: This table only shows the top 24 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 26 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -4526,16 +4526,16 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HSMC_TX_D_N[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HSMC_TX_D_N[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "OTG_DREQ[0]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X0_Y49 to location X10_Y60
+    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X0_Y49 to location X10_Y60
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
@@ -4836,10 +4836,10 @@ Warning (169064): Following 123 pins have no output enable or a GND or VCC outpu
     Info (169065): Pin AUD_BCLK has a permanently disabled output enable
 Info (144001): Generated suppressed messages file C:/Users/team06/Desktop/dclab_lab3/output_files/DE2_115.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 84 warnings
-    Info: Peak virtual memory: 5888 megabytes
-    Info: Processing ended: Tue Apr 30 12:44:37 2019
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 5884 megabytes
+    Info: Processing ended: Tue Apr 30 13:01:10 2019
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +----------------------------+

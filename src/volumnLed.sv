@@ -23,10 +23,12 @@ always_comb begin
 		n_LEDG_valid = ~LEDG[8];
 		n_LEDR = record_data[15] ? (record_data[14:0] == 15'd0) : (record_data[14:0] == 15'h7fff);
 
-		if(record_data[15]) n_LEDG = {MSB == 3'd0, MSB <= 3'd1, MSB <= 3'd2, MSB <= 3'd3,
-									  MSB <= 3'd4, MSB <= 3'd5, MSB <= 3'd6, record_data != 16'd0};
-		else n_LEDG = {MSB == 3'd7, MSB >= 3'd6, MSB >= 3'd5, MSB >= 3'd4,
-					   MSB >= 3'd3, MSB >= 3'd2, MSB >= 3'd1, record_data != 16'd0};
+		n_LEDG = {record_data[15] ^ record_data[14], record_data[15] ^ record_data[13], record_data[15] ^ record_data[12], record_data[15] ^ record_data[11], 
+				  record_data[15] ^ record_data[10], record_data[15] ^ record_data[ 9], record_data[15] ^ record_data[ 8], record_data != 16'd0};
+		// if(record_data[15]) n_LEDG = {MSB == 3'd0, MSB <= 3'd1, MSB <= 3'd2, MSB <= 3'd3,
+		// 							  MSB <= 3'd4, MSB <= 3'd5, MSB <= 3'd6, record_data != 16'd0};
+		// else n_LEDG = {MSB == 3'd7, MSB >= 3'd6, MSB >= 3'd5, MSB >= 3'd4,
+		// 			   MSB >= 3'd3, MSB >= 3'd2, MSB >= 3'd1, record_data != 16'd0};
 	end
 	else if(top_state == 3'b110) begin
 		n_LEDG = LEDG[7:0];
