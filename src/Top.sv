@@ -84,12 +84,12 @@ module Top(
 		.play_data(dsp_play_data), .play_valid(dsp_play_valid));
 
 	//dsp
-	assign I2S_request_data = dsp_request_data;
-	assign dsp_play_data = play_data;
-	assign dsp_play_valid = play_valid;
-	// DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
-	// 	.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
-	// 	.request_data(dsp_request_data), .play_speed(play_speed));
+	// assign I2S_request_data = dsp_request_data;
+	// assign dsp_play_data = play_data;
+	// assign dsp_play_valid = play_valid;
+	DSP_LOGIC dsp(.i_clk(clk), .i_rst(rst), .current_state(state), .data_valid(play_valid), .data_in(play_data), 
+		.I2S_request_data(I2S_request_data), .slot_way(_oneSlot), .data_out(dsp_play_data), .valid(dsp_play_valid), 
+		.request_data(dsp_request_data), .play_speed(play_speed));
 
 	//volumn
 	wire volRed;
