@@ -136,26 +136,28 @@ module DE2_115(
 	output [16:0] HSMC_TX_D_P,
 	inout [6:0] EX_IO
 );
+	wire reset;
+	assign reset = SW[17];
 	//altpll
 	wire clk_12m, clk_100k;
-	altpll altpll(.clk_clk(CLOCK_50), .reset_reset_n(SW[0]), .altpll_0_c0_clk(clk_12m), .altpll_0_c1_clk(clk_100k));
+	altpll altpll(.clk_clk(CLOCK_50), .reset_reset_n(reset), .altpll_0_c0_clk(clk_12m), .altpll_0_c1_clk(clk_100k));
 
 	//I2C
 	wire i2c_done;
-	I2Cinitialize i2c(.i_clk(clk_100k), .i_start(1'd1), .i_rst(SW[0]), .o_scl(I2C_SCLK), .o_finished(i2c_done), .o_sda(I2C_SDAT));
+	I2Cinitialize i2c(.i_clk(clk_100k), .i_start(1'd1), .i_rst(reset), .o_scl(I2C_SCLK), .o_finished(i2c_done), .o_sda(I2C_SDAT));
 
 	//Debounce
 	wire playRecord, fast, slow, stop;
-	Debounce fast_buttom      (.i_in(KEY[0]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(fast));
-	Debounce playRecord_buttom(.i_in(KEY[1]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(playRecord));
-	Debounce stop_buttom      (.i_in(KEY[2]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(stop));
-	Debounce slow_buttom      (.i_in(KEY[3]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(slow));
+	Debounce fast_buttom      (.i_in(KEY[0]), .i_clk(clk_12m), .i_rst (reset), .o_neg(fast));
+	Debounce playRecord_buttom(.i_in(KEY[1]), .i_clk(clk_12m), .i_rst (reset), .o_neg(playRecord));
+	Debounce stop_buttom      (.i_in(KEY[2]), .i_clk(clk_12m), .i_rst (reset), .o_neg(stop));
+	Debounce slow_buttom      (.i_in(KEY[3]), .i_clk(clk_12m), .i_rst (reset), .o_neg(slow));
 
 	//Top
-	Top top(.clk(clk_12m), .rst(SW[17]), .I2C_down(i2c_done), .playRecord (playRecord), .stop(stop), .fast(fast), .slow(slow),
-		.oneSlot(SW[3]), .mode(SW[1]), .SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), 
+	Top top(.clk(clk_12m), .rst(reset), .I2C_down(i2c_done), .playRecord (playRecord), .stop(stop), .fast(fast), .slow(slow),
+		.oneSlot(SW[2]), .mode(SW[0]), .SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), 
 		.SRAM_WE_N  (SRAM_WE_N), .SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), 
 		.AUD_BCLK   (AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .HEX0(HEX0), .HEX1(HEX1), 
 		.HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5), .HEX6(HEX6), .HEX7(HEX7), .LEDG(LEDG), .LEDR(LEDR), .LCD_BLON(LCD_BLON), 
-		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW), .reverse(SW[2]));
+		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW), .reverse(SW[1]));
 endmodule
