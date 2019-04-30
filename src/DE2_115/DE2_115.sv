@@ -152,10 +152,10 @@ module DE2_115(
 	Debounce slow_buttom      (.i_in(KEY[3]), .i_clk(clk_12m), .i_rst (SW[0]), .o_neg(slow));
 
 	//Top
-	Top top(.clk(clk_12m), .rst(SW[0]), .I2C_down(i2c_done), .playRecord (playRecord), .stop(stop), .fast(fast), .slow(slow),
-		.oneSlot(SW[1]), .mode(SW[2]), .SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), 
+	Top top(.clk(clk_12m), .rst(SW[17]), .I2C_down(i2c_done), .playRecord (playRecord), .stop(stop), .fast(fast), .slow(slow),
+		.oneSlot(SW[3]), .mode(SW[1]), .SRAM_ADDR(SRAM_ADDR), .SRAM_DQ(SRAM_DQ), .SRAM_CE_N(SRAM_CE_N), .SRAM_OE_N(SRAM_OE_N), 
 		.SRAM_WE_N  (SRAM_WE_N), .SRAM_UB_N(SRAM_UB_N), .SRAM_LB_N(SRAM_LB_N), .AUD_ADCDAT(AUD_ADCDAT), .AUD_ADCLRCK(AUD_ADCLRCK), 
 		.AUD_BCLK   (AUD_BCLK), .AUD_DACDAT(AUD_DACDAT), .AUD_DACLRCK(AUD_DACLRCK), .AUD_XCK(AUD_XCK), .HEX0(HEX0), .HEX1(HEX1), 
 		.HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5), .HEX6(HEX6), .HEX7(HEX7), .LEDG(LEDG), .LEDR(LEDR), .LCD_BLON(LCD_BLON), 
-		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW));
+		.LCD_DATA(LCD_DATA), .LCD_EN(LCD_EN), .LCD_ON(LCD_ON), .LCD_RS(LCD_RS), .LCD_RW(LCD_RW), .reverse(SW[2]));
 endmodule
