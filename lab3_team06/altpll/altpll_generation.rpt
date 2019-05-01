@@ -1,0 +1,41 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\team06\Desktop\dclab_lab3\altpll.qsys --block-symbol-file --output-directory=C:\Users\team06\Desktop\dclab_lab3\altpll --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading dclab_lab3/altpll.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 15.0]
+Progress: Parameterizing module altpll_0
+Progress: Adding clk_0 [clock_source 15.0]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: altpll.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: altpll.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: altpll.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Warning: altpll.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\team06\Desktop\dclab_lab3\altpll.qsys --synthesis=VERILOG --output-directory=C:\Users\team06\Desktop\dclab_lab3\altpll\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading dclab_lab3/altpll.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 15.0]
+Progress: Parameterizing module altpll_0
+Progress: Adding clk_0 [clock_source 15.0]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: altpll.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: altpll.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: altpll.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Warning: altpll.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Info: altpll: Generating altpll "altpll" for QUARTUS_SYNTH
+Info: altpll_0: "altpll" instantiated altpll "altpll_0"
+Info: rst_controller: "altpll" instantiated altera_reset_controller "rst_controller"
+Info: altpll: Done "altpll" with 3 modules, 5 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
